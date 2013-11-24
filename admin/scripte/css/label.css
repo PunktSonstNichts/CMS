@@ -1,0 +1,48 @@
+.label-success{
+display: inline;
+padding: .2em .6em .3em;
+font-size: 75%;
+font-weight: bold;
+line-height: 1;
+color: rgb(255, 255, 255);
+text-align: center;
+white-space: nowrap;
+vertical-align: baseline;
+border-radius: .25em;
+background-image: none !important;
+background: rgb(67, 200, 60) !important;
+background-color: rgb(92, 184, 92);
+border-color: rgb(76, 174, 76);
+}
+.label-warning{
+display: inline;
+padding: .2em .6em .3em;
+font-size: 75%;
+font-weight: bold;
+line-height: 1;
+color: rgb(255, 255, 255);
+text-align: center;
+white-space: nowrap;
+vertical-align: baseline;
+border-radius: .25em;
+background-image: none !important;
+background: rgb(255, 190, 40) !important;
+background-color: rgb(250, 185, 38);
+border-color: rgb(250, 180, 50);
+}
+.label-danger{
+display: inline;
+padding: .2em .6em .3em;
+font-size: 75%;
+font-weight: bold;
+line-height: 1;
+color: rgb(255, 255, 255);
+text-align: center;
+white-space: nowrap;
+vertical-align: baseline;
+border-radius: .25em;
+background-image: none !important;
+background: rgb(229, 72, 54) !important;
+background-color: rgb(229, 72, 54);
+border-color: rgb(220, 30, 30);
+}

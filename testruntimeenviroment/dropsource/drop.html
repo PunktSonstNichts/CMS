@@ -1,0 +1,16 @@
+<head>
+    <script type="text/javascript">
+document.onpaste = function(event){
+alert("hurra");
+console.log(event);
+  var items = (event.clipboardData || event.originalEvent.clipboardData).items;
+  console.log(JSON.stringify(items)); // will give you the mime types
+  var blob = items[0].getAsFile();
+  var reader = new FileReader();
+  reader.onload = function(event){
+    console.log(event.target.result)}; // data url!
+  reader.readAsDataURL(blob);
+}
+
+</script>
+<div contenteditable="true" class="wysiwygeditor-content" id="wysiwygeditor-content" style="width=90%; height: 90%; margin: 10px; border: 1px solid red;"></div>

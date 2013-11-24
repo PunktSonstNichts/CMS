@@ -1,0 +1,1 @@
+<ul class="nav nav-pills pull-right">	<li class="active"><a href="#">Home</a></li>	<li><a href="#">Special<?php if(TEMPLATE == "bootstrap"){ ?><span class="badge pull-right" style="margin-left: 5px;">42</span><?php } ?></a></li>	<li><a href="#">Howto</a></li></ul><?phpif(TEMPLATE == "bootstrap"){?><h3 class="text-muted">Bootstrap!</h3><?php}?>

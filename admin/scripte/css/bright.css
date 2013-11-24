@@ -1,0 +1,71 @@
+#header{
+color: rgb(236, 236, 233);
+background-color: rgb(60, 60, 60);
+}
+.divider{
+background-color: rgb(210, 220, 255);
+}
+
+#active_notification{
+background: rgb(71,196,85);
+background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgb(71,196,85)), to(rgb(51,176,65)));
+border: 2px solid rgb(71,196,85);
+}
+#active_notification:hover{
+background: rgb(51,176,65);
+background: -webkit-gradient(radial, center center, 100, center center, 400, from(rgb(51,176,65)), to(rgb(71,196,85)));
+}
+#active_notification:active{
+background: rgb(41,166,55);
+background: -webkit-gradient(radial, center center, 100, center center, 400, from(rgb(41,166,55)), to(rgb(21,146,35)));
+}
+
+#sidebar{
+background: rgb(71,196,85);
+background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgb(71,196,85)), to(rgb(51,176,65)));
+}
+#sidebar-heading{
+font-size: 1.2em;
+padding: 5px;
+}
+#sidebar-heading  > span{
+color: white;
+text-shadow: 1px 1px 10px rgba(33, 33, 33, 0.8);
+}
+#sidebar li{
+border-top: 1px solid rgb(33, 33, 33);
+}
+#sidebar li.last-li{
+border-bottom: 1px solid rgb(33, 33, 33);
+}
+#sidebar li:hover{
+background: rgb(51,176,65);
+background: -webkit-gradient(radial, center center, 100, center center, 400, from(rgb(51,176,65)), to(rgb(71,196,85)));
+}
+#sidebar li:active{
+box-shadow:inset 4px 4px 8px rgba(0, 0, 0, 0.25);
+background: rgb(41,166,55);
+background: -webkit-gradient(radial, center center, 100, center center, 400, from(rgb(41,166,55)), to(rgb(21,146,35)));
+}
+
+#sidebar li > span{
+color: white;
+}
+.submenu{
+background: rgb(51,176,65);
+}
+.submenu-connector{
+background-image: -webkit-gradient(linear, 25% 0%, 0% 0%, from(rgb(51,176,65)), to(rgb(71,196,85)));
+background-image: -moz-linear-gradient(center right, rgb(71,196,85) 25%, rgb(255, 102, 51) 80%);
+}
+.element{
+background-color: rgb(247, 245, 241);
+border: 1px solid rgb(207, 205, 201);
+}
+.element-heading{
+background-color: rgb(255, 255, 255);
+}
+.element-heading > span{
+color: rgb(187, 185, 181);
+text-shadow: 1px 1px 10px rgba(33, 33, 33, 0.8);
+}

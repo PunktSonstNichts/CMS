@@ -1,0 +1,13 @@
+table>tbody>tr>th, table>tfoot>tr>th, table>tbody>tr>td, table>tfoot>tr>td {
+padding: 5px;
+border-top: 1px solid rgb(221, 221, 221);
+}
+table>thead>tr>th, table>tbody>tr>th, table>thead>tr>td, table>tbody>tr>td{
+margin: 0;
+}
+table>tbody>tr, table>thead>tr{
+margin: 0;
+}
+table>tbody>tr:nth-child(2n){
+background-color: rgb(248, 245, 248);
+}

@@ -1,0 +1,43 @@
+.progress{
+border-radius: 2px;
+background: rgb(233, 235, 236);
+color: rgb(233, 235, 236);
+}
+.progress.normal{
+width: 125px;
+height: 26px;
+-webkit-box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.4);
+box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.4);
+}
+.progress.normal > div{
+border-radius: 4px;
+height: 26px;
+}
+.progress.slim{
+width: 75px;
+height: 14px;
+-webkit-box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.4);
+box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.4);
+}
+.progress.slim > div{
+border-radius: 2px;
+height: 14px;
+}
+.progress.success > div{
+background-image: none !important;
+background: rgb(67, 200, 60) !important;
+background-color: rgb(92, 184, 92);
+border-color: rgb(76, 174, 76);
+}
+.progress.danger > div{
+background-image: none !important;
+background: rgb(229, 72, 54) !important;
+background-color: rgb(229, 72, 54);
+border-color: rgb(220, 30, 30);
+}
+.progress.warning > div{
+background-image: none !important;
+background: rgb(255, 190, 40) !important;
+background-color: rgb(250, 185, 38);
+border-color: rgb(250, 180, 50);
+}

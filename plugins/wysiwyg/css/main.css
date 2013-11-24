@@ -1,0 +1,61 @@
+.wysiwygeditor-editor{
+border: 1px solid rgb(133, 133, 133);
+border-radius: 1px;
+}
+.wysiwygeditor-editor.simple{
+width: 398px;
+}
+.wysiwygeditor-toolbar.simple{
+border-bottom: 1px solid rgb(133, 133, 133);
+width: 398px;
+height: 32px;
+}
+button.wysiwyg, ul.wysiwyg{
+float: left;
+color: rgb(36,36,33) !important;
+border-radius: 0px;
+margin-top: 2px;
+margin-left: 0px;
+margin-right: 0px;
+border-style:none;
+border-left: 1px solid rgb(133, 133, 133);
+background: rgb(12,146,255);
+background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgb(12,150,255)), to(rgb(0,120,250)));
+padding: 8px;
+border-top: 0px;
+border-right: 0px;
+}
+button.wysiwyg:hover, ul.wysiwyg:hover{
+background: rgb(10,140,250);
+background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgb(0,120,250)), to(rgb(12,150,255)));
+}
+
+ul.wysiwyg{
+height: 16px;
+}
+.wysiwyg-submenu{
+position: absolute;
+display: none;
+}
+.wysiwyg-submenu.visible{
+display: block;
+}
+button.wysiwyg.first, ul.wysiwyg.first{
+border-radius: 5px 0px 0px 5px;
+margin-left: 5px;
+border-left: 0px;
+}
+button.wysiwyg.last, ul.wysiwyg.last{
+border-radius: 0px 5px 5px 0px;
+margin-right: 5px;
+}
+
+.wysiwygeditor-content{
+padding: 5px;
+margin: 5px;
+margin-top: 50px;
+min-height: 150px;
+width: 90% !important;
+overflow-y: scroll;
+background-color: rgba(255, 255, 255, 0.8);
+}

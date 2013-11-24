@@ -1,0 +1,63 @@
+<!DOCTYPE html> 
+<head> 
+<title>Richtext</title>
+<meta charset="utf-8">
+<script type="text/javascript"> 
+function postEdit() {
+   document.getElementById("form_inhalt").value =  document.getElementById("inhalt").innerHTML;
+   return true;
+}
+function format(command_name, command_value) {
+   document.execCommand(command_name, false, command_value);
+}
+</script> 
+<style>
+button { margin-right: 0; margin-left: -3px; }
+</style>
+<script>
+</script>
+</head> 
+<body> 
+ 
+<form method="post" id="richtext_formular" action="save-content.php" onsubmit="return postEdit();"> 
+<input type="hidden" name="form_inhalt" id="form_inhalt" value=""> 
+<button type="button" onclick="format('insertparagraph','<p>');" 
+        title="Textabsatz">¶</button>
+<button type="button" onclick="format('formatblock','<h1>');" 
+        title="Überschrift 1. Ordnung">H1</button>
+<button type="button" onclick="format('formatblock','<h2>');" 
+        title="Überschrift 2. Ordnung">H2</button>
+<button type="button" onclick="format('formatblock','<h3>');" 
+        title="Überschrift 3. Ordnung">H3</button>
+<button type="button" onclick="format('formatblock','<h4>');" 
+        title="Überschrift 4. Ordnung">H4</button>
+<button type="button" onclick="format('insertunorderedlist','');" 
+        title="Unsortierte Liste">●</button>
+<button type="button" onclick="format('insertorderedlist','');" 
+        title="Unsortierte Liste">1.</button>
+<button type="button" onclick="format('inserthorizontalrule','');" 
+        title="Trennlinie">&mdash;</button>
+&nbsp;
+<button type="button" onclick="format('bold','');"><b>B</b></button>
+<button type="button" onclick="format('italic','');"><i>I</i></button>
+<button type="button" onclick="format('subscript','');">
+        <span style="font-size: 65%;"><sub>X</sub></span></button>
+<button type="button" onclick="format('superscript','');">
+        <span style="font-size: 65%;"><sup>X</sup></span></button>
+<button type="button" onclick="document.execCommand('createlink');">
+        <span style="text-decoration: underline;">link</span></button>
+&nbsp;
+<button type="button" onclick="format('justifyleft','');">|= </button>
+<button type="button" onclick="format('justifyright','');"> =|</button>
+<button type="button" onclick="format('justifycenter','');">)=(</button>
+<button type="button" onclick="format('justifyfull','');">|=|</button>
+ 
+<div contenteditable="true" id="inhalt" style="border: solid 1px #D0D0D0; 
+padding: 5px; height: 150px; width: 600px; overflow: scroll;"></div>
+ 
+<p><input type="submit" value="OK"></p>
+ 
+</form> 
+ 
+</body> 
+</html>
