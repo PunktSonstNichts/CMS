@@ -100,7 +100,7 @@ while($tasks[] = $taskssql->result($tasksresult, "assoc"));
 		</div>
 		<div class="element-content">
 			<form method="post" style="margin-left: 5px;" action="publish.php">
-				<input type="text"   name="article-title" placeholder="Your title" style="margin-bottom: 5px; width: 365px;"/>
+				<input type="text"   name="article-title" placeholder="Your title" style="margin-bottom: 5px; width: 364px;"/>
 				<?php
 				#quikpost
 				$default_settings_sql = "SELECT setting, value FROM `widgets_settings` WHERE `widget` = 'quikpost_w'";
@@ -180,16 +180,9 @@ while($tasks[] = $taskssql->result($tasksresult, "assoc"));
 		<?php
 		foreach($tasks as $task){
 		if($task != ""){
-		switch($task["status"]){
-		case "canceled":
-			$label = "<span class='label-danger'>canceled</span>";
-			$progressbar = "danger";
-		break;
-		default:
-			$label = "<span class='label-success'>WIP</span>";
-			$progressbar = "success";
-		break;
-		}
+		list($task_name, $task_type) = array_pad(explode("|", $task["status"], 2), 2, null);
+			$label = "<span class='label-$task_type'>$task_name</span>";
+			$progressbar = "$task_type";
 		?>
 		<tr>
 			<td><?php echo $task["task-name"]; ?></td>
@@ -201,6 +194,12 @@ while($tasks[] = $taskssql->result($tasksresult, "assoc"));
 		}
 		}
 		?>
+				<tr>
+			<td><input type="text" class="slim" placeholder="Task name"></td>
+			<td><input type="text" class="slim" placeholder="Assigned to"></td>
+			<td>deadline</td>
+			<td><input type="submit" class="btn slim" value="Add task"></td>
+		</tr>	
 		</tbody>
 		</table> 	
 	</div>
