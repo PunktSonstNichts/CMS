@@ -42,26 +42,9 @@ padding: 5px;
 }
 }
 
-.input-element.small{
-float: right;
-margin-right: 10px;
-}
-.input-element.small > label{
-width: 120px;
-width: 50px;
-margin-top: 10px;
-}
-.input-element.small > .label-helper{
-width: 150px;
-margin-left: 80px;
-}
-.input-element.small > .label-helper > input{
-width: 85px;
-}
 
 
 #dialog-helper{
-/* Helps to center dialog-box */
 position: fixed;
 left: 50%;
 z-index: 1050;
@@ -126,4 +109,17 @@ background-color: rgba(53, 53, 53, 0.2);
 }
 #dialog-handler{
 clear:both;
+}
+
+#dialog.success{
+width: 200px;
+background-image: none !important;
+background: rgb(67, 200, 60) !important;
+background-color: rgb(92, 184, 92);
+border-color: rgb(76, 174, 76);
+color: white;
+font-weight: bold;
+letter-spacing:1px;
+text-shadow: 0px 1px rgb(66, 66, 66);
+font-size: 16px
 }

@@ -60,8 +60,7 @@ class mysql{
             $inc = $this->last_injection; 
             } else { 
             $inc = $sql; 
-        } 
-        
+        }
 		switch($type){
 			case "array":
 				$row = mysql_fetch_array($inc);

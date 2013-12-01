@@ -1,1 +1,31 @@
 
+[1385830574][8] Undefined index: HTTP_REFERER //line 43 in file C:\Users\Till\Desktop\xampp\htdocs\CMS\index.php 
+
+[1385834824][8] Undefined index: HTTP_REFERER //line 43 in file C:\Users\Till\Desktop\xampp\htdocs\CMS\index.php 
+
+[1385830574][8] Undefined index: HTTP_REFERER //line 43 in file C:\Users\Till\Desktop\xampp\htdocs\CMS\index.php 
+
+[1385834919][8] Undefined index: HTTP_REFERER //line 43 in file C:\Users\Till\Desktop\xampp\htdocs\CMS\index.php 
+
+[1385830574][8] Undefined index: HTTP_REFERER //line 43 in file C:\Users\Till\Desktop\xampp\htdocs\CMS\index.php 
+
+[1385834824][8] Undefined index: HTTP_REFERER //line 43 in file C:\Users\Till\Desktop\xampp\htdocs\CMS\index.php 
+
+[1385830574][8] Undefined index: HTTP_REFERER //line 43 in file C:\Users\Till\Desktop\xampp\htdocs\CMS\index.php 
+
+[1385834971][8] Undefined index: HTTP_REFERER //line 43 in file C:\Users\Till\Desktop\xampp\htdocs\CMS\index.php 
+
+[1385830574][8] Undefined index: HTTP_REFERER //line 43 in file C:\Users\Till\Desktop\xampp\htdocs\CMS\index.php 
+
+[1385834824][8] Undefined index: HTTP_REFERER //line 43 in file C:\Users\Till\Desktop\xampp\htdocs\CMS\index.php 
+
+[1385830574][8] Undefined index: HTTP_REFERER //line 43 in file C:\Users\Till\Desktop\xampp\htdocs\CMS\index.php 
+
+[1385834919][8] Undefined index: HTTP_REFERER //line 43 in file C:\Users\Till\Desktop\xampp\htdocs\CMS\index.php 
+
+[1385830574][8] Undefined index: HTTP_REFERER //line 43 in file C:\Users\Till\Desktop\xampp\htdocs\CMS\index.php 
+
+[1385834824][8] Undefined index: HTTP_REFERER //line 43 in file C:\Users\Till\Desktop\xampp\htdocs\CMS\index.php 
+
+[1385830574][8] Undefined index: HTTP_REFERER //line 43 in file C:\Users\Till\Desktop\xampp\htdocs\CMS\index.php 
+

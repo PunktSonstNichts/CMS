@@ -4,20 +4,22 @@ public $meta = array();
 public $metastring = "";
 public $title = "";
 private $site = "";
+private $sitename = "";
 private $dbprae = "";
 
-	public function __construct($site = "", $dbprae = ""){
+	public function __construct($site = "", $sitename = "", $dbprae = ""){
+		$this->site = $site;
+		$this->sitename = $sitename;
+		$this->dbprae = $dbprae;
 		$this->getmeta();
 		$this->gettitle();
-		$this->site = $site;
-		$this->dbprae = $dbprae;
 	}
 	
 	public function getmeta(){
 		$metasql = new mysql();
 		$metaresult = $metasql->query("SELECT  `key`, `value`, `not_affected` FROM `".$this->dbprae."globals` WHERE `type` = 'meta';");
 		while ($row = $metasql->result($metaresult, "assoc")) {
-			if($this->site != $row["not_affected"] && $this->site != "" && $row["not_affected"] != ""){
+			if($this->site != $row["not_affected"]){
 			
 			}else{
 				$name = htmlspecialchars($row["key"]);
@@ -42,7 +44,7 @@ private $dbprae = "";
 			return false;
 		}else{
 			$title = htmlspecialchars($row["value"]);
-			$this->title = "<title>".$title."</title>";
+			$this->title = "<title>".$title." &raquo; ".$this->sitename."</title>";
 		}
 		unset($titlesql);
 	}

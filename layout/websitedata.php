@@ -1,1 +1,0 @@
-<?phpclass website{public $name;private $site;public function __construct($site = "index"){$this->site = $site;$this->name = "Yolo";}public function layout(){}}?>

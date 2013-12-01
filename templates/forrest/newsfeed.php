@@ -36,8 +36,5 @@
 </div>
 </div>
 <div id="footer">
-	<button type="submit" class="btn" name="add">
-		<span class="value">Add new</span>
-	</button>
 </div>
 </div>

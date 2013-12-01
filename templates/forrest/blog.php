@@ -8,24 +8,23 @@
 </head>
 <body>
 <div class="wrapper">
-<div id="">
-<span>BLOG</span>
-</div>
-</div>
-<div class="wrapper">
 <?php $body->logo("top"); ?>
 </div>
 <div class="wrapper grey">
 <div id="topnav">
-<?php $body->top("top"); ?>
+<?php $body->navigation("top"); ?>
+</div>
+</div>
+<div class="wrapper">
+<div id="content">
+<?php $body->top(); ?>
 </div>
 </div>
 <div class="wrapper">
 <div id="content">
 <div id="table">
-<h1>Mein Bezirk, Mein BLOG :v *Genius* es klappt, Btiches!</h1>
-</div>
 <?php $body->main(); ?>
+</div>
 </div>
 </div>
 <div class="wrapper">

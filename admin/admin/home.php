@@ -121,22 +121,6 @@ while($tasks[] = $taskssql->result($tasksresult, "assoc"));
 	</div>
 </div>
 <div class="col-4">
-
-<!-- <div class="element" id="statistics" style="width: 225px;">
-	<div class="element-heading">
-		<span>Statistics</span>
-	</div>
-	<div class="element-content">
-		<div class="column">
-		<h1>1.012 <span style="color: rgb(240, 40, 50);">(-12)</span></h1>
-		<span>Visitors Today</span>
-		</div>
-		<div class="column">
-		<h1>412 <span style="color: rgb(40, 250, 50);">(+3)</span></h1>
-		<span>Comments Today</span>
-		</div>
-	</div>
-</div> -->
 <div class="element" id="bookmarklet" style="width: 225px;">
 <div class="element-heading">
 <span>Bookmarklet</span>
@@ -178,6 +162,11 @@ while($tasks[] = $taskssql->result($tasksresult, "assoc"));
 		</thead> 
 		<tbody>
 		<?php
+		#quikpost
+		$user_sql = "SELECT ID, Name, role, active_Q0 FROM `".$dbprae."users`;";
+		$user_c = new mysql();
+		$user_result = $user_c->query($user_sql);
+		while($user_array[] = $user_c->result($user_result, "assoc"));
 		foreach($tasks as $task){
 		if($task != ""){
 		list($task_name, $task_type) = array_pad(explode("|", $task["status"], 2), 2, null);
@@ -196,8 +185,18 @@ while($tasks[] = $taskssql->result($tasksresult, "assoc"));
 		?>
 				<tr>
 			<td><input type="text" class="slim" placeholder="Task name"></td>
-			<td><input type="text" class="slim" placeholder="Assigned to"></td>
-			<td>deadline</td>
+			<td>
+				<select width="150" style="width: 150px;" class="slim" name="user">
+					<?php
+					foreach($user_array as $user){
+						if($user != ""){
+						echo "<option value='".$user["Name"]."'>".$user["Name"]."</option>";
+						}
+					}
+					?>
+				</select>
+			</td>
+			<td>Deadline</td>
 			<td><input type="submit" class="btn slim" value="Add task"></td>
 		</tr>	
 		</tbody>
