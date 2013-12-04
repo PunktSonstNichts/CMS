@@ -16,7 +16,7 @@ $template_sql->close_connect();
 
 
 //Define other Vars
-define("TEMPLATE", $template["value"]); // To allow widgets to determine actual template
+define( "TEMPLATE", $template["value"]); // To allow widgets to determine actual template
 define( "ACTUAL_SITE", $actual_site); // Name of actual site
 define( "ACTUAL_SITENAME", $pagedata["visual_name"]); // Visual-Name of actual site
 

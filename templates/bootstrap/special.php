@@ -28,16 +28,28 @@ content: "" !important;
   <?php $body->top();  ?>
   <hr>
 <div class="row row-offcanvas row-offcanvas-right active">
-  <div class="col-xs-12 col-sm-9"><?php $body->main(); ?></div>
+  <div class="col-xs-12 col-sm-9">
+	<h3 style="text-align: center;"><b>Never went to germany?</b></h3>
+	<h4 style="text-align: center;">Then start discovering cool cities and captivating landscapes today!</h4>
+	<img src="http://<?php echo ROOT; ?>content/images/wrapper_DE.png" width="848px" style="border: 1px solid rgb(170, 170, 170); border-radius: 5px;-webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);"/>
+	<p style="color: rgb(98,100,95); float:left;">01.12.2013 // Till Meyer-Arlt</p>
+	<p style="text-align: right;"><small><a target="_blank" href="http://de.best-wallpaper.net/Beautiful-scenery-in-Germany_2560x1440.html">http://de.best-wallpaper.net/Germany.html</a></small></p></br>
+	<p style="line-height: 21px;">
+	<?php print_r($_GET);  ?>
+	
+	Germany is the perfect destination for people who like to explore many different traditions in a short amount of time due to the fact that the german highways are the best worldwide.
+	Not only the highway but also the comfortable trains enable the traveller to visit one day Hamburg with its unique red-light district and to drink beer at the "Wiesn" in Munich the next day.
+	Besides Hamburg and Munich many other cities have there specialty mostly in downtown, for examples hannover is known for it big forrest and other natural areas like the Maschsee in town.</br>
+	Germany's big cities are just waiting to get discovered. To dive into them you don't need to buy expansive guides: English is widely spoken through Germany and our country is known as very visitor-friendly. 
+	Many people are open to show tourists the special trendy district. Not only for explorer Germany is the best choice, adrenalin-junkies can drive on the Autobahn, Snowboarder can drive down the mountains in the Alps and families can drive to all the theme parks Germany can offer.</br>	
+	</p>
+  </div>
 	<div class="col-xs-6 col-sm-3 sidebar-offcanvas">
-		<div class="well" style="text-align: left;">
-			<h3>Other Specials</h3>
-		</div>
 		<div class="well" style="text-align: left;">
 			<h3 style="text-align: center;">Our Publisher</h3>
 			<p><a href="blog">PunktSonstNichts</a> | <span class="label label-success">admin</span></p>
-			<p><a href="blog">hermit</a> | <span class="label label-primary">content manager</span></p>
 			<p><a href="blog">Max M&uuml;ller</a> | <span class="label label-info">designer</span></p>
+			<p><a href="blog">Till Meyer-Arlt</a> | <span class="label label-primary">content manager</span></p>
 		</div>
 		<div class="well" style="text-align: left;">
 			<h3 style="text-align: center;">CMS | Bootstrap</h3>

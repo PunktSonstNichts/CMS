@@ -9,7 +9,7 @@ $time_start = microtime();
 
 include "loader.php";
 //set_error_handler("log_error");
-
+error_reporting(0);
 
 if(!empty($_GET["mode"])){
 if($_GET["mode"] == "Admin"){

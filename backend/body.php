@@ -18,26 +18,30 @@ private $sqlresult_arraywidgets_settings = array();
 	public function __call($orientation, $fallback){
 		$widget_found = false;
 		foreach($this->sqlresult_array_widgets as $widget){
-		$widget_name = $widget["widget"];
-			if($widget["position"] == $orientation){
-				if (file_exists("widgets/".$widget["widget"]."/frontend.php")){
-					include("widgets/".$widget["widget"]."/frontend.php");
-					$widget_found = true;
-				}else{
-					echo "<p class='error'><b>body.php:</b> widget 'widgets/".$widget_name."/frontend.php' nicht gefunden!</p>";
+			if($widget != ""){
+				$widget_name = $widget["widget"];
+				if($widget["position"] == $orientation){
+					if (file_exists("widgets/".$widget["widget"]."/frontend.php")){
+						include("widgets/".$widget["widget"]."/frontend.php");
+						$widget_found = true;
+					}else{
+						echo "<p class='error'><b>body.php:</b> widget 'widgets/".$widget_name."/frontend.php' nicht gefunden!</p>";
+					}
 				}
 			}
 		}
 		if($widget_found == false){
 			foreach($this->sqlresult_array_widgets as $widget){
-			$widget_name = $widget["widget"];
-				if($widget["position"] == $fallback){
-					if (file_exists("widgets/".$widget["widget"]."/frontend.php")){
-						include("widgets/".$widget["widget"]."/frontend.php");
-						$widget_found = true;
-					}else{
-						print_r($widget);
-						echo "<p class='error'><b>body.php:</b> widget 'widgets/".$widget_name."/frontend.php' nicht gefunden!</p>";
+				if($widget != ""){
+				$widget_name = $widget["widget"];
+					if($widget["position"] == $fallback){
+						if (file_exists("widgets/".$widget["widget"]."/frontend.php")){
+							include("widgets/".$widget["widget"]."/frontend.php");
+							$widget_found = true;
+						}else{
+							print_r($widget);
+							echo "<p class='error'><b>body.php:</b> widget 'widgets/".$widget_name."/frontend.php' nicht gefunden!</p>";
+						}
 					}
 				}
 			}
