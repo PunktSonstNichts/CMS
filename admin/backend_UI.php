@@ -1,5 +1,6 @@
 <?php
-define('BACKEND_ROOT', dirname($_SERVER['PHP_SELF']));
+setcookie("BACKEND_ROOT", dirname($_SERVER['PHP_SELF'])."/", time()+3600);
+define("BACKEND_ROOT", dirname($_SERVER['PHP_SELF']));
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="EN" lang="EN" dir="ltr">
@@ -98,6 +99,7 @@ Welcome back, <a href=""><?php echo $_SESSION["user"]["name"];?></a>
 </div>
 <div id="contentframe"  style="overflow: auto;">
 <?php
+print_r($_GET);
 include($_SESSION["user"]["role"]."/home.php");
 ?>
 </div>

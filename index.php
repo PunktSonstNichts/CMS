@@ -7,10 +7,13 @@ $actual_site = "index";
 $time_start = microtime();
 
 
+
 include "loader.php";
 //set_error_handler("log_error");
 error_reporting(0);
 
+
+// Definition based on mode
 if(!empty($_GET["mode"])){
 if($_GET["mode"] == "Admin"){
 define("DEVELOPMODE",true);
@@ -36,6 +39,7 @@ switch(constant('DEVELOPMODE')){
 		break;
 }
 
+// user-log
 $ip = $_SERVER['REMOTE_ADDR'];
 $useragent = $_SERVER['HTTP_USER_AGENT'];
 $datetime = date('Y-m-d H:i:s');
@@ -64,7 +68,7 @@ $query = $usertracking->query("INSERT INTO `".$dbprae."client_demograohy`  ( `ID
 VALUES ( NULL ,  '$ip',  '$browser',  '$useragent',  '$cookie', '$domain',  '$datetime');");
 $usertracking->result($query);
 
-
+//start website caching
 $cache = new cache($actual_site, 10);
 
 if(file_exists("const.php")){

@@ -31,7 +31,7 @@ content: "" !important;
   <div class="col-xs-12 col-sm-9">
 	<h3 style="text-align: center;"><b>Never went to germany?</b></h3>
 	<h4 style="text-align: center;">Then start discovering cool cities and captivating landscapes today!</h4>
-	<img src="http://<?php echo ROOT; ?>content/images/wrapper_DE.png" width="848px" style="border: 1px solid rgb(170, 170, 170); border-radius: 5px;-webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);"/>
+	<img src="http://<?php echo ROOT; ?>content/images/wrapper_DE.jpg" width="848px" style="border: 1px solid rgb(170, 170, 170); border-radius: 5px;-webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);"/>
 	<p style="color: rgb(98,100,95); float:left;">01.12.2013 // Till Meyer-Arlt</p>
 	<p style="text-align: right;"><small><a target="_blank" href="http://de.best-wallpaper.net/Beautiful-scenery-in-Germany_2560x1440.html">http://de.best-wallpaper.net/Germany.html</a></small></p></br>
 	<p style="line-height: 21px;">

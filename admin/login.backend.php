@@ -14,20 +14,20 @@ if($Name != ""){
 				$row = $usersql->result($userresult, "assoc");
 				if(md5($password) == $row["passw"]){
 					$_SESSION["user"] = array("name" => $row["Name"], "role" => $row["role"]);
-					include("backend_UI.php");
+					header("Location: http://".ROOT."backend_UI.php");
 				}else{
 					$_SESSION["error"] = "Wrong Password";
-					header("Location: ".ROOT."/admin/index.php");
+					header("Location: http://".ROOT."index.php");
 					exit;
 				}			
 	}else{
 	$_SESSION["error"] = "Empty Password field";
-	header("Location: ".ROOT."/admin/index.php");
+	header("Location: http://".ROOT."index.php");
 	exit;
 	}
 }else{
 $_SESSION["error"] = "Empty User Field";
-header("Location: ".ROOT."/admin/index.php");
+header("Location: http://".ROOT."index.php");
 exit;
 }
 ?>
