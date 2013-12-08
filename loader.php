@@ -1,24 +1,7 @@
 <?php
-$url = $_SERVER['REQUEST_URI'];
-$parts = array_filter(explode('/',$url));
-$dir = $_SERVER['SERVER_NAME']."/";
-$dowhile = true;
-$countwhile = 1;
-while( $dowhile != false){
-	if($parts[$countwhile] == $_GET["site"]){
-		$dowhile = false;
-	}elseif($countwhile > count($parts) + 2){
-		$dowhile = false;
-	}else{
-	$dir .= $parts[$countwhile] . "/";
-	$countwhile++;
-	}
-}
-if($dir[strlen($dir)-1] != "/"){
-$dir .= "/";
-}
+$url = $_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF'])."/";
 
-define('ROOT', $dir);
+define('ROOT', $url);
 define('PLUGINROOT', ROOT."plugins");
 
 include("const.php");

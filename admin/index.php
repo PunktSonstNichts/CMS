@@ -1,6 +1,6 @@
 <?php
 session_start();
-define( 'PATH', dirname($_SERVER["PHP_SELF"]) );
+include("../loader.php");
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -13,58 +13,31 @@ define( 'PATH', dirname($_SERVER["PHP_SELF"]) );
 <script type="text/javascript">
 $(document).ready( function(){
 
-
-$(".next").click( function(){
-var error = false;
-var data = [];
-$(this).prev().children().children(".input").each( function(key, value){
-if(typeof $(this).data("value") === 'undefined'){
-var error = true;
-console.log("error");
-alert("error");
-}else{
-var key = $(this).attr("title");
-var value = $(this).data("value");
-alert(key);
-data.push(key +"="+ value);
-}
-
-});
-if(error == true){
-alert("error");
-
-}else{
-alert(data);
-var transmitted_data = data.join("&");
-alert(transmitted_data);
-$.ajax({
-	url: "login.backend.php",
-	type: "POST",		
-	data: transmitted_data,
-
-	success: function (answer_json){
-	var answer = jQuery.parseJSON(answer_json);
-	console.log(answer);
-		if (answer.error == "false"){
-			alert("alles gut!");
-		} else{
-		//Wenn Passwort falsch, dann Ausgabe!
-			console.log(answer);
-            $('#login_error').html(answer.message);
-			$('#login_error').effect("shake", { times:1 }, 100);
-			$('input').removeAttr('disabled');
-			$('#login').val("");
-        }
-	}
+$('form').submit(function(e){
+	var form = $(this);
+	e.preventDefault();
+	$.ajax({
+		type: $(this).attr("method"),
+		url: $(this).attr("action"),
+		data: $(this).serialize(),
+		success: function(data){
+			console.log(data);
+			var obj = JSON.parse(data);
+			if(obj.error == "false"){
+				$('div').dialog('success', obj.msg);
+				form.children('input[type=text]').val("");
+				form.find('div[contenteditable=true]').html("");
+			}else{
+				location.replace(obj.location);
+			}
+		}
+	});
 });
 
-}
-});
 
 //Select button
 $(".select-button").click( function(){
 $(this).toggleClass("clicked");
-toggle_view_input_trow_checkbox($(this));
 });
 });
 </script>
@@ -163,16 +136,16 @@ border-color: rgb(0, 220, 0);
 </style>
 </head>
 <body>
-<div id="notification" class="<?php echo ($_SESSION['error'] ? 'error' : '')?>"><span><?php echo $_SESSION["error"]; ?></span></div>
+<div id="notification" class=""><span></span></div>
 <div id="login" style="width: 400px;">
 	<div id="heading"><?php echo "CMS" ?> - Backend</div>
-	<form action="<?php echo PATH."/login.backend.php"; ?>" method="post" name="loginform" style=" margin-left: 5px;">
+	<form action="<?php echo "http://".ROOT."login.backend.php";?>" method="post" name="loginform" style=" margin-left: 5px;">
 	<div id="text">
 			<div ><label class="label" for="username" >Username:</label></br><input type="text"     id="username"  name="username"  /></div>
 			<div ><label class="label" for="userpassw">Password:</label></br><input type="password" id="userpassw" name="userpassw" /></div>
 	</div>
 	<div id="remindme" style="margin-top: 18px;"><input style="display: none;" type="checkbox" id="remindme_checkbox" name="remindme_checkbox"/><label for="remindme_checkbox" class="select-button"><div></div><span style="font-size: 0.9em;">Erinnere mich</span></label></div>
-	<div id="next" class="btn btn-success" style="margin-left: 50%;" onclick="document.loginform.submit()"><span>Log In</span></div>
+	<input type="submit" class="btn" style="margin-left: 50%;" value="Log In"/>
 	</form>
 	</div>	
 </div>

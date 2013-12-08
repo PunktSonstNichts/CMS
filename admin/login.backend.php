@@ -1,11 +1,15 @@
 <?php
 session_start();
 include("../loader.php");
-
+$reply = array();
 
 $Name = $_POST["username"]; 
 $password = $_POST["userpassw"];
-$remindme_checkbox = $_POST["remindme_checkbox"];
+if(isset($_POST["remindme_checkbox"]) && $_POST["remindme_checkbox"]==false){
+$remindme_checkbox  = false;
+}else{
+$remindme_checkbox = true;
+}
 
 if($Name != ""){
 	if($password != ""){
@@ -14,20 +18,22 @@ if($Name != ""){
 				$row = $usersql->result($userresult, "assoc");
 				if(md5($password) == $row["passw"]){
 					$_SESSION["user"] = array("name" => $row["Name"], "role" => $row["role"]);
-					header("Location: http://".ROOT."backend_UI.php");
+					$reply["error"] = false;
+					$reply["location"] = "backend_UI.php";
 				}else{
-					$_SESSION["error"] = "Wrong Password";
-					header("Location: http://".ROOT."index.php");
-					exit;
+					$reply["error"] = true;
+					$reply["location"] = "index.php";
+					$reply["msg"] = "Wrong Password";
 				}			
 	}else{
-	$_SESSION["error"] = "Empty Password field";
-	header("Location: http://".ROOT."index.php");
-	exit;
+	$reply["error"] = true;
+	$reply["location"] = "index.php";
+	$reply["msg"] = "Empty Password field";
 	}
 }else{
-$_SESSION["error"] = "Empty User Field";
-header("Location: http://".ROOT."index.php");
-exit;
+$reply["error"] = true;
+$reply["location"] = "index.php";
+$reply["msg"] = "Empty User Field";
 }
+echo json_encode($reply);
 ?>
