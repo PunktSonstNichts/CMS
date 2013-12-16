@@ -9,7 +9,7 @@ private $dbprae = "";
 
 	public function __construct($site = "", $sitename = "", $dbprae = ""){
 		$this->site = $site;
-		$this->sitename = $sitename;
+		$this->sitename = $sitename; // used for title
 		$this->dbprae = $dbprae;
 		$this->getmeta();
 		$this->gettitle();
@@ -20,12 +20,10 @@ private $dbprae = "";
 		$metaresult = $metasql->query("SELECT  `key`, `value`, `not_affected` FROM `".$this->dbprae."globals` WHERE `type` = 'meta';");
 		while ($row = $metasql->result($metaresult, "assoc")) {
 			if($this->site != $row["not_affected"]){
-			
-			}else{
 				$name = htmlspecialchars($row["key"]);
 				$content = htmlspecialchars($row["value"]);
 				array_push($this->meta, "<meta name='$name' content='$content'>");				
-				$this->metastring =  $this->metastring."<meta name='$name' content='$content'>\n";				
+				$this->metastring .= "<meta name='$name' content='$content'>\n";					
 			}
 		}
 		unset($metasql);

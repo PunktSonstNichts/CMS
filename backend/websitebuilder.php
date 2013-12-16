@@ -15,24 +15,28 @@ $template_sql->free_result();
 $template_sql->close_connect(); 
 
 
-//Define other Vars
-define( "TEMPLATE", $template["value"]); // To allow widgets to determine actual template
-define( "ACTUAL_SITE", $actual_site); // Name of actual site
-define( "ACTUAL_SITENAME", $pagedata["visual_name"]); // Visual-Name of actual site
+
 
 $file = "templates/".$template["value"]."/".$pagedata["template"].".php";
 if (file_exists($file)){
 /*
 Define all important vars and array's
 */
+//Define other Vars
+define( "TEMPLATE", $template["value"]); // To allow widgets to determine actual template
+define( "ACTUAL_SITE", $actual_site); // Name of actual site
+define( "ACTUAL_SITENAME", $pagedata["visual_name"]); // Visual-Name of actual site
 //widgets that are suppost to show on the side
 $widgets = new mysql();
 $result = $widgets->query("SELECT * FROM `".$dbprae."pagemeta` WHERE `affected_pageID` = '".$pagedata["ID"]."'");
 while($pagedata_widgets[] = $widgets->result($result, "assoc"));
+unset($widgets);
 
+//settings for the widgets
 $setting = new mysql();
 $setting_result = $setting->query("SELECT * FROM `".$dbprae."widgets_settings`;");
 while($settings[] = $setting->result($setting_result, "assoc"));
+unset($setting);
 
 
 /*
@@ -44,10 +48,47 @@ $header = new header(ACTUAL_SITE, ACTUAL_SITENAME, $dbprae);
 include("backend/body.php");
 $body = new body($pagedata, $pagedata_widgets, $settings);
 
+//Check if site is published
+/*
+If a task is assigned to the actual site and its taggeg as "WIP" client gets WIP error page
+*/
+
+// Conditions
+$wip_condition_sql = new mysql();
+$wip_condition_res = $wip_condition_sql->query("SELECT `value` FROM `".$dbprae."globals` WHERE `key` = 'closed-by-wip-contidtion' LIMIT 1;");
+$wip_condition = $wip_condition_sql->result($wip_condition_res, "assoc");
+$wip_condition_sql->free_result(); 
+$wip_condition_sql->close_connect(); 
+$wip_condition = $wip_condition["value"];
+
+//check for WIP - sql query
+if($wip_condition != ""){
+$task = new mysql();
+$task_result = $task->query("SELECT * FROM `".$dbprae."tasks` WHERE `assigned_toSITENAME` = '".htmlspecialchars($_GET["site"])."' AND $wip_condition LIMIT 1;");
+$wip_task_info = $task->result($task_result, "assoc");
+if($wip_task_info != ""){
+	$_wippage = "templates/".$template["value"]."/error-sites/wip.php";
+	if(file_exists($_wippage)){
+		include($_wippage);
+	}else{
+		include("error-sites/wip.php");
+	}
+	exit();
+}
+}
+
 
 // Including the template
 include($file);
 }else{
-echo " <p class='error'><b>websitebuilder.php</b> template '".$file."' nicht gefunden</p>";
+	//Throw 404 error
+	header('HTTP/1.0 404 Not Found');
+	$_404page = "templates/".$template["value"]."/error-sites/404.php";
+	if(file_exists($_404page)){
+		include($_404page);
+	}else{
+		include("error-sites/404.php");
+	}
+	exit();
 }
 ?> 

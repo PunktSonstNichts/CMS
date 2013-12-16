@@ -10,7 +10,7 @@ $time_start = microtime();
 
 include "loader.php";
 //set_error_handler("log_error");
-error_reporting(0);
+//error_reporting(0);
 
 
 // Definition based on mode
@@ -40,12 +40,8 @@ switch(constant('DEVELOPMODE')){
 }
 
 // user-log
-$ip = $_SERVER['REMOTE_ADDR'];
-$useragent = $_SERVER['HTTP_USER_AGENT'];
-$datetime = date('Y-m-d H:i:s');
 $cookie = "superawesomestuff";
-$referer = $_SERVER['HTTP_REFERER'];
-$domain = parse_url($referer, PHP_URL_HOST);
+$useragent = $_SERVER['HTTP_USER_AGENT'];
 
 if(strpos($useragent, 'MSIE') !== FALSE)
    $browser =  "Internet Explorer";
@@ -65,9 +61,9 @@ if(strpos($useragent, 'MSIE') !== FALSE)
 
 $usertracking = new mysql();
 $query = $usertracking->query("INSERT INTO `".$dbprae."client_demograohy`  ( `ID` ,`IP` ,`Browser` ,`User Agent` ,`cookie` ,`Referrer` ,`accesstimestamp` )
-VALUES ( NULL ,  '$ip',  '$browser',  '$useragent',  '$cookie', '$domain',  '$datetime');");
+VALUES ( NULL ,  '".$_SERVER['REMOTE_ADDR']."',  '$browser',  '$useragent',  '$cookie', '".parse_url($_SERVER['HTTP_REFERER'], PHP_URL_HOST)."',  '".date('Y-m-d H:i:s')."');");
 $usertracking->result($query);
-
+unset($usertracking);
 //start website caching
 $cache = new cache($actual_site, 10);
 

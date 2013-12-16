@@ -4,9 +4,7 @@
 <?php echo $header->title; ?>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-5589-1">
 <?php echo $header->metastring; ?>
-<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
-<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap-theme.min.css">
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="http://<?php echo ROOT;?>templates/bootstrap/scripte/css/bootstrap.css">
 <style type="text/css">
 h1{
 font-size: 24px !important;

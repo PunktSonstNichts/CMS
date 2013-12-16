@@ -123,3 +123,13 @@ letter-spacing:1px;
 text-shadow: 0px 1px rgb(66, 66, 66);
 font-size: 16px
 }
+#dialog.error{
+width: 200px;
+color: rgb(169, 68, 66);
+background-color: rgb(242, 222, 222);
+border-color: rgb(235, 204, 209);
+letter-spacing:1px;
+}
+#dialog.error > #dialog-content{
+min-height: 40px !important;
+}

@@ -12,11 +12,11 @@ include("../loader.php");
 <meta charset="utf-8">
 <link rel="stylesheet" href="scripte/css/main.css" type="text/css"/>
 <link rel="stylesheet" href="scripte/css/blue.css" type="text/css"/>
-<link rel="stylesheet" href="..\plugins\dialog\dialog.css" type="text/css"/>
+<link rel="stylesheet" href="../plugins/dialog/dialog.css" type="text/css"/>
 <script src="scripte/js/jquery.min.js"></script>
 <script src="scripte/js/jquery-ui.min.js"></script>
 <script type="text/javascript" src="scripte/js/javascript.php"></script>
-<script type="text/javascript" src="scripte/js/main.js"></script>
+<script type="text/javascript" src="../plugins/dialog/dialog.js"></script>
 <script type="text/javascript" src="..\plugins\wysiwyg\js\wysiwyg.js"></script>
 <script type="text/javascript">
 $(document).ready( function(){
@@ -30,13 +30,14 @@ $('form').submit(function(e){
 		url: $(this).attr("action"),
 		data: $(this).serialize(),
 		success: function(data){
+			console.log(data);
 			var obj = JSON.parse(data);
-			if(obj.error == "false"){
+			if(obj.error == false){
 				$('div').dialog('success', obj.msg);
 				form.children('input[type=text]').val("");
 				form.find('div[contenteditable=true]').html("");
 			}else{
-			
+				$('div').dialog('error', obj.msg);
 			}
 		}
 	});
