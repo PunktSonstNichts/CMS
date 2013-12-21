@@ -144,14 +144,14 @@ border-color: rgb(0, 220, 0);
 <body>
 <div id="notification" class=""><span></span></div>
 <div id="login" style="width: 400px;">
-	<div id="heading"><?php echo "CMS" ?> - Backend</div>
+	<div id="heading">Backend</div>
 	<form action="<?php echo ROOT_URL."admin/login.backend.php";?>" method="post" name="loginform" style=" margin-left: 5px;">
 	<div id="text">
-			<div ><label class="label" for="username" ><?php _t("username");?></label></br><input type="text"     id="username"  name="username"  /></div>
-			<div ><label class="label" for="userpassw"><?php _t("password");?></label></br><input type="password" id="userpassw" name="userpassw" /></div>
+			<div ><label class="label" for="username" ><?php echo _t("username");?></label></br><input type="text"     id="username"  name="username"  /></div>
+			<div ><label class="label" for="userpassw"><?php echo _t("password");?></label></br><input type="password" id="userpassw" name="userpassw" /></div>
 	</div>
-	<div id="remindme" style="margin-top: 18px;"><input style="display: none;" type="checkbox" id="remindme_checkbox" name="remindme_checkbox"/><label for="remindme_checkbox" class="select-button"><div></div><span style="font-size: 0.9em;">Erinnere mich</span></label></div>
-	<input type="submit" class="btn" style="margin-left: 50%;" value="Log In"/>
+	<div id="remindme" style="margin-top: 18px;"><input style="display: none;" type="checkbox" id="remindme_checkbox" name="remindme_checkbox"/><label for="remindme_checkbox" class="select-button"><div></div><span style="font-size: 0.9em;"><?php echo _t("remind me");?></span></label></div>
+	<input type="submit" class="btn" style="margin-left: 50%;" value="<?php echo _t("log in");?>"/>
 	</form>
 	</div>	
 </div>

@@ -8,7 +8,10 @@
 		array_push($breadcumb_elements, "<li><a href='".ROOT_URL."$link'>$name</a></li>");
 	}
 	if($_GET["get"] != ""){
-		array_push($breadcumb_elements, "<li title='this is a function, to remove it click on $name'>".$_GET["get"]."</li>");
+		array_push($breadcumb_elements, "<li title='this is a function, to remove it click on ($name)'><a href='".ROOT_URL.$_GET["site"]."/".$_GET["get"]."'>".$_GET["get"]."</a></li>");
+	}
+	if($_GET["mode"] != ""){
+		array_push($breadcumb_elements, "<li title='this is a function, to remove it click on (".$_GET["get"].")'>".$_GET["mode"]."</li>");
 	}
 	
 	foreach($this->sqlresult_arraywidgets_settings as $widget_setting){

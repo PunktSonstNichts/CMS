@@ -88,7 +88,7 @@ console.log(isValidDate('11-31-1061'));
 			</div>
 		</div>
 <div id="user_control">
-Welcome back, <a href="#"><?php echo $_SESSION["user"]["name"];?></a>
+<?php echo sprintf( _t('Welcome back, %s'), '<a href="#">'.$_SESSION["user"]["name"].'</a>');?>
 </div>
 </div>
 <!-- Sidebar -->

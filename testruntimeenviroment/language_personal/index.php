@@ -1,5 +1,5 @@
 <?php
-function _t($text = "", $type = "return"){
+function _s($text = "", $type = "return"){
 	if("" == $text){
 		//drop error
 		echo "no text";
@@ -13,16 +13,15 @@ function _t($text = "", $type = "return"){
 }
 
 function get_translation($text){
-	$old_chdir = getcwd();
-	chdir(SERVER_DIR);
-		include "lang/lang_DE.php";
-	chdir( $old_chdir );
-	
+	include "lang_DE.php";
 	if($_lang[$text] != ""){
 		return $_lang[$text];
 	}else{
 		return false;
 	}
 }
-
+?>
+Hier die Tests:
+<?php
+echo sprintf( _s('welcome back %s!'), "PunktSonstNichts");
 ?>
