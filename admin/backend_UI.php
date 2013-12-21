@@ -1,7 +1,5 @@
 <?php
 session_start();
-setcookie("BACKEND_ROOT", dirname($_SERVER['PHP_SELF'])."/", time()+3600);
-define("BACKEND_ROOT", dirname($_SERVER['PHP_SELF']));
 
 include("../loader.php");
 ?>
@@ -20,6 +18,7 @@ include("../loader.php");
 <script type="text/javascript" src="../plugins/wysiwyg/js/wysiwyg.js"></script>
 <script type="text/javascript">
 $(document).ready( function(){
+
 $('div').dialog('init');
 
 $('form').submit(function(e){

@@ -1,6 +1,6 @@
 <?php
 session_start();
-include("loader.php");
+include("../loader.php");
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -27,7 +27,6 @@ $('form').submit(function(e){
 				if(typeof $.fn.dialog !== "undefined"){
 					$('div').dialog('success', obj.msg);
 				}
-				alert(obj.location);
 				if(obj.location != ""){
 					location.replace(obj.location);
 				}else{
@@ -48,7 +47,7 @@ $(this).toggleClass("clicked");
 });
 });
 </script>
-<link rel="stylesheet" href="admin/scripte/css/main.css" type="text/css"/>
+<link rel="stylesheet" href="scripte/css/main.css" type="text/css"/>
 <style type="text/css">
 
 #remindme{

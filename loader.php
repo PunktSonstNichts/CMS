@@ -14,8 +14,8 @@ $old_chdir = getcwd();
 chdir(SERVER_DIR);
 
 #if inclusion fail, call installation
-if(file_exists("backend/const.php")){
-	if((include 'backend/const.php') !== true){
+if(file_exists("const.php")){
+	if((include 'const.php') !== true){
 		include("install/index.php");
 		exit();
 	}

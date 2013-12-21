@@ -11,7 +11,7 @@ while($tasks[] = $taskssql->result($tasksresult, "assoc"));
 <div class="row">
 <div class="col-8">
 	<?php
-	include("admin_widgets/statistics.php");
+	include("../admin_widgets/statistics.php");
 	?>
 </br>
 	<div class="element" id="quikpost">
@@ -32,7 +32,9 @@ while($tasks[] = $taskssql->result($tasksresult, "assoc"));
 				<?php
 				}
 				$wysiwygtype = "simple";
-				include("../plugins/wysiwyg/editor.php");
+				chdir(SERVER_DIR);
+				include("plugins/wysiwyg/editor.php");
+				chdir( $old_chdir );
 				?>
 				<input type="submit" class="btn" value="bloggen"/>
 				<input type="button" class="btn" value="erweitert"/>

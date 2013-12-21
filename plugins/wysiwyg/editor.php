@@ -1,5 +1,5 @@
-<link rel="stylesheet" href="<?php echo BACKEND_ROOT;?>/../plugins/wysiwyg/css/main.css" type="text/css"/>
-<script src="<?php echo BACKEND_ROOT;?>/../plugins/wysiwyg/js/wysiwyg.js"></script>
+<link rel="stylesheet" href="<?php echo ROOT_URL;?>plugins/wysiwyg/css/main.css" type="text/css"/>
+<script src="<?php echo ROOT_URL;?>plugins/wysiwyg/js/wysiwyg.js"></script>
 <div class="wysiwygeditor-editor">
 <input type="hidden" name="form_inhalt" id="form_inhalt" value="">
 <div class="wysiwygeditor-toolbar">
