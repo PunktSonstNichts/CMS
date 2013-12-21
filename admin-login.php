@@ -1,6 +1,5 @@
 <?php
 session_start();
-define("DEVELOPMODE", false);
 include("loader.php");
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -24,9 +23,12 @@ $('form').submit(function(e){
 		success: function(data){
 			console.log(data);
 			var obj = JSON.parse(data);
-			if(obj.error == "false"){
-				$('div').dialog('success', obj.msg);
-				if(obj.location){
+			if(obj.error == false){
+				if(typeof $.fn.dialog !== "undefined"){
+					$('div').dialog('success', obj.msg);
+				}
+				alert(obj.location);
+				if(obj.location != ""){
 					location.replace(obj.location);
 				}else{
 					form.children('input[type=text]').val("");
@@ -144,7 +146,7 @@ border-color: rgb(0, 220, 0);
 <div id="notification" class=""><span></span></div>
 <div id="login" style="width: 400px;">
 	<div id="heading"><?php echo "CMS" ?> - Backend</div>
-	<form action="<?php echo ROOT."/admin/login.backend.php";?>" method="post" name="loginform" style=" margin-left: 5px;">
+	<form action="<?php echo ROOT_URL."admin/login.backend.php";?>" method="post" name="loginform" style=" margin-left: 5px;">
 	<div id="text">
 			<div ><label class="label" for="username" ><?php _t("username");?></label></br><input type="text"     id="username"  name="username"  /></div>
 			<div ><label class="label" for="userpassw"><?php _t("password");?></label></br><input type="password" id="userpassw" name="userpassw" /></div>

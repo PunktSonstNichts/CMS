@@ -1,6 +1,8 @@
 <?php
 session_start();
+define("DEVELOPMODE",false);
 include("../loader.php");
+
 $reply = array();
 
 $Name = $_POST["username"]; 
@@ -19,7 +21,7 @@ if($Name != ""){
 				if(md5($password) == $row["passw"]){
 					$_SESSION["user"] = array("name" => $row["Name"], "role" => $row["role"]);
 					$reply["error"] = false;
-					$reply["location"] = "backend_UI.php";
+					$reply["location"] = "admin/backend_UI.php";
 				}else{
 					$reply["error"] = true;
 					$reply["location"] = "index.php";
