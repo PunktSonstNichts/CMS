@@ -17,37 +17,8 @@ $template_sql->close_connect();
 
 
 
-$file = "templates/".$template["value"]."/".$pagedata["template"].".php";
-if (file_exists($file)){
-/*
-Define all important vars and array's
-*/
-//Define other Vars
-define( "TEMPLATE", $template["value"]); // To allow widgets to determine actual template
-define( "ACTUAL_SITE", $actual_site); // Name of actual site
-define( "ACTUAL_SITENAME", $pagedata["visual_name"]); // Visual-Name of actual site
-//widgets that are suppost to show on the side
-$widgets = new mysql();
-$result = $widgets->query("SELECT * FROM `".$dbprae."pagemeta` WHERE `affected_pageID` = '".$pagedata["ID"]."'");
-while($pagedata_widgets[] = $widgets->result($result, "assoc"));
-unset($widgets);
-
-//settings for the widgets
-$setting = new mysql();
-$setting_result = $setting->query("SELECT * FROM `".$dbprae."widgets_settings`;");
-while($settings[] = $setting->result($setting_result, "assoc"));
-unset($setting);
-
-
-/*
-Vars for template to get all data
-*/
-//Header for tilte, meta
-$header = new header(ACTUAL_SITE, ACTUAL_SITENAME, $dbprae);
-//Body to call all widgets for a certain position
-include("backend/body.php");
-$body = new body($pagedata, $pagedata_widgets, $settings);
-
+$template_path = "templates/".$template["value"]."/".$pagedata["template"].".php";
+if (file_exists($template_path)){
 //Check if site is published
 /*
 If a task is assigned to the actual site and its taggeg as "WIP" client gets WIP error page
@@ -63,26 +34,57 @@ $wip_condition = $wip_condition["value"];
 
 //check for WIP - sql query
 if($wip_condition != ""){
-$task = new mysql();
-$task_result = $task->query("SELECT * FROM `".$dbprae."tasks` WHERE `assigned_toSITENAME` = '".htmlspecialchars($_GET["site"])."' AND $wip_condition LIMIT 1;");
-$wip_task_info = $task->result($task_result, "assoc");
-if($wip_task_info != ""){
-	$_wippage = "templates/".$template["value"]."/error-sites/wip.php";
-	if(file_exists($_wippage)){
-		include($_wippage);
-	}else{
-		include("error-sites/wip.php");
-	}
-	exit();
-}
-}
 
+	$task = new mysql();
+	$task_result = $task->query("SELECT * FROM `".$dbprae."tasks` WHERE `assigned_toSITENAME` = '".htmlspecialchars($_GET["site"])."' AND $wip_condition LIMIT 1;");
+	$wip_task_info = $task->result($task_result, "assoc");
+	flush();
+	if($wip_task_info != ""){
+		$_wippage = "templates/".$template["value"]."/error-sites/wip.php";
+		if(file_exists($_wippage)){
+			include($_wippage);
+		}else{
+			include("error-sites/wip.php");
+		}
+		exit();
+	}
+}
+	/*
+	Define all important vars and array's
+	*/
+	//Define other Vars
+	define( "TEMPLATE", $template["value"]); // To allow widgets to determine actual template
+	define( "ACTUAL_SITE", $actual_site); // Name of actual site
+	define( "ACTUAL_SITENAME", $pagedata["visual_name"]); // Visual-Name of actual site
+	//widgets that are suppost to show on the side
+	$widgets = new mysql();
+	$result = $widgets->query("SELECT * FROM `".$dbprae."pagemeta` WHERE `affected_pageID` = '".$pagedata["ID"]."'");
+	while($pagedata_widgets[] = $widgets->result($result, "assoc"));
+	unset($widgets);
+
+	//settings for the widgets
+	$setting = new mysql();
+	$setting_result = $setting->query("SELECT * FROM `".$dbprae."widgets_settings`;");
+	while($settings[] = $setting->result($setting_result, "assoc"));
+	unset($setting);
+
+
+	/*
+	Vars for template to get all data
+	*/
+	//Header for tilte, meta
+	$header = new header(ACTUAL_SITE, ACTUAL_SITENAME, $dbprae);
+	//Body to call all widgets for a certain position
+	include("backend/body.php");
+	$body = new body($pagedata, $pagedata_widgets, $settings);
 
 // Including the template
-include($file);
+include($template_path);
+
 }else{
 	//Throw 404 error
 	header('HTTP/1.0 404 Not Found');
+	flush();
 	$_404page = "templates/".$template["value"]."/error-sites/404.php";
 	if(file_exists($_404page)){
 		include($_404page);

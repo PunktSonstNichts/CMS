@@ -17,7 +17,7 @@ include("../loader.php");
 <script src="scripte/js/jquery-ui.min.js"></script>
 <script type="text/javascript" src="scripte/js/javascript.php"></script>
 <script type="text/javascript" src="../plugins/dialog/dialog.js"></script>
-<script type="text/javascript" src="..\plugins\wysiwyg\js\wysiwyg.js"></script>
+<script type="text/javascript" src="../plugins/wysiwyg/js/wysiwyg.js"></script>
 <script type="text/javascript">
 $(document).ready( function(){
 $('div').dialog('init');
@@ -34,8 +34,12 @@ $('form').submit(function(e){
 			var obj = JSON.parse(data);
 			if(obj.error == false){
 				$('div').dialog('success', obj.msg);
-				form.children('input[type=text]').val("");
-				form.find('div[contenteditable=true]').html("");
+				if(obj.location){
+					location.replace(obj.location);
+				}else{
+					form.children('input[type=text]').val("");
+					form.find('div[contenteditable=true]').html("");		
+				}
 			}else{
 				$('div').dialog('error', obj.msg);
 			}
@@ -43,7 +47,17 @@ $('form').submit(function(e){
 	});
 });
 
+$(".sidebar_ajax").click( function(event){
+console.log($(this).attr("href"));
+event.preventDefault();
+$("#contentframe").load( $(this).attr("href") );
 });
+
+$("#contentframe").load("<?php echo $_SESSION["user"]["role"]."/home.php"; ?>");
+
+});
+
+
 
 function isValidDate(date){
     var matches = /^(\d{2})[-\/](\d{2})[-\/](\d{4})$/.exec(date);
@@ -75,7 +89,7 @@ console.log(isValidDate('11-31-1061'));
 			</div>
 		</div>
 <div id="user_control">
-Welcome back, <a href=""><?php echo $_SESSION["user"]["name"];?></a>
+Welcome back, <a href="#"><?php echo $_SESSION["user"]["name"];?></a>
 </div>
 </div>
 <!-- Sidebar -->
@@ -84,28 +98,25 @@ Welcome back, <a href=""><?php echo $_SESSION["user"]["name"];?></a>
 <span>My CMS SYSTEM</span>
 </div>
 <ul id="admin-sidebar-panel">
-<li><span>Home</span></li>
+<li href="<?php echo $_SESSION["user"]["role"]."/home.php"; ?>" class="sidebar_ajax"><span>Home</span></li>
 <div class="submenu-group">
-<li><span>New</span></li>
+<li href="<?php echo $_SESSION["user"]["role"]."/new.php"; ?>" class="sidebar_ajax"><span>New</span></li>
 <ul style="display: none;" class="submenu">
 <div class="submenu-connector"></div>
-      <li>Post</li>
-      <li>Site</li>
-      <li>Directory</li>
-      <li>widget</li>
+      <li href="<?php echo $_SESSION["user"]["role"]."/new.php?type=post"; ?>" class="sidebar_ajax">Post</li>
+      <li href="<?php echo $_SESSION["user"]["role"]."/new.php?type=site"; ?>" class="sidebar_ajax">Site</li>
+      <li href="<?php echo $_SESSION["user"]["role"]."/new.php?type=directory"; ?>" class="sidebar_ajax">Directory</li>
+      <li href="<?php echo $_SESSION["user"]["role"]."/new.php?type=widget"; ?>" class="sidebar_ajax">widget</li>
 </ul>
 </div>
-<li><span>Designs</span></li>
-<li><span>Widgets</span></li>
-<li><span>Settings</span></li>
-<li class="last-li"><span>Users</span></li>
+<li href="<?php echo $_SESSION["user"]["role"]."/design.php"; ?>" class="sidebar_ajax"><span>Designs</span></li>
+<li href="<?php echo $_SESSION["user"]["role"]."/widget.php"; ?>" class="sidebar_ajax"><span>Widgets</span></li>
+<li href="<?php echo $_SESSION["user"]["role"]."/setting.php"; ?>" class="sidebar_ajax"><span>Settings</span></li>
+<li href="<?php echo $_SESSION["user"]["role"]."/user.php"; ?>" class="sidebar_ajax last-li"><span>Users</span></li>
 </ul>
 </div>
 <div id="contentframe"  style="overflow: auto;">
-<?php
-print_r($_GET);
-include($_SESSION["user"]["role"]."/home.php");
-?>
+%
 </div>
 <div id="footer"></div>
 </body>

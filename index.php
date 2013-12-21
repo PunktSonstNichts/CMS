@@ -1,17 +1,11 @@
 <?php
+$time_start = microtime();
+
 if(!empty($_GET["site"])){
 $actual_site = $_GET["site"];
 }else{
 $actual_site = "index";
 }
-$time_start = microtime();
-
-
-
-include "loader.php";
-//set_error_handler("log_error");
-//error_reporting(0);
-
 
 // Definition based on mode
 if(!empty($_GET["mode"])){
@@ -26,6 +20,12 @@ define("CACHE",true);
 define("DEVELOPMODE",false);
 define("CACHE",true);
 }
+
+include "loader.php";
+
+//set_error_handler("log_error");
+error_reporting(0);
+
 
 switch(constant('DEVELOPMODE')){
 	case true:
@@ -64,21 +64,17 @@ $query = $usertracking->query("INSERT INTO `".$dbprae."client_demograohy`  ( `ID
 VALUES ( NULL ,  '".$_SERVER['REMOTE_ADDR']."',  '$browser',  '$useragent',  '$cookie', '".parse_url($_SERVER['HTTP_REFERER'], PHP_URL_HOST)."',  '".date('Y-m-d H:i:s')."');");
 $usertracking->result($query);
 unset($usertracking);
-//start website caching
-$cache = new cache($actual_site, 10);
-
-if(file_exists("const.php")){
-	if ((include 'const.php') == true){
-		include("backend/websitebuilder.php");
-	}else{
-		include("install/index.php");
-		exit();
-	}
-}else{
-	include("install/index.php");
-	exit();
+//start website caching if const is true
+if(CACHE == true){
+$cache = new cache($actual_site, 1024);
 }
 
+include("backend/websitebuilder.php");
+
+
+if(CACHE == true){
 $cache->endcache();
+}
+
 echo "</br>Verarbeitungszeit des Skripts: ".sprintf('%.3f', (microtime() - $time_start))." Sekunden";
 ?>

@@ -1,0 +1,1 @@
+<?phpsession_start();include("../../loader.php");if($handle = opendir("../../widgets")) {	while (false !== ($entry = readdir($handle))) {		if($entry != "." && $entry != "..") {			echo "$entry</br>";		}	}	closedir($handle);}?>

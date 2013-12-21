@@ -1,4 +1,6 @@
 <?php
+session_start();
+include("../../loader.php");
 /* Task
 Preparing array for foreach-loop from sql result
 */
@@ -93,7 +95,7 @@ while($tasks[] = $taskssql->result($tasksresult, "assoc"));
 		?>
 		<tr>
 			<td><?php echo $task["task-name"]; ?></td>
-			<td><?php echo $task["assigned_toUNAME"]; ?></td>
+			<td><?php echo $task["assigned_toUSERNAME"]; ?></td>
 			<td><div class="progress slim <?php echo $progressbar; ?>"><div class="ui-progressbar-value" style="width: <?php echo $task["progress"]; ?>%;"></div></div></td>
 			<td><?php echo $label; ?></td>
 		</tr>		

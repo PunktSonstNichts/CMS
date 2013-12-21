@@ -61,30 +61,33 @@ class mysql{
             } else { 
             $inc = $sql; 
         }
-		switch($type){
-			case "array":
-				$row = mysql_fetch_array($inc);
-				break;
-			case "row":
-				$row = mysql_fetch_row($inc); 
-				break;
-			case "object":
-				$row = mysql_fetch_object($inc);
-				break;
-			case "assoc":
-				$row = mysql_fetch_assoc($inc); 
-				break;
-			case "num":
-				$row = mysql_num_rows($inc);
-				break;
+		if($inc === FALSE) {
+			$row = "";
+		}else{	
+			switch($type){
+				case "array":
+					$row = mysql_fetch_array($inc);
+					break;
+				case "row":
+					$row = mysql_fetch_row($inc); 
+					break;
+				case "object":
+					$row = mysql_fetch_object($inc);
+					break;
+				case "assoc":
+					$row = mysql_fetch_assoc($inc); 
+					break;
+				case "num":
+					$row = mysql_num_rows($inc);
+					break;
+			}
 		}
         return($row); 
     }    
     
 	public function free_result($sql = NULL){ 
         $inc = ''; 
-        if($sql === NULL) 
-        { 
+        if($sql === NULL){ 
             $inc = $this->last_injection; 
             } else { 
             $inc = $sql; 
