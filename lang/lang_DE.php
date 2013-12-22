@@ -59,11 +59,11 @@ $_lang["link name"] = "Linkname";
 #body.php
 $_lang['<p class="error"><b>body.php:</b> no widget found for %1$s or %2$s!</p>'] = '<p class="error"><b>body.php:</b> Kein Widget f&uuml;r <u>%1$s</u> oder <u>%2$s</u> gefunden!</p>';
 $_lang['widget %s not found!'] = 'Kein Widget unter %s gefunden';
+$_lang["widget '%s' already called!"] = "Widget '%s' wurde schon aufgerufen!";
 
 /*
 Should be in other files for certain widgets or templates 
 #different language files support
 */
-#breadcrumb/frontend.php
-$_lang['this is a function, to remove it click on (%s)'] = "Dies ist eine Funktion. Um sie zu entfernen, gehe zu (%s)";
+
 ?>
