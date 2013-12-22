@@ -1,42 +1,42 @@
 <?php
-$_GET["x-size"];
-$_GET["y-size"];
+include("../../loader.php");
+
 $type = $_GET["type"];
 switch ($type){
 case "img":
 ?>
 	<div id="dialog-heading">
-		<span>Editor for images</span>
+		<span><?php echo _t("Editor for images");?></span>
 		<div id="dialog-settings"><div class="close">x</div></div>
 	</div>
 	<div id="dialog-content">
-		<span><small>Please be sure to don't violant any copyright laws. Unless the picture is yours or you have the lizence to show it on your website, link the original source to the image.</small></span>
+		<span><?php echo _t("<small>Please be sure to don't violant any copyright laws. Unless the picture is yours or you have the lizence to show it on your website, link the original source to the image.</small>"); ?></span>
 		<div class="dialog-divider"></div>
 		<div class="input-element">
-			<label for="source">Copyright source:</label>
+			<label for="source"><?php echo _t("Copyright source"); ?></label>
 			<div class="label-helper">
-				<input type="text" class="elem-edit" name="source" id="source" data-effected_attribut="data-copyright" placeholder="Copyright source..."/>
+				<input type="text" class="elem-edit" name="source" id="source" data-effected_attribut="data-copyright" placeholder="<?php echo _t("Copyright source"); ?>"/>
 			</div>
 		</div>
 		<div class="dialog-divider"></div>
 		<div class="input-element small">
-			<label for="width" class="small">width: </label>
+			<label for="width" class="small"><?php echo _t("width"); ?></label>
 			<div class="label-helper">
-				<input type="text" name="width" id="width" class="append-info elem-edit" data-effected_attribut="width" placeholder="width..." value="<?php echo $_GET["x-size"]; ?>"/>
+				<input type="text" name="width" id="width" class="append-info elem-edit" data-effected_attribut="width" placeholder="<?php echo _t("width"); ?>" value="<?php echo $_GET["x-size"]; ?>"/>
 				<div class="right-info"><span>px</span></div>
 			</div>
 		</div>
 		<div class="input-element small">
-			<label for="height">height: </label>
+			<label for="height"><?php echo _t("height"); ?></label>
 			<div class="label-helper">
-				<input type="text" name="height" id="height" class="append-info elem-edit" data-effected_attribut="height" placeholder="height..." value="<?php echo $_GET["y-size"]; ?>"/>
+				<input type="text" name="height" id="height" class="append-info elem-edit" data-effected_attribut="height" placeholder="<?php echo _t("height"); ?>" value="<?php echo $_GET["y-size"]; ?>"/>
 				<div class="right-info"><span>px</span></div>
 			</div>
 		</div></br>
 		
 		<div id="dialog-handler">
-			<button class="btn-success">Save edited image</button>
-			<button class="btn-danger">cancel editing</button>
+			<button class="btn-success"><?php echo _t("Save edited image"); ?></button>
+			<button class="btn-danger"><?php echo _t("cancel editing"); ?></button>
 		</div>
 	</div>
 <?php
@@ -44,22 +44,20 @@ break;
 case "a":	
 ?>
 	<div id="dialog-heading">
-		<span>Edit this shit.</span>
+		<span><?php echo _t("Edit this shit");?></span>
 		<div id="dialog-settings"><div class="close">x</div></div>
 	</div>
 	<div id="dialog-content">
-		<span>You really want to change something, also after this box appears and singnals you there could be danger?</span>
-		<div class="dialog-divider"></div>
 		<div class="input-element">
-			<label for="source">Copyright source:</label>
+			<label for="source"><?php echo _t("anchor"); ?></label>
 			<div class="label-helper">
-				<input type="text" name="source" data-special-type="copyright" data-effected_attribut="data-special" id="source" placeholder="Copyright source..."/>
+				<input type="text" name="source" data-special-type="copyright" data-effected_attribut="data-special" id="source" placeholder="<?php echo _t("anchor"); ?>"/>
 			</div>
 		</div></br>
 		<div class="input-element">
-			<label for="source">Link name:</label>
+			<label for="source"><?php echo _t("link name"); ?></label>
 			<div class="label-helper">
-				<input type="text" name="source" data-special-type="html" data-effected_attribut="data-special" id="source" placeholder="Link name..."/>
+				<input type="text" name="source" data-special-type="html" data-effected_attribut="data-special" id="source" placeholder="<?php echo _t("link name"); ?>"/>
 			</div>
 		</div></br>
 		<div class="input-element small">
@@ -72,7 +70,7 @@ case "a":
 		
 		<div id="dialog-handler">
 			<button class="btn-success">Save edited link</button>
-			<button class="btn-danger">cancel editing</button>
+			<button class="btn-danger"><?php echo _t("cancel editing"); ?></button>
 		</div>
 	</div>
 <?php

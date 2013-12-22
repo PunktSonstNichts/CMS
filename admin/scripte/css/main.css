@@ -150,6 +150,7 @@ background: -webkit-gradient(radial, center center, 100, center center, 400, fro
 
 /** Sidebar **/
 #sidebar{
+z-index: 5;
 width: 190px; 
 position: fixed;
 height: 100%;

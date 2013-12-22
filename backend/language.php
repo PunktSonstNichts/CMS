@@ -1,8 +1,7 @@
 <?php
 function _t($text = "", $type = "return"){
 	if("" == $text){
-		//drop error
-		echo "no text";
+		return "no text"; //drop error
 	}else{
 		if(@get_translation($text) !== false){
 			return get_translation($text);
@@ -15,7 +14,7 @@ function _t($text = "", $type = "return"){
 function get_translation($text){
 	$old_chdir = getcwd();
 	chdir(SERVER_DIR);
-		include "lang/lang_DE.php";
+	include "lang/lang_DE.php";
 	chdir( $old_chdir );
 	
 	if($_lang[$text] != ""){

@@ -12,7 +12,7 @@ $referrerresult = $referrersql->query("SELECT COUNT(Referrer) AS ReferrerNum , R
 while($most_used_referrer[] = $referrersql->result($referrerresult, "assoc"));
 
 /* Stat math */
-$user_development = $user_recent[0]["User_all"] / 24;//BUG
+$user_development = $user_recent[0]["User_all"] / 24; //BUG
 
 
 $percent_first_browser = round(($most_used_browser[0]["BrowserNum"] / $most_used_browser[0]["AllBrowser"]) * 100);
@@ -23,7 +23,7 @@ $percent_sec_referrer = round(($most_used_referrer[1]["ReferrerNum"] / $most_use
 ?>
 	<div class="element" id="users" style="width: 124px; height: 120px;">
 		<div class="element-heading">
-			<span>Users</span>
+			<span><?php echo _t("users"); ?></span>
 		</div>
 		<div class="element-content">
 			<div class="center main-statistic">
@@ -32,13 +32,13 @@ $percent_sec_referrer = round(($most_used_referrer[1]["ReferrerNum"] / $most_use
 			<div class="statistics-development pos">
 			</div>
 			<div class="statistic-description">
-			in the past 30 minutes.
+			<?php echo sprintf( _t('in the past %c minutes'), 30); ?>
 			</div>
 		</div>
 	</div>
 	<div class="element" id="users" style="width: 124px; height: 120px;">
 		<div class="element-heading">
-			<span>Browsers</span>
+			<span><?php echo _t("browsers"); ?></span>
 		</div>
 		<div class="element-content">
 			<div class="main-statistic">
@@ -54,7 +54,7 @@ $percent_sec_referrer = round(($most_used_referrer[1]["ReferrerNum"] / $most_use
 	</div>
 	<div class="element" id="referrer" style="width: 124px; height: 120px;">
 		<div class="element-heading">
-			<span>Referrer</span>
+			<span><?php echo _t("refferrer"); ?></span>
 		</div>
 		<div class="element-content">
 			<div class="center main-statistic">
@@ -62,7 +62,7 @@ $percent_sec_referrer = round(($most_used_referrer[1]["ReferrerNum"] / $most_use
 				if($most_used_referrer[0]["Referrer"] != ""){
 					echo $most_used_referrer[0]["Referrer"];
 				}else{
-					echo "<span title='or no referrer send'>tipped URL</span>";
+					echo _t("<span title='or no referrer send'>tipped URL</span>");
 				}
 				?>
 			</div>
@@ -74,7 +74,7 @@ $percent_sec_referrer = round(($most_used_referrer[1]["ReferrerNum"] / $most_use
 			if($most_used_referrer[1]["Referrer"] != ""){
 				echo $most_used_referrer[1]["Referrer"];
 			}else{
-				echo "<span title='or no referrer send'>tipped URL</span>";
+				echo _t("<span title='or no referrer send'>tipped URL</span>");
 			}
 			echo " (".$percent_sec_referrer."%)"; ?>
 			</div>

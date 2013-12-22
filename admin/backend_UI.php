@@ -97,21 +97,21 @@ console.log(isValidDate('11-31-1061'));
 <span>My CMS SYSTEM</span>
 </div>
 <ul id="admin-sidebar-panel">
-<li href="<?php echo $_SESSION["user"]["role"]."/home.php"; ?>" class="sidebar_ajax"><span>Home</span></li>
+<li href="<?php echo $_SESSION["user"]["role"]."/home.php"; ?>" class="sidebar_ajax"><span><?php echo _t("home"); ?></span></li>
 <div class="submenu-group">
-<li href="<?php echo $_SESSION["user"]["role"]."/new.php"; ?>" class="sidebar_ajax"><span>New</span></li>
+<li href="<?php echo $_SESSION["user"]["role"]."/new.php"; ?>" class="sidebar_ajax"><span><?php echo _t("new"); ?></span></li>
 <ul style="display: none;" class="submenu">
 <div class="submenu-connector"></div>
-      <li href="<?php echo $_SESSION["user"]["role"]."/new.php?type=post"; ?>" class="sidebar_ajax">Post</li>
-      <li href="<?php echo $_SESSION["user"]["role"]."/new.php?type=site"; ?>" class="sidebar_ajax">Site</li>
-      <li href="<?php echo $_SESSION["user"]["role"]."/new.php?type=directory"; ?>" class="sidebar_ajax">Directory</li>
-      <li href="<?php echo $_SESSION["user"]["role"]."/new.php?type=widget"; ?>" class="sidebar_ajax">widget</li>
+      <li href="<?php echo $_SESSION["user"]["role"]."/new.php?type=post"; ?>" class="sidebar_ajax"><?php echo _t("post"); ?></li>
+      <li href="<?php echo $_SESSION["user"]["role"]."/new.php?type=site"; ?>" class="sidebar_ajax"><?php echo _t("site"); ?></li>
+      <li href="<?php echo $_SESSION["user"]["role"]."/new.php?type=directory"; ?>" class="sidebar_ajax"><?php echo _t("directory"); ?></li>
+      <li href="<?php echo $_SESSION["user"]["role"]."/new.php?type=widget"; ?>" class="sidebar_ajax"><?php echo _t("widget"); ?></li>
 </ul>
 </div>
-<li href="<?php echo $_SESSION["user"]["role"]."/design.php"; ?>" class="sidebar_ajax"><span>Designs</span></li>
-<li href="<?php echo $_SESSION["user"]["role"]."/widget.php"; ?>" class="sidebar_ajax"><span>Widgets</span></li>
-<li href="<?php echo $_SESSION["user"]["role"]."/setting.php"; ?>" class="sidebar_ajax"><span>Settings</span></li>
-<li href="<?php echo $_SESSION["user"]["role"]."/user.php"; ?>" class="sidebar_ajax last-li"><span>Users</span></li>
+<li href="<?php echo $_SESSION["user"]["role"]."/design.php"; ?>" class="sidebar_ajax"><span><?php echo _t("designs"); ?></span></li>
+<li href="<?php echo $_SESSION["user"]["role"]."/widget.php"; ?>" class="sidebar_ajax"><span><?php echo _t("widgets"); ?></span></li>
+<li href="<?php echo $_SESSION["user"]["role"]."/setting.php"; ?>" class="sidebar_ajax"><span><?php echo _t("settings"); ?></span></li>
+<li href="<?php echo $_SESSION["user"]["role"]."/user.php"; ?>" class="sidebar_ajax last-li"><span><?php echo _t("users"); ?></span></li>
 </ul>
 </div>
 <div id="contentframe"  style="overflow: auto;">
