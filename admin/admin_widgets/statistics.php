@@ -1,4 +1,5 @@
 <?php
+if(!ROOT){ exit; }
 $user_recentsql = new mysql();
 $user_recentresult = $user_recentsql->query("SELECT COUNT(*) AS User_all, (SELECT COUNT(*) FROM `".$dbprae."client_demograohy` WHERE 'accesstimestamp' >= '".gmdate("Y-m-d H:i:s", time() - (30 * 60))."' LIMIT 0 , 3) AS User_recent FROM  `".$dbprae."client_demograohy` WHERE 'accesstimestamp' >= '".gmdate("Y-m-d H:i:s", time() - (24 * 60 * 60))."' LIMIT 0 , 3;");
 while($user_recent[] = $user_recentsql->result($user_recentresult, "assoc"));

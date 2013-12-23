@@ -21,7 +21,7 @@ if($Name != ""){
 				if(md5($password) == $row["passw"]){
 					$_SESSION["user"] = array("name" => $row["Name"], "role" => $row["role"]);
 					$reply["error"] = false;
-					$reply["location"] = "backend_UI.php";
+					$reply["location"] = "admin-home.php";
 				}else{
 					$reply["error"] = true;
 					$reply["location"] = "index.php";

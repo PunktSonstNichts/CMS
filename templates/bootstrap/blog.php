@@ -43,7 +43,7 @@ content: "" !important;
 		<div class="well" style="text-align: left;">
 			<h3 style="text-align: center;">CMS | Bootstrap</h3>
 			<p>Do you like that design? We have this and many other <b>for free</b>!</p>
-			<p><a class="btn btn-success btn-medium" href="xxx">Visit tdesk.com</a></p>
+			<p><a class="btn btn-success btn-medium" href="http://templateworld123.funpic.de" target="_blank">Visit tdesk.com</a></p>
 		</div>
 	</div>
 </div>

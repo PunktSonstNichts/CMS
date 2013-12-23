@@ -231,3 +231,7 @@ font-size: 1.2em;
 font-size: 0.8em;
 color: rgb(16, 16, 16);
 }
+/* Settings */
+.setting_label{
+width: 200px;
+}

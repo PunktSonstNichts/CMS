@@ -1,10 +1,7 @@
 <?php
 class body{
 
-public $topelements = array();
-public $topelements_string = "";
-public $widgets = "";
-private $site = "";
+
 private $sqlresult_array_site = array();
 private $sqlresult_array_widgets = array();
 private $sqlresult_arraywidgets_settings = array();
@@ -27,12 +24,12 @@ private $sqlresult_arraywidgets_settings = array();
 		$widget_found = false;
 		$passed_widget_names = array();
 		
-		foreach($this->sqlresult_array_widgets as $widget){
+		foreach($this->sqlresult_array_widgets as $count => $widget){
+		global $passed_widget_names;
 			if($widget != ""){
 				if(($widget["position"] == $orientation) || (($widget["fallback_position"] == $orientation) && (array_search($widget["widget"], $passed_widget_names) === false))){
 					if (file_exists("widgets/".$widget["widget"]."/frontend.php")){					
 						$passed_widget_names[] = $widget["widget"];
-						print_r($passed_widget_names);
 					
 						if((array_search($widget["widget"], $passed_widget_names) === true)){
 							if(DEVELOPMODE){

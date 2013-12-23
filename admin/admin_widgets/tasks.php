@@ -1,3 +1,6 @@
+<?php
+if(!ROOT){ exit; }
+?>
 <div class="element" style="width: 500px;">
 	<div class="element-heading">
 		<span><?php echo _t("tasks in progress"); ?></span>

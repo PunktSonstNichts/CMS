@@ -92,6 +92,9 @@ border-radius: 2px;
 transition: border-color ease-in-out .15s,box-shadow ease-in-out .20s;
 }
 
+input[disabled]{
+background-color: rgb(232, 232, 232);
+}
 
 .btn, button, input[type=button]{
 transition: background 0.2s;

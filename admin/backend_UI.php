@@ -1,12 +1,3 @@
-<?php
-session_start();
-
-include("../loader.php");
-?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="EN" lang="EN" dir="ltr">
-<head profile="http://gmpg.org/xfn/11">
-<title>Backend</title>
 <meta charset="utf-8">
 <link rel="stylesheet" href="scripte/css/main.css" type="text/css"/>
 <link rel="stylesheet" href="scripte/css/blue.css" type="text/css"/>
@@ -18,6 +9,10 @@ include("../loader.php");
 <script type="text/javascript" src="../plugins/wysiwyg/js/wysiwyg.js"></script>
 <script type="text/javascript">
 $(document).ready( function(){
+
+<?php
+run_action("admin-javascript");
+?>
 
 $('div').dialog('init');
 
@@ -45,14 +40,6 @@ $('form').submit(function(e){
 		}
 	});
 });
-
-$(".sidebar_ajax").click( function(event){
-console.log($(this).attr("href"));
-event.preventDefault();
-$("#contentframe").load( $(this).attr("href") );
-});
-
-$("#contentframe").load("<?php echo $_SESSION["user"]["role"]."/home.php"; ?>");
 
 });
 
@@ -92,31 +79,28 @@ console.log(isValidDate('11-31-1061'));
 </div>
 </div>
 <!-- Sidebar -->
+<?php
+run_action("before-adminsidebar");
+?>
 <div id="sidebar">
 <div id="sidebar-heading">
 <span>My CMS SYSTEM</span>
 </div>
 <ul id="admin-sidebar-panel">
-<li href="<?php echo $_SESSION["user"]["role"]."/home.php"; ?>" class="sidebar_ajax"><span><?php echo _t("home"); ?></span></li>
+<li><a href="<?php echo ROOT_URL."admin/".$_SESSION["user"]["role"]."-home.php"; ?>"><span><?php echo _t("home"); ?></span></a></li>
 <div class="submenu-group">
-<li href="<?php echo $_SESSION["user"]["role"]."/new.php"; ?>" class="sidebar_ajax"><span><?php echo _t("new"); ?></span></li>
+<li><a href="<?php echo ROOT_URL."admin/".$_SESSION["user"]["role"]."-new.php"; ?>"><span><?php echo _t("new"); ?></span></a></li>
 <ul style="display: none;" class="submenu">
 <div class="submenu-connector"></div>
-      <li href="<?php echo $_SESSION["user"]["role"]."/new.php?type=post"; ?>" class="sidebar_ajax"><?php echo _t("post"); ?></li>
-      <li href="<?php echo $_SESSION["user"]["role"]."/new.php?type=site"; ?>" class="sidebar_ajax"><?php echo _t("site"); ?></li>
-      <li href="<?php echo $_SESSION["user"]["role"]."/new.php?type=directory"; ?>" class="sidebar_ajax"><?php echo _t("directory"); ?></li>
-      <li href="<?php echo $_SESSION["user"]["role"]."/new.php?type=widget"; ?>" class="sidebar_ajax"><?php echo _t("widget"); ?></li>
+      <li><a href="<?php echo ROOT_URL."admin/".$_SESSION["user"]["role"]."-new.php?type=post"; ?>"><?php echo _t("post"); ?></a></li>
+      <li><a href="<?php echo ROOT_URL."admin/".$_SESSION["user"]["role"]."-new.php?type=site"; ?>"><?php echo _t("site"); ?></a></li>
+      <li><a href="<?php echo ROOT_URL."admin/".$_SESSION["user"]["role"]."-new.php?type=directory"; ?>"><?php echo _t("directory"); ?></a></li>
+      <li><a href="<?php echo ROOT_URL."admin/".$_SESSION["user"]["role"]."-new.php?type=widget"; ?>"><?php echo _t("widget"); ?></a></li>
 </ul>
 </div>
-<li href="<?php echo $_SESSION["user"]["role"]."/design.php"; ?>" class="sidebar_ajax"><span><?php echo _t("designs"); ?></span></li>
-<li href="<?php echo $_SESSION["user"]["role"]."/widget.php"; ?>" class="sidebar_ajax"><span><?php echo _t("widgets"); ?></span></li>
-<li href="<?php echo $_SESSION["user"]["role"]."/setting.php"; ?>" class="sidebar_ajax"><span><?php echo _t("settings"); ?></span></li>
-<li href="<?php echo $_SESSION["user"]["role"]."/user.php"; ?>" class="sidebar_ajax last-li"><span><?php echo _t("users"); ?></span></li>
+<li><a href="<?php echo ROOT_URL."admin/".$_SESSION["user"]["role"]."-design.php"; ?>"><span><?php echo _t("designs"); ?></span></a></li>
+<li><a href="<?php echo ROOT_URL."admin/".$_SESSION["user"]["role"]."-widget.php"; ?>"><span><?php echo _t("widgets"); ?></span></a></li>
+<li><a href="<?php echo ROOT_URL."admin/".$_SESSION["user"]["role"]."-setting.php"; ?>"><span><?php echo _t("settings"); ?></span></a></li>
+<li><a href="<?php echo ROOT_URL."admin/".$_SESSION["user"]["role"]."-user.php"; ?>"><span><?php echo _t("users"); ?></span></a></li>
 </ul>
 </div>
-<div id="contentframe"  style="overflow: auto;">
-%
-</div>
-<div id="footer"></div>
-</body>
-</html>

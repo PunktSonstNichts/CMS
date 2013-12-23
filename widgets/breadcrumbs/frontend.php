@@ -34,3 +34,6 @@ $cms_type = "widget";
 	}
 ?>
 </ol>
+<?php
+run_action("breadcrumbs_loaded", array("breadcrumb-elements" => $breadcumb_elements));
+?>
