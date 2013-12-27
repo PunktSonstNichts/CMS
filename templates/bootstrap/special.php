@@ -7,6 +7,9 @@
 <link rel="stylesheet" href="<?php echo ROOT_URL;?>templates/bootstrap/scripte/css/bootstrap.css">
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
 <style type="text/css">
+<?php
+run_action('css-loaded');
+?>
 h1{
 font-size: 24px !important;
 }
@@ -33,9 +36,7 @@ content: "" !important;
 	<img src="http://<?php echo ROOT; ?>content/images/wrapper_DE.jpg" width="848px" style="border: 1px solid rgb(170, 170, 170); border-radius: 5px;-webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);"/>
 	<p style="color: rgb(98,100,95); float:left;">01.12.2013 // Till Meyer-Arlt</p>
 	<p style="text-align: right;"><small><a target="_blank" href="http://de.best-wallpaper.net/Beautiful-scenery-in-Germany_2560x1440.html">http://de.best-wallpaper.net/Germany.html</a></small></p></br>
-	<p style="line-height: 21px;">
-	<?php print_r($_GET);  ?>
-	
+	<p style="line-height: 21px;">	
 	Germany is the perfect destination for people who like to explore many different traditions in a short amount of time due to the fact that the german highways are the best worldwide.
 	Not only the highway but also the comfortable trains enable the traveller to visit one day Hamburg with its unique red-light district and to drink beer at the "Wiesn" in Munich the next day.
 	Besides Hamburg and Munich many other cities have there specialty mostly in downtown, for examples hannover is known for it big forrest and other natural areas like the Maschsee in town.</br>
@@ -57,6 +58,8 @@ content: "" !important;
 		</div>
 	</div>
 </div>
+<hr>
+<?php $body->footer(); ?>
 </div>
 
 </body>

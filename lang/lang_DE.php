@@ -57,7 +57,7 @@ $_lang["anchor"] = "Link";
 $_lang["link name"] = "Linkname";
 
 #body.php
-$_lang['<p class="error"><b>body.php:</b> no widget found for %1$s or %2$s!</p>'] = '<p class="error"><b>body.php:</b> Kein Widget f&uuml;r <u>%1$s</u> oder <u>%2$s</u> gefunden!</p>';
+$_lang['no widget found for %1$s or %2$s!'] = 'Kein Widget f&uuml;r %1$s oder %2$s gefunden!';
 $_lang['widget %s not found!'] = 'Kein Widget unter %s gefunden';
 $_lang["widget '%s' already called!"] = "Widget '%s' wurde schon aufgerufen!";
 

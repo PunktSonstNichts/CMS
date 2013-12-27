@@ -4,19 +4,21 @@
 <?php echo $header->title; ?>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-5589-1">
 <?php echo $header->metastring; ?>
-<link rel="stylesheet" href="<?php echo "templates/forrest/"; ?>scripte/css/main.css" type="text/css" />
-<style type="text/css">
+<link rel="stylesheet" href="<?php echo ROOT_URL."templates/".TEMPLATE; ?>/scripte/css/main.css" type="text/css" />
 
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<style type="text/css">
+<?php
+run_action('css-loading');
+?>
 </style>
 </head>
 <body>
 <div class="wrapper">
 <div class="wrapper-child">
-<span>One day baby we'll be old, oh baby we'll be old and think of all the stories that we could have told</span>
+<span>One day baby we'll be old, oh baby we'll be old and think of all the stories that we could have told</span></br>
+<?php $body->logo("crap"); ?>
 </div>
-</div>
-<div class="wrapper">
-<?php $body->logo("top"); ?>
 </div>
 <div class="wrapper grey">
 <div id="topnav">

@@ -28,14 +28,17 @@ class error{
 		}
 		$this->savelog($log, $file);
 	}
-	private function savelog($log, $file = "log/log.txt"){
+	private function savelog($log, $file){
+		$old_chdir = getcwd();
+		chdir(SERVER_DIR);
 		$backup = fopen($file, "r");
 		$log_content = fread($backup, filesize($file));
 		fclose($backup);
 		
 		$handle = fopen($file, "a");
-		fwrite( $handle , "$log \n"."$log_content");
+		fwrite( $handle , "$log \n");
 		fclose($handle);
+		chdir($old_chdir);
 	}
 }
 function log_error($errorlevel, $errorstring, $errorfile, $errorline){

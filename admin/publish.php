@@ -19,7 +19,8 @@ $response["msg"] = "you stayed too long inactiv";
 }else{
 
 $update_textdb = new mysql();
-$metaresult = $update_textdb->query("INSERT INTO `cms_cms`.`text_w` (`ID`, `Heading`, `author`, `publishdate`, `lasteditdate`, `label`, `affected_pageID`, `affect_pageNAME`, `content`, `preview`, `keywords`) VALUES (NULL, '$title', '".$_SESSION["user"]["name"]."', '".date("Y-m-d H:i:s")."', '".date("Y-m-d H:i:s")."', 'hot', '$default_siteID', '$default_siteNAME', '".$_POST["form_inhalt"]."', 'Leider noch keine Zeit für einen Vorschautext...', '$default_keywords');");
+$metaresult = $update_textdb->query("INSERT INTO `cms_cms`.`text_w` (`ID`, `Heading`, `author`, `publishdate`, `lasteditdate`, `label`, `affected_pageID`, `affect_pageNAME`, `content`, `preview`, `keywords`) VALUES (NULL, '$title', '".$_SESSION["user"]["name"]."', '".date("Y-m-d H:i:s")."', '".date("Y-m-d H:i:s")."', 'hot', '$default_siteID', '$default_siteNAME', '".$_POST["form_inhalt"]."', 'no time for a preview text :(', '$default_keywords');");
+echo "INSERT INTO `cms_cms`.`text_w` (`ID`, `Heading`, `author`, `publishdate`, `lasteditdate`, `label`, `affected_pageID`, `affect_pageNAME`, `content`, `preview`, `keywords`) VALUES (NULL, '$title', '".$_SESSION["user"]["name"]."', '".date("Y-m-d H:i:s")."', '".date("Y-m-d H:i:s")."', 'hot', '$default_siteID', '$default_siteNAME', `".$_POST["form_inhalt"]."`, 'no time for a preview text :(', '$default_keywords');";
 $response["error"] = false;
 $response["msg"] = "everything worked fine";
 }

@@ -51,9 +51,15 @@ background: rgb(205, 120, 0);
 background: -webkit-gradient(radial, center center, 100, center center, 400, from(rgb(205, 120, 0)), to(rgb(185, 100, 0)));
 }
 
-#sidebar li > span{
+#sidebar li > a{
+padding: 5px;
+font-size: 1.2em;
+text-decoration: none;
+}
+#sidebar li > a > span{
 color: white;
 }
+
 .submenu{
 background: rgb(225, 140, 0);
 }

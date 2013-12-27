@@ -13,6 +13,7 @@ private $dbprae = "";
 		$this->dbprae = $dbprae;
 		$this->getmeta();
 		$this->gettitle();
+		run_action("header-prepared", array("page-meta" => $this->meta, "page-title" => $this->title));
 	}
 	
 	public function getmeta(){

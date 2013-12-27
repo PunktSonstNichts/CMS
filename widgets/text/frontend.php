@@ -18,6 +18,9 @@ echo $textsnippet["content"];
 </div>
 <div class="snippet-author" style="float:left;"><small style="font-size: 0.8em; color: rgb(66,66,66);">by <?php echo $textsnippet["author"]; ?></small></div>
 <div class="snippet-time" style="width: 100%; text-align: right;"><small style="font-size: 0.8em; color: rgb(66,66,66);">since <?php echo date_format(date_create($textsnippet["lasteditdate"]), 'd.m.y // H:i:s'); ?></small></div>
+<?php
+run_action("after-text-loaded", array("text-id" => $textsnippet["ID"], "text-title" => $textsnippet["Heading"]));
+?>
 </div>
 <?php
 }

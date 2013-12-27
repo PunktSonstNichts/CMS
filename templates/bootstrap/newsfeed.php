@@ -6,6 +6,9 @@
 <?php echo $header->metastring; ?>
 <link rel="stylesheet" href="<?php echo ROOT_URL;?>templates/bootstrap/scripte/css/bootstrap.css">
 <style type="text/css">
+<?php
+run_action('css-loaded');
+?>
 h1{
 font-size: 24px !important;
 }
@@ -30,9 +33,7 @@ content: "" !important;
 </div>
 
 <div id="footer">
-	<button type="submit" class="btn" name="add">
-		<span class="value">Add new</span>
-	</button>
+<?php $body->footer(); ?>
 </div>
 </body>
 </html>

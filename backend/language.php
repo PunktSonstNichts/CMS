@@ -6,6 +6,7 @@ function _t($text = "", $specific_lang_folder = "", $cms_type = ""){
 		if(@get_translation($text, $specific_lang_folder, $cms_type) !== false){
 			return get_translation($text, $specific_lang_folder, $cms_type);
 		}else{
+			new error("[lang] $text could not been found in lang databases");
 			return $text;
 		}
 	}
@@ -23,6 +24,11 @@ function get_translation($text, $specific_lang_folder, $cms_type){
 				case "widget":
 					if(file_exists("widgets/".$specific_lang_folder."lang/lang_DE.php")){
 						include "widgets/".$specific_lang_folder."lang/lang_DE.php";
+					}
+				break;
+				case "plugin":
+					if(file_exists("plugins/".$specific_lang_folder."lang/lang_DE.php")){
+						include "plugins/".$specific_lang_folder."lang/lang_DE.php";
 					}
 				break;
 				default:

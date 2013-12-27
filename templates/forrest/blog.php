@@ -4,11 +4,11 @@
 <?php echo $header->title; ?>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <?php echo $header->metastring; ?>
-<link rel="stylesheet" href="<?php echo "templates/forrest/"; ?>scripte/css/main.css" type="text/css" />
+<link rel="stylesheet" href="<?php echo ROOT_URL."templates/".TEMPLATE; ?>/scripte/css/main.css" type="text/css" />
 </head>
 <body>
 <div class="wrapper">
-<?php $body->logo("top"); ?>
+<?php $body->logo("navigation"); ?>
 </div>
 <div class="wrapper grey">
 <div id="topnav">
@@ -29,7 +29,7 @@
 </div>
 <div class="wrapper">
 <div id="main">
-
+<?php $body->footer(); ?>
 </div>
 <div id="footer"></div>
 </div>

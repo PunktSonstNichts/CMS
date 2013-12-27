@@ -1,0 +1,1 @@
+<?php$_lang["Add Comment to %s"] = "Kommentiere zu %s";$_lang["title"] = "Titel";$_lang["content"] = "Dein Kommentar";$_lang["comment!"] = "Kommentiere!";?>

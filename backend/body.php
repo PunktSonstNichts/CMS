@@ -10,6 +10,7 @@ private $sqlresult_arraywidgets_settings = array();
 		$this->sqlresult_array_site = $sqlsiteresult_row;
 		$this->sqlresult_array_widgets = $row_widgets;
 		$this->sqlresult_arraywidgets_settings = $widgets_settings;
+		run_action("body-construct");
 	}
 
 	public function __call($orientation, $fallback){
@@ -36,6 +37,7 @@ private $sqlresult_arraywidgets_settings = array();
 								echo '<p class="error"><b>body.php:</b> '.sprintf( _t("widget '%s' already called!"), $widget["widget"]).'</p>';
 							}
 						}else{
+							run_action("widget-inclusion", array("widget-name" => $widget["widget"]));
 							include("widgets/".$widget["widget"]."/frontend.php");						
 						}
 						$widget_found = true;
@@ -50,18 +52,20 @@ private $sqlresult_arraywidgets_settings = array();
 		}
 		//fallback
 		if($widget_found == false){
-		$fallback = $fallback[0]; // silly fallback bug on magic __call function
-			foreach($this->sqlresult_array_widgets as $widget){
-				if($widget != ""){
-					if(($widget["position"] == $fallback) || ($widget["fallback_position"] == $fallback)){
-						if (file_exists("widgets/".$widget["widget"]."/frontend.php")){
-							include("widgets/".$widget["widget"]."/frontend.php");
-							$widget_found = true;
-						}else{
-							if(DEVELOPMODE){
-								echo '<p class="error"><b>body.php:</b> '.sprintf( _t("widget %s not found!"), "'widgets/".$widget["widget"]."/frontend.php'").'</p>';
+		$fallback = $fallback[0]; // We only accept one fallback! only the first one get used, the rest cut off
+			if($fallback != ""){
+				foreach($this->sqlresult_array_widgets as $widget){
+					if($widget != ""){
+						if(($widget["position"] == $fallback) || ($widget["fallback_position"] == $fallback)){
+							if (file_exists("widgets/".$widget["widget"]."/frontend.php")){
+								include("widgets/".$widget["widget"]."/frontend.php");
+								$widget_found = true;
+							}else{
+								if(DEVELOPMODE){
+									echo '<p class="error"><b>body.php:</b> '.sprintf( _t("widget %s not found!"), "'widgets/".$widget["widget"]."/frontend.php'").'</p>';
+								}
+								//Add error log here
 							}
-							//Add error log here
 						}
 					}
 				}
@@ -69,7 +73,7 @@ private $sqlresult_arraywidgets_settings = array();
 		}
 		if($widget_found == false){
 			if(DEVELOPMODE){
-				echo sprintf( _t('<p class="error"><b>body.php:</b> no widget found for %1$s or %2$s!</p>'), $orientation, $fallback );
+				echo '<p class="error"><b>body.php:</b> '.sprintf( _t('no widget found for %1$s or %2$s!'), "<u>".$orientation."</u>", "<u>".$fallback."</u>" ).'</p>';
 			}
 			//Add error log here
 		}

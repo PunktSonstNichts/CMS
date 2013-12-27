@@ -1,4 +1,3 @@
-<meta charset="utf-8">
 <link rel="stylesheet" href="scripte/css/main.css" type="text/css"/>
 <link rel="stylesheet" href="scripte/css/blue.css" type="text/css"/>
 <link rel="stylesheet" href="../plugins/dialog/dialog.css" type="text/css"/>
@@ -7,6 +6,11 @@
 <script type="text/javascript" src="scripte/js/javascript.php"></script>
 <script type="text/javascript" src="../plugins/dialog/dialog.js"></script>
 <script type="text/javascript" src="../plugins/wysiwyg/js/wysiwyg.js"></script>
+<style type="text/css">
+<?php
+run_action("admin-css");
+?>
+</style>
 <script type="text/javascript">
 $(document).ready( function(){
 
@@ -87,20 +91,20 @@ run_action("before-adminsidebar");
 <span>My CMS SYSTEM</span>
 </div>
 <ul id="admin-sidebar-panel">
-<li><a href="<?php echo ROOT_URL."admin/".$_SESSION["user"]["role"]."-home.php"; ?>"><span><?php echo _t("home"); ?></span></a></li>
+<li><a href="<?php echo ROOT_URL."admin/admin-home.php"; ?>"><span><?php echo _t("home"); ?></span></a></li>
 <div class="submenu-group">
-<li><a href="<?php echo ROOT_URL."admin/".$_SESSION["user"]["role"]."-new.php"; ?>"><span><?php echo _t("new"); ?></span></a></li>
+<li><a href="<?php echo ROOT_URL."admin/admin-new.php"; ?>"><span><?php echo _t("new"); ?></span></a></li>
 <ul style="display: none;" class="submenu">
 <div class="submenu-connector"></div>
-      <li><a href="<?php echo ROOT_URL."admin/".$_SESSION["user"]["role"]."-new.php?type=post"; ?>"><?php echo _t("post"); ?></a></li>
-      <li><a href="<?php echo ROOT_URL."admin/".$_SESSION["user"]["role"]."-new.php?type=site"; ?>"><?php echo _t("site"); ?></a></li>
-      <li><a href="<?php echo ROOT_URL."admin/".$_SESSION["user"]["role"]."-new.php?type=directory"; ?>"><?php echo _t("directory"); ?></a></li>
-      <li><a href="<?php echo ROOT_URL."admin/".$_SESSION["user"]["role"]."-new.php?type=widget"; ?>"><?php echo _t("widget"); ?></a></li>
+      <li><a href="<?php echo ROOT_URL."admin/admin-new.php?type=post"; ?>"><?php echo _t("post"); ?></a></li>
+      <li><a href="<?php echo ROOT_URL."admin/admin-new.php?type=site"; ?>"><?php echo _t("site"); ?></a></li>
+      <li><a href="<?php echo ROOT_URL."admin/admin-new.php?type=directory"; ?>"><?php echo _t("directory"); ?></a></li>
+      <li><a href="<?php echo ROOT_URL."admin/admin-new.php?type=widget"; ?>"><?php echo _t("widget"); ?></a></li>
 </ul>
 </div>
-<li><a href="<?php echo ROOT_URL."admin/".$_SESSION["user"]["role"]."-design.php"; ?>"><span><?php echo _t("designs"); ?></span></a></li>
-<li><a href="<?php echo ROOT_URL."admin/".$_SESSION["user"]["role"]."-widget.php"; ?>"><span><?php echo _t("widgets"); ?></span></a></li>
-<li><a href="<?php echo ROOT_URL."admin/".$_SESSION["user"]["role"]."-setting.php"; ?>"><span><?php echo _t("settings"); ?></span></a></li>
-<li><a href="<?php echo ROOT_URL."admin/".$_SESSION["user"]["role"]."-user.php"; ?>"><span><?php echo _t("users"); ?></span></a></li>
+<li><a href="<?php echo ROOT_URL."admin/admin-design.php"; ?>"><span><?php echo _t("designs"); ?></span></a></li>
+<li><a href="<?php echo ROOT_URL."admin/admin-widget.php"; ?>"><span><?php echo _t("widgets"); ?></span></a></li>
+<li><a href="<?php echo ROOT_URL."admin/admin-setting.php"; ?>"><span><?php echo _t("settings"); ?></span></a></li>
+<li><a href="<?php echo ROOT_URL."admin/admin-user.php"; ?>"><span><?php echo _t("users"); ?></span></a></li>
 </ul>
 </div>
