@@ -1,0 +1,1 @@
+<?php?><form action="" method="post"><input type="text" placeholder="some crap"/></form>

@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+        <base href="http://flowmainserver.appspot.com/" /> <!-- remove this when you put it online -->
+    <!-- Copyright Cal Smith 2010 $(window).height()-->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript"></script>
+    <script src="js/jquery.scrollTo-min.js" type="text/javascript"></script>
+    <script type="text/javascript">$(window)._scrollable();</script>
+    <link href="buttons.css" media="all" rel="stylesheet" type="text/css" />
+    <link href="main.css" media="all" rel="stylesheet" type="text/css" id="main_css" />
+
+    <title>flow | post title</title>
+    <script type="text/javascript">/*
+    $(window).scroll(function(){
+        if($(window).scrollTop() == $(document).height() - $(window).height()){
+            document.location = "http://www.google.com";
+        }
+    });
+    */</script>
+    <style type="text/css">
+        html body {
+            text-align:center;
+        }
+        html body div.pageHolder {
+            margin:auto;
+        }
+        html body a.title {
+            text-indent:-10000px;
+            display:block;
+        }
+        html body table {
+            position:relative;
+            z-index:10;
+            background:url(imgs/dark_bg.png) repeat;
+        }
+        html body table table td {
+            padding-bottom:5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="pageHolder" style="margin:auto;">
+        <a href="/" class="title">Flow</a>
+        <div class="directory">
+            <p class="categoryTitle">Post title<span class="categoryTitleBy">&nbsp;2 weeks ago by @<a href="#" class="categoryTitleByA">author url</a></span></p>
+            <div class="postDescription"></div>
+            <div class="heartOff" title="Click to heart">&hearts;</div>
+            <div class="commentTab" onclick="$(window).scrollTo( $('#commentBoxTitle'), 380 ); $('#commentBox').focus();" title="Comments">&Xi;&nbsp;</div>
+            <div class="postFull" style="background-image: url(example_full.png); height: 500px; width: 1300px;"></div>
+            <table border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                    <td valign="top">
+                        <span class="commentBoxTitle" id="commentBoxTitle">Comment</span>
+                        <textarea id="commentBox" class="commentBox"></textarea>
+                        <div align="right"><div class="commentPostButton">Post</div></div>
+                    </td>
+                    <td>
+                        <div class="commentsHolder">
+                            <table border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td valign="top"><img src="http://s3.amazonaws.com/forrst-production/users/photos/10587/xl.png?1280926926" class="commentUserPic" /></td>
+                                    <td><div class="commentBody">Vivamus id mollis quam. Morbi ac commodo nulla. In condimentum orci id nisl volutpat bibendum. Quisque commodo hendrerit lorem quis egestas. Maecenas quis tortor arcu. Vivamus rutrum nunc non neque consectetur quis placerat neque lobortis. Nam vestibulum, arcu sodales feugiat consectetur, nisl orci bibendum elit, eu euismod magna sapien ut nibh. Donec semper quam scelerisque tortor dictum gravida. In hac habitasse platea dictumst. Nam pulvinar, odio sed rhoncus suscipit, sem diam ultrices mauris, eu consequat purus metus eu velit. Proin metus odio, aliquam eget molestie nec, gravida ut sapien.</div></td>
+                                </tr>
+                                <tr>
+                                <td valign="top"><img src="http://s3.amazonaws.com/forrst-production/users/photos/7825/xl.png?1278955396" class="commentUserPic" /></td>
+                                    <td><div class="commentBody">Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque faucibus. Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque faucibus.</div></td>
+                                </tr>
+                                <tr>
+                                    <td valign="top"><img src="http://s3.amazonaws.com/forrst-production/users/photos/10587/xl.png?1280926926" class="commentUserPic" /></td>
+                                    <td><div class="commentBody">Vivamus id mollis quam. Morbi ac commodo nulla. In condimentum orci id nisl volutpat bibendum. Quisque commodo hendrerit lorem quis egestas. Maecenas quis tortor arcu. Vivamus rutrum nunc non neque consectetur quis placerat neque lobortis. Nam vestibulum, arcu sodales feugiat consectetur, nisl orci bibendum elit, eu euismod magna sapien ut nibh. Donec semper quam scelerisque tortor dictum gravida. In hac habitasse platea dictumst. Nam pulvinar, odio sed rhoncus suscipit, sem diam ultrices mauris, eu consequat purus metus eu velit. Proin metus odio, aliquam eget molestie nec, gravida ut sapien.</div></td>
+                                </tr>
+                                <tr>
+                                    <td valign="top"><img src="http://s3.amazonaws.com/forrst-production/users/photos/7825/xl.png?1278955396" class="commentUserPic" /></td>
+                                    <td><div class="commentBody">Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque faucibus. Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque faucibus.</div></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <div class="footer">created by cal smith</div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+lang/lang_DE.php|plugin "%s" is not valid. Please re-install this plugin, including the init.php.</br>
+lang/lang_DE.php|plugin "%s" is not valid. Please re-install this plugin, including the init.php.</br>
+plugins/comment-text/lang/lang_DE.php|%d likes
+plugins/comment-text/lang/lang_DE.php|%d likes
+plugins/comment-text/lang/lang_DE.php|%d likes
+plugins/comment-text/lang/lang_DE.php|%d likes
+plugins/comment-text/lang/lang_DE.php|%d likes
+plugins/comment-text/lang/lang_DE.php|%d likes
+plugins/comment-text/lang/lang_DE.php|%d likes
+plugins/comment-text/lang/lang_DE.php|%d likes
+lang/lang_DE.php|plugin "%s" is not valid. Please re-install this plugin, including the init.php.</br>
+lang/lang_DE.php|plugin "%s" is not valid. Please re-install this plugin, including the init.php.</br>
+plugins/comment-text/lang/lang_DE.php|%d likes
+plugins/comment-text/lang/lang_DE.php|%d likes
+plugins/comment-text/lang/lang_DE.php|%d likes
+plugins/comment-text/lang/lang_DE.php|%d likes
+plugins/comment-text/lang/lang_DE.php|%d likes
+plugins/comment-text/lang/lang_DE.php|%d likes
+plugins/comment-text/lang/lang_DE.php|%d likes
+plugins/comment-text/lang/lang_DE.php|%d likes
+lang/lang_DE.php|plugin "%s" is not valid. Please re-install this plugin, including the init.php.</br>
+lang/lang_DE.php|plugin "%s" is not valid. Please re-install this plugin, including the init.php.</br>
+lang/lang_DE.php|plugin "%s" is not valid. Please re-install this plugin, including the init.php.</br>
+lang/lang_DE.php|plugin "%s" is not valid. Please re-install this plugin, including the init.php.</br>
+plugins/comment-text/lang/lang_DE.php|%d likes
+plugins/comment-text/lang/lang_DE.php|%d likes
+plugins/comment-text/lang/lang_DE.php|%d likes
+plugins/comment-text/lang/lang_DE.php|%d likes
+plugins/comment-text/lang/lang_DE.php|%d likes
+plugins/comment-text/lang/lang_DE.php|%d likes
+plugins/comment-text/lang/lang_DE.php|%d likes
+plugins/comment-text/lang/lang_DE.php|%d likes

@@ -6,7 +6,30 @@ function _t($text = "", $specific_lang_folder = "", $cms_type = ""){
 		if(@get_translation($text, $specific_lang_folder, $cms_type) !== false){
 			return get_translation($text, $specific_lang_folder, $cms_type);
 		}else{
-			new error("[lang] $text could not been found in lang databases");
+			if(DEVELOPMODE){
+				if($specific_lang_folder != ""){
+					//lang related to current .php file
+					switch($cms_type){
+						case "widget":
+							$file = "widgets/".$specific_lang_folder."lang/lang_DE.php";
+						break;
+						case "plugin":
+							$file = "plugins/".$specific_lang_folder."lang/lang_DE.php";
+						break;
+						default:
+							$file = $specific_lang_folder."lang/lang_DE.php";
+					}
+				}else{
+					$file = "lang/lang_DE.php";
+				}
+				$lang_error_string = "$file|$text\n";
+				$lang_error_file = "export/lang.txt";
+				$lang_handle = fopen($lang_error_file, "a");
+				fwrite($lang_handle, $lang_error_string);
+
+				
+				new error("[lang] $text could not been found in lang databases / $specific_lang_folder - $cms_type");
+			}
 			return $text;
 		}
 	}

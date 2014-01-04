@@ -1,6 +1,7 @@
 table>tbody>tr>th, table>tfoot>tr>th, table>tbody>tr>td, table>tfoot>tr>td {
 padding: 5px;
 border-top: 1px solid rgb(221, 221, 221);
+background-color: white;
 }
 table>thead>tr>th, table>tbody>tr>th, table>thead>tr>td, table>tbody>tr>td{
 margin: 0;
@@ -10,4 +11,14 @@ margin: 0;
 }
 table>tbody>tr:nth-child(2n){
 background-color: rgb(248, 245, 248);
+}
+table{
+border: 1px solid rgb(221, 221, 221);
+margin: 5px;
+}
+table>thead{
+background-color: rgb(245, 245, 245);
+color: rgb(51, 51, 51);
+padding: 0;
+margin: 0;
 }

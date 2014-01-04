@@ -11,6 +11,8 @@ global $cms_type;
 if(!isset($commentboxcounter)){
 $commentboxcounter = 0;
 }
+$titleinput_id = "commentbox-title-$commentboxcounter";
+$contentinput_id = "commentbox-content-$commentboxcounter";
 ?>
 <div class='commentbox well' style="padding-top: 15px;">
 <div class="commentbox comment-heading">Comment-Box</div>
@@ -22,17 +24,17 @@ while($count < 2){
 ?>
 <hr>
 <div class='commentbox comment'>
-<div class='commentbox comment-author'>PunktSonstNichts</div>
+	<div class='commentbox comment-author'>PunktSonstNichts</div>
 	<div class='commentbox comment-content well'>
+	<p class="commentbox comment-content-text">
 	Lorem Ipsum dolor sit amet, consquetetur
-
-
+	</p>
 		<div class='commentbox commentbox-actionbar'>
 			<div class="commentbox-likes-div">
 				<span class="label label-warning commentbox-likes"><?php echo sprintf(_t("%d likes", $widget_path, $cms_type), 45); ?></span>
 			</div>
 			<div class="commentbox-actions">
-				<span class="label label-info"><?php echo _t("quote", $widget_path, $cms_type); ?></span>
+				<span class="label label-info comment-quote" data-target="<?php echo $contentinput_id; ?>"><?php echo _t("quote", $widget_path, $cms_type); ?></span>
 				<span class="label label-success"><?php echo _t("like", $widget_path, $cms_type); ?></span>
 				<span class="label label-danger"><?php echo _t("report", $widget_path, $cms_type); ?></span>
 			</div>
@@ -43,8 +45,6 @@ while($count < 2){
 <?php
 $count++;
 }
-$titleinput_id = "commentbox-title-$commentboxcounter";
-$contentinput_id = "commentbox-content-$commentboxcounter";
 ?>
 <hr>
 <div class="commentbox leave-comment">
@@ -153,13 +153,18 @@ document.getElementsByTagName('head')[0].appendChild(script);
 $(document).ready( function(){
 	$(".comment-body").attr("data-is_commentbox_visible", false);
 	$(".comment-toggleview").click(function() {
-		if($(this).next(".comment-body").attr("data-is_commentbox_visible") = true){
+		if($(this).next(".comment-body").attr("data-is_commentbox_visible") == "true"){
 			$(this).next(".comment-body").fadeOut( "fast" );
 			$(this).next(".comment-body").attr("data-is_commentbox_visible", false);
 		}else{
 			$(this).next(".comment-body").fadeIn( "fast" );
 			$(this).next(".comment-body").attr("data-is_commentbox_visible", true);
 		}
+	});
+	
+	$(".comment-quote").click( function(){
+	$this = $(this).parents().parents().parents().children(".comment-content-text");
+	$( "#" + $(this).attr("data-target")).html($this.html()).focus();
 	});
 });
 <?php

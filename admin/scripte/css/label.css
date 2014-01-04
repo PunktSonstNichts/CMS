@@ -46,3 +46,35 @@ background: rgb(229, 72, 54) !important;
 background-color: rgb(229, 72, 54);
 border-color: rgb(220, 30, 30);
 }
+.label-info{
+display: inline;
+padding: .2em .6em .3em;
+font-size: 75%;
+font-weight: bold;
+line-height: 1;
+color: rgb(255, 255, 255);
+text-align: center;
+white-space: nowrap;
+vertical-align: baseline;
+border-radius: .25em;
+background-image: none !important;
+background: rgb(91, 192, 222) !important;
+background-color: rgb(91, 192, 222);
+border-color: rgb(90, 185, 212);
+}
+.label-primary{
+display: inline;
+padding: .2em .6em .3em;
+font-size: 75%;
+font-weight: bold;
+line-height: 1;
+color: rgb(255, 255, 255);
+text-align: center;
+white-space: nowrap;
+vertical-align: baseline;
+border-radius: .25em;
+background-image: none !important;
+background: rgb(66, 139, 202) !important;
+background-color: rgb(66, 139, 202);
+border-color: rgb(60, 130, 192);
+}

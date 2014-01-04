@@ -1,10 +1,12 @@
 <link rel="stylesheet" href="scripte/css/main.css" type="text/css"/>
 <link rel="stylesheet" href="scripte/css/blue.css" type="text/css"/>
-<link rel="stylesheet" href="../plugins/dialog/dialog.css" type="text/css"/>
+
 <script src="scripte/js/jquery.min.js"></script>
 <script src="scripte/js/jquery-ui.min.js"></script>
 <script type="text/javascript" src="scripte/js/javascript.php"></script>
-<script type="text/javascript" src="../plugins/dialog/dialog.js"></script>
+<?php
+run_action("admin-head-loading");
+?>
 <script type="text/javascript" src="../plugins/wysiwyg/js/wysiwyg.js"></script>
 <style type="text/css">
 <?php
@@ -104,6 +106,7 @@ run_action("before-adminsidebar");
 </div>
 <li><a href="<?php echo ROOT_URL."admin/admin-design.php"; ?>"><span><?php echo _t("designs"); ?></span></a></li>
 <li><a href="<?php echo ROOT_URL."admin/admin-widget.php"; ?>"><span><?php echo _t("widgets"); ?></span></a></li>
+<li><a href="<?php echo ROOT_URL."admin/admin-plugins.php"; ?>"><span><?php echo _t("plugins"); ?></span></a></li>
 <li><a href="<?php echo ROOT_URL."admin/admin-setting.php"; ?>"><span><?php echo _t("settings"); ?></span></a></li>
 <li><a href="<?php echo ROOT_URL."admin/admin-user.php"; ?>"><span><?php echo _t("users"); ?></span></a></li>
 </ul>

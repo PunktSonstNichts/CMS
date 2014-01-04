@@ -1,1 +1,1 @@
-<?php$_lang["Add Comment to %s"] = "Kommentiere zu %s";$_lang["title"] = "Titel";$_lang["content"] = "Dein Kommentar";$_lang["comment!"] = "Kommentiere!";?>
+<?php$_lang["Add Comment to %s"] = "Kommentiere zu %s";$_lang["title"] = "Titel";$_lang["content"] = "Dein Kommentar";$_lang["comment!"] = "Kommentiere!";$_lang["read comments"] = "Kommentare lesen";$_lang["quote"] = "zitieren";$_lang["like"] = "like";$_lang["report"] = "melden";?>

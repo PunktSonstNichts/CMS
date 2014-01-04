@@ -26,7 +26,7 @@ include_once(dirname(__file__)."/backend_UI.php");
 <div id="contentframe">
 <div class="element" id="general_setting" style="float: none;">
 <div class="element-heading">
-<span>Allgemeine Einstellungen</span>
+<span><?php echo _t("general settings"); ?></span>
 </div>
 <div class="element-content">
 <form action="setting_change.php" method="post" style="float: left;">
@@ -52,7 +52,7 @@ while($setting = $settingssql->result($settingsresult, "assoc")){
 <hr>
 <div class="element" id="widget_setting" style="float: none;">
 <div class="element-heading">
-<span>Einstellungen für Widgets</span>
+<span><?php echo _t("settings for widgets"); ?></span>
 </div>
 <div class="element-content">
 
