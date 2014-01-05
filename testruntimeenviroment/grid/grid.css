@@ -1,0 +1,123 @@
+.grid{
+height: 980px;
+}
+.row-1, .row-2, .row-3, .row-4, .row-5, .row-6, .row-7, .row-8, .row-9, .row-10, .row-11, .row-12{
+min-height: 1px;
+}
+
+.grid{
+height: 980px;
+}
+.row-1{
+width: 4.33%;
+padding-left: 2%;
+padding-right: 2%;
+float: left;
+}
+.row-2{
+width: 12.66%;
+padding-left: 2%;
+padding-right: 2%;
+float: left;
+}
+.row-3{
+width: 19%;
+padding-left: 3%;
+padding-right: 3%;
+float: left;
+}
+.row-4{
+width: 27.33%;
+padding-left: 3%;
+padding-right: 3%;
+float: left;
+}
+.row-5{
+width: 33.66%;
+padding-left: 4%;
+padding-right: 4%;
+float: left;
+}
+.row-6{
+width: 40%;
+padding-left: 5%;
+padding-right: 5%;
+float: left;
+}
+.row-7{
+width: 48.33%;
+padding-left: 5%;
+padding-right: 5%;
+float: left;
+}
+.row-8{
+width: 56.66%;
+padding-left: 5%;
+padding-right: 5%;
+float: left;
+}
+.row-9{
+width: 65%;
+padding-left: 5%;
+padding-right: 5%;
+float: left;
+}
+.row-10{
+width: 73.33%;
+padding-left: 5%;
+padding-right: 5%;
+float: left;
+}
+.row-11{
+width: 81.66%;
+padding-left: 5%;
+padding-right: 5%;
+float: left;
+}
+.row-12{
+width: 90%;
+padding-left: 5%;
+padding-right: 5%;
+}
+.column-1{
+height: 8.33%;
+}
+.column-2{
+height: 16.66%;
+}
+.column-3{
+height: 25%;
+}
+.column-4{
+height: 33.33%;
+}
+.column-5{
+height: 41.66%;
+}
+.column-6{
+height: 50%;
+}
+.column-7{
+height: 58.33%;
+}
+.column-8{
+height: 66.66%;
+}
+.column-9{
+height: 75%;
+}
+.column-10{
+height: 83.33%;
+}
+.column-11{
+height: 91.66%;
+}
+.column-12{
+height: 100%;
+}
+.column-last{
+float: right!important;
+}
+.clearfix{
+clear: both;
+}

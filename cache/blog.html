@@ -8,8 +8,85 @@
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
 <script src="http://code.jquery.com/jquery-latest.js"></script>
 <script type="text/javascript">
+if (typeof jQuery == 'undefined') {
+var script = document.createElement('script');
+script.src = 'http://code.jquery.com/jquery-latest.js';
+script.type = 'text/javascript';
+document.getElementsByTagName('head')[0].appendChild(script);
+}
+
+$(document).ready( function(){
+	$(".comment-body").attr("data-is_commentbox_visible", false);
+	$(".comment-toggleview").click(function() {
+		if($(this).next(".comment-body").attr("data-is_commentbox_visible") == "true"){
+			$(this).next(".comment-body").fadeOut( "fast" );
+			$(this).next(".comment-body").attr("data-is_commentbox_visible", false);
+		}else{
+			$(this).next(".comment-body").fadeIn( "fast" );
+			$(this).next(".comment-body").attr("data-is_commentbox_visible", true);
+		}
+	});
+	
+	$(".comment-quote").click( function(){
+	$this = $(this).parents().parents().parents().children(".comment-content-text");
+	$( "#" + $(this).attr("data-target")).html($this.html()).focus();
+	});
+});
 </script>
 <style type="text/css">
+textarea {
+resize: none;
+}
+.commentbox{
+position: relative;
+clear: both;
+font-size: 1em;
+}
+.commentbox.comment-body{
+display: none;
+}
+
+.commentbox.leave-comment-header{
+margin: 15px;
+font-size: 12px;
+font-weight: bold;
+color: rgb(87, 87, 87);
+text-transform: uppercase;
+letter-spacing: 1px;
+}
+.commentbox.comment-content{
+background-color: rgb(252, 253, 252);
+padding-top: 5px !important;
+padding-bottom: 15px !important;
+}
+
+.commentbox > .commentbox.comment-heading{
+border-radius: 2px;
+font-weight: bold;
+text-transform: uppercase;
+letter-spacing: 1px;
+}
+.commentbox-titleinput{
+margin-bottom: 10px;
+}
+.comment-toggleview{
+float: right;
+margin-top: -25px;
+}
+
+.commentbox-actionbar{
+padding-top: 5px;
+border-top: 1px solid rgb(227, 227, 227);
+clear: both;
+height: 18px;
+}
+.commentbox-likes-div{
+float: left;
+margin-top: 6px;
+}
+.commentbox-actions{
+float: right;
+}
 h1{
 font-size: 24px !important;
 }
@@ -39,6 +116,84 @@ The performance will take place on November 25th, but fear not because we'll let
 </div>
 <div class="snippet-author" style="float:left;"><small style="font-size: 0.8em; color: rgb(66,66,66);">by Olly Murs</small></div>
 <div class="snippet-time" style="width: 100%; text-align: right;"><small style="font-size: 0.8em; color: rgb(66,66,66);">since 19.10.13 // 00:53:00</small></div>
+<div class='commentbox well' style="padding-top: 15px;">
+<div class="commentbox comment-heading">Comment-Box</div>
+<button class="commentbox comment-toggleview btn btn-primary">Kommentare lesen</button>
+<div class="commentbox comment-body">
+<hr>
+<div class='commentbox comment'>
+	<div class='commentbox comment-author'>PunktSonstNichts</div>
+	<div class='commentbox comment-content well'>
+	<p class="commentbox comment-content-text">
+	Lorem Ipsum dolor sit amet, consquetetur
+	</p>
+		<div class='commentbox commentbox-actionbar'>
+			<div class="commentbox-likes-div">
+				<span class="label label-warning commentbox-likes">45 likes</span>
+			</div>
+			<div class="commentbox-actions">
+				<span class="label label-info comment-quote" data-target="commentbox-content-0">zitieren</span>
+				<span class="label label-success">like</span>
+				<span class="label label-danger">melden</span>
+			</div>
+		</div>
+	</div>
+</div>
+
+<hr>
+<div class='commentbox comment'>
+	<div class='commentbox comment-author'>PunktSonstNichts</div>
+	<div class='commentbox comment-content well'>
+	<p class="commentbox comment-content-text">
+	Lorem Ipsum dolor sit amet, consquetetur
+	</p>
+		<div class='commentbox commentbox-actionbar'>
+			<div class="commentbox-likes-div">
+				<span class="label label-warning commentbox-likes">45 likes</span>
+			</div>
+			<div class="commentbox-actions">
+				<span class="label label-info comment-quote" data-target="commentbox-content-0">zitieren</span>
+				<span class="label label-success">like</span>
+				<span class="label label-danger">melden</span>
+			</div>
+		</div>
+	</div>
+</div>
+
+<hr>
+<div class="commentbox leave-comment">
+
+<form method="post" class="form-horizontal" role="form">
+  <div class="form-group">
+	<div class="col-sm-2"></div>
+    <div class="col-sm-10">
+      <p class="form-control-static">Kommentiere zu <a href='#'>Upcoming Events</a></p>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="commentbox-title-0" class="col-sm-2 control-label">Titel</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control commentbox-titleinput" id="commentbox-title-0"  placeholder="Titel"/>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="commentbox-content-0" class="col-sm-2 control-label">Dein Kommentar</label>
+    <div class="col-sm-10">
+      <div contenteditable="true" id="commentbox-content-0" class="form-control" rows="3" maxRows="5" maxChars="256" wrap="virtual"></div>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-10">
+      <input type="submit" class="btn btn-info" value="Kommentiere!"/>
+    </div>
+  </div>
+
+</form>
+</div>
+</div>
+</div>
+
 </div>
 <div class="snippet" style="margin: 5px; display: block;">
 <div class="snippet-heading" style="color: rgb(255, 145, 0); height: 60px"><h1>Ein Offline-Test</h1></div>
@@ -48,6 +203,84 @@ Internet ist aus, klappt alles?</p>
 </div>
 <div class="snippet-author" style="float:left;"><small style="font-size: 0.8em; color: rgb(66,66,66);">by PunktSonstNichts</small></div>
 <div class="snippet-time" style="width: 100%; text-align: right;"><small style="font-size: 0.8em; color: rgb(66,66,66);">since 14.12.13 // 23:02:28</small></div>
+<div class='commentbox well' style="padding-top: 15px;">
+<div class="commentbox comment-heading">Comment-Box</div>
+<button class="commentbox comment-toggleview btn btn-primary">Kommentare lesen</button>
+<div class="commentbox comment-body">
+<hr>
+<div class='commentbox comment'>
+	<div class='commentbox comment-author'>PunktSonstNichts</div>
+	<div class='commentbox comment-content well'>
+	<p class="commentbox comment-content-text">
+	Lorem Ipsum dolor sit amet, consquetetur
+	</p>
+		<div class='commentbox commentbox-actionbar'>
+			<div class="commentbox-likes-div">
+				<span class="label label-warning commentbox-likes">45 likes</span>
+			</div>
+			<div class="commentbox-actions">
+				<span class="label label-info comment-quote" data-target="commentbox-content-0">zitieren</span>
+				<span class="label label-success">like</span>
+				<span class="label label-danger">melden</span>
+			</div>
+		</div>
+	</div>
+</div>
+
+<hr>
+<div class='commentbox comment'>
+	<div class='commentbox comment-author'>PunktSonstNichts</div>
+	<div class='commentbox comment-content well'>
+	<p class="commentbox comment-content-text">
+	Lorem Ipsum dolor sit amet, consquetetur
+	</p>
+		<div class='commentbox commentbox-actionbar'>
+			<div class="commentbox-likes-div">
+				<span class="label label-warning commentbox-likes">45 likes</span>
+			</div>
+			<div class="commentbox-actions">
+				<span class="label label-info comment-quote" data-target="commentbox-content-0">zitieren</span>
+				<span class="label label-success">like</span>
+				<span class="label label-danger">melden</span>
+			</div>
+		</div>
+	</div>
+</div>
+
+<hr>
+<div class="commentbox leave-comment">
+
+<form method="post" class="form-horizontal" role="form">
+  <div class="form-group">
+	<div class="col-sm-2"></div>
+    <div class="col-sm-10">
+      <p class="form-control-static">Kommentiere zu <a href='#'>Ein Offline-Test</a></p>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="commentbox-title-0" class="col-sm-2 control-label">Titel</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control commentbox-titleinput" id="commentbox-title-0"  placeholder="Titel"/>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="commentbox-content-0" class="col-sm-2 control-label">Dein Kommentar</label>
+    <div class="col-sm-10">
+      <div contenteditable="true" id="commentbox-content-0" class="form-control" rows="3" maxRows="5" maxChars="256" wrap="virtual"></div>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-10">
+      <input type="submit" class="btn btn-info" value="Kommentiere!"/>
+    </div>
+  </div>
+
+</form>
+</div>
+</div>
+</div>
+
 </div>
 <div class="snippet" style="margin: 5px; display: block;">
 <div class="snippet-heading" style="color: rgb(255, 145, 0); height: 60px"><h1>Ein Post von Rainer Zufall</h1></div>
@@ -57,6 +290,84 @@ krass :o</p>
 </div>
 <div class="snippet-author" style="float:left;"><small style="font-size: 0.8em; color: rgb(66,66,66);">by Rainer Zufall</small></div>
 <div class="snippet-time" style="width: 100%; text-align: right;"><small style="font-size: 0.8em; color: rgb(66,66,66);">since 24.12.13 // 00:24:47</small></div>
+<div class='commentbox well' style="padding-top: 15px;">
+<div class="commentbox comment-heading">Comment-Box</div>
+<button class="commentbox comment-toggleview btn btn-primary">Kommentare lesen</button>
+<div class="commentbox comment-body">
+<hr>
+<div class='commentbox comment'>
+	<div class='commentbox comment-author'>PunktSonstNichts</div>
+	<div class='commentbox comment-content well'>
+	<p class="commentbox comment-content-text">
+	Lorem Ipsum dolor sit amet, consquetetur
+	</p>
+		<div class='commentbox commentbox-actionbar'>
+			<div class="commentbox-likes-div">
+				<span class="label label-warning commentbox-likes">45 likes</span>
+			</div>
+			<div class="commentbox-actions">
+				<span class="label label-info comment-quote" data-target="commentbox-content-0">zitieren</span>
+				<span class="label label-success">like</span>
+				<span class="label label-danger">melden</span>
+			</div>
+		</div>
+	</div>
+</div>
+
+<hr>
+<div class='commentbox comment'>
+	<div class='commentbox comment-author'>PunktSonstNichts</div>
+	<div class='commentbox comment-content well'>
+	<p class="commentbox comment-content-text">
+	Lorem Ipsum dolor sit amet, consquetetur
+	</p>
+		<div class='commentbox commentbox-actionbar'>
+			<div class="commentbox-likes-div">
+				<span class="label label-warning commentbox-likes">45 likes</span>
+			</div>
+			<div class="commentbox-actions">
+				<span class="label label-info comment-quote" data-target="commentbox-content-0">zitieren</span>
+				<span class="label label-success">like</span>
+				<span class="label label-danger">melden</span>
+			</div>
+		</div>
+	</div>
+</div>
+
+<hr>
+<div class="commentbox leave-comment">
+
+<form method="post" class="form-horizontal" role="form">
+  <div class="form-group">
+	<div class="col-sm-2"></div>
+    <div class="col-sm-10">
+      <p class="form-control-static">Kommentiere zu <a href='#'>Ein Post von Rainer Zufall</a></p>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="commentbox-title-0" class="col-sm-2 control-label">Titel</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control commentbox-titleinput" id="commentbox-title-0"  placeholder="Titel"/>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="commentbox-content-0" class="col-sm-2 control-label">Dein Kommentar</label>
+    <div class="col-sm-10">
+      <div contenteditable="true" id="commentbox-content-0" class="form-control" rows="3" maxRows="5" maxChars="256" wrap="virtual"></div>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-10">
+      <input type="submit" class="btn btn-info" value="Kommentiere!"/>
+    </div>
+  </div>
+
+</form>
+</div>
+</div>
+</div>
+
 </div>
 <div class="snippet" style="margin: 5px; display: block;">
 <div class="snippet-heading" style="color: rgb(255, 145, 0); height: 60px"><h1>Ein laaaanger Text...</h1></div>
@@ -66,26 +377,88 @@ krass :o</p>
 </div>
 <div class="snippet-author" style="float:left;"><small style="font-size: 0.8em; color: rgb(66,66,66);">by PunktSonstNichts</small></div>
 <div class="snippet-time" style="width: 100%; text-align: right;"><small style="font-size: 0.8em; color: rgb(66,66,66);">since 24.12.13 // 23:03:10</small></div>
+<div class='commentbox well' style="padding-top: 15px;">
+<div class="commentbox comment-heading">Comment-Box</div>
+<button class="commentbox comment-toggleview btn btn-primary">Kommentare lesen</button>
+<div class="commentbox comment-body">
+<hr>
+<div class='commentbox comment'>
+	<div class='commentbox comment-author'>PunktSonstNichts</div>
+	<div class='commentbox comment-content well'>
+	<p class="commentbox comment-content-text">
+	Lorem Ipsum dolor sit amet, consquetetur
+	</p>
+		<div class='commentbox commentbox-actionbar'>
+			<div class="commentbox-likes-div">
+				<span class="label label-warning commentbox-likes">45 likes</span>
+			</div>
+			<div class="commentbox-actions">
+				<span class="label label-info comment-quote" data-target="commentbox-content-0">zitieren</span>
+				<span class="label label-success">like</span>
+				<span class="label label-danger">melden</span>
+			</div>
+		</div>
+	</div>
+</div>
+
+<hr>
+<div class='commentbox comment'>
+	<div class='commentbox comment-author'>PunktSonstNichts</div>
+	<div class='commentbox comment-content well'>
+	<p class="commentbox comment-content-text">
+	Lorem Ipsum dolor sit amet, consquetetur
+	</p>
+		<div class='commentbox commentbox-actionbar'>
+			<div class="commentbox-likes-div">
+				<span class="label label-warning commentbox-likes">45 likes</span>
+			</div>
+			<div class="commentbox-actions">
+				<span class="label label-info comment-quote" data-target="commentbox-content-0">zitieren</span>
+				<span class="label label-success">like</span>
+				<span class="label label-danger">melden</span>
+			</div>
+		</div>
+	</div>
+</div>
+
+<hr>
+<div class="commentbox leave-comment">
+
+<form method="post" class="form-horizontal" role="form">
+  <div class="form-group">
+	<div class="col-sm-2"></div>
+    <div class="col-sm-10">
+      <p class="form-control-static">Kommentiere zu <a href='#'>Ein laaaanger Text...</a></p>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="commentbox-title-0" class="col-sm-2 control-label">Titel</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control commentbox-titleinput" id="commentbox-title-0"  placeholder="Titel"/>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="commentbox-content-0" class="col-sm-2 control-label">Dein Kommentar</label>
+    <div class="col-sm-10">
+      <div contenteditable="true" id="commentbox-content-0" class="form-control" rows="3" maxRows="5" maxChars="256" wrap="virtual"></div>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-10">
+      <input type="submit" class="btn btn-info" value="Kommentiere!"/>
+    </div>
+  </div>
+
+</form>
+</div>
+</div>
+</div>
+
 </div>
 </div></div>
 	<div class="col-xs-6 col-sm-3 sidebar-offcanvas">
-		<div class="well" style="text-align: left;">
-			<h3 style="text-align: center;">Recommended</h3>
-			<p>CMS // Blog is the number 1 for good textes combinded with design: <a href="blog">Blog</a></p>
-			<p>Hakuna Matata; or the life of monkeys in natural habbits: <a href="blog">Life of Monkeys</a></p>
-		</div>
-		<div class="well" style="text-align: left;">
-			<h3 style="text-align: center;">Our Publisher</h3>
-			<p><a href="blog">PunktSonstNichts</a> | <span class="label label-success">admin</span></p>
-			<p><a href="blog">hermit</a> | <span class="label label-primary">content manager</span></p>
-			<p><a href="blog">Max M&uuml;ller</a> | <span class="label label-info">designer</span></p>
-		</div>
-		<div class="well" style="text-align: left;">
-			<h3 style="text-align: center;">CMS | Bootstrap</h3>
-			<p>Do you like that design? We have this and many other <b>for free</b>!</p>
-			<p><a class="btn btn-success btn-medium" href="http://templateworld123.funpic.de" target="_blank">Visit tdesk.com</a></p>
-		</div>
-	</div>
+		<div class="well" style="text-align: left;">	<h3 style="text-align: center;">Recommended</h3>	<p>CMS // Blog is the number 1 for good textes combinded with design: <a href="blog">Blog</a></p>	<p>Hakuna Matata; or the life of monkeys in natural habbits: <a href="blog">Life of Monkeys</a></p></div><div class="well" style="text-align: left;">	<h3 style="text-align: center;">Our Publisher</h3>		<p>		<a href="http://localhost/CMS/user/PunktSonstNichts">PunktSonstNichts</a> | <span class="label label-danger">admin</span>		</p>		<p>		<a href="http://localhost/CMS/user/Rainer Zufall">Rainer Zufall</a> | <span class="label label-success">designer</span>		</p>		<p>		<a href="http://localhost/CMS/user/snowman123">snowman123</a> | <span class="label label-primary">content manager</span>		</p>		<p>		<a href="http://localhost/CMS/user/thehacker">thehacker</a> | <span class="label label-primary">content manager</span>		</p>	</div><div class="well" style="text-align: left;">	<h3 style="text-align: center;">CMS | Bootstrap</h3>	<p>Do you like that bootstrap theme? We have this and many other <b>for free</b>!</p>	<p><a class="btn btn-success btn-medium" href="http://templateworld123.funpic.de" target="_blank">Visit tdesk.com</a></p></div>	</div>
 </div>
 <hr>
 </div>

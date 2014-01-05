@@ -65,7 +65,7 @@ $count++;
   <div class="form-group">
     <label for="<?php echo $contentinput_id; ?>" class="col-sm-2 control-label"><?php echo _t("content", $widget_path, $cms_type); ?></label>
     <div class="col-sm-10">
-      <textarea id="<?php echo $contentinput_id; ?>" class="form-control" rows="3" maxRows="5" maxChars="256" wrap="virtual"></textarea>
+      <div contenteditable="true" id="<?php echo $contentinput_id; ?>" class="form-control" rows="3" maxRows="5" maxChars="256" wrap="virtual"></div>
     </div>
   </div>
   <div class="form-group">

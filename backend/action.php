@@ -50,7 +50,7 @@ function run_action($actionname, $transfered_params = array()){
 					$params[] = $parameter;
 				}
 			}
-			$return_arr[] = call_user_func_array($action["name"], $params);
+			$return_arr[$actionname] = call_user_func_array($action["name"], $params);
 		}
 	}
 	return $return_arr;

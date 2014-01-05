@@ -46,8 +46,20 @@ include_once(dirname(__file__)."/backend_UI.php");
 				<span><?php echo $user["Name"]; ?></span>
 			</div>
 			<div class="element-content">
-				<span class="user-label label-role"><b><?php echo _t("role"); ?></b></span></label><span style="clear: both;" class="user-content user-role"><?php echo $user["role"]; ?></span></br>
-				<span class="user-label label-description"><?php echo _t("description"); ?></span></label><span style="clear: both;" class="user-content user-description"><?php echo $user["description"]; ?></span>
+				<table>
+					<thead>
+						<tr>
+							<th tabindex="0" rowspan="1" colspan="1" ><b><?php echo _t("role"); ?></b></th>
+							<th tabindex="0" rowspan="1" colspan="1" ><?php echo _t("sites"); ?></th>
+						</tr>
+					</thead> 
+					<tbody>
+						<tr>
+							<td tabindex="0" rowspan="1" colspan="1" ><?php echo $user["role"]; ?></td>
+							<td tabindex="0" rowspan="1" colspan="1" ><?php echo $user["description"]; ?></td>
+						</tr>
+					</tbody>
+				</table>
 			</div>
 		</div>
 		<?php

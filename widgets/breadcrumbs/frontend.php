@@ -1,9 +1,13 @@
 <?php
+if(!ROOT){
+exit;
+}
+
 #init of the widget
 $widget_path = "breadcrumbs/";
 $cms_type = "widget";
 
-global $breadcrumb_already_called;
+global $breadcrumb_already_called; // Additional, can removed (hopefully)
 ?>
 <ol class="breadcrumb" style="margin-top: 5px; margin-bottom: 5px; margin-left: 5px;">
 <?php
@@ -20,7 +24,7 @@ global $breadcrumb_already_called;
 			array_push($breadcumb_elements, "<li><a href='".ROOT_URL."$link'>$name</a></li>");
 		}
 		if($_GET["get"] != ""){
-			array_push($breadcumb_elements, "<li title='".sprintf(_t("this is a function, to remove it click on (%s)", $widget_path, $cms_type), $name)."'><a href='".ROOT_URL.$_GET["site"]."/".$_GET["get"]."'>".$_GET["get"]."</a></li>");
+			array_push($breadcumb_elements, "<li title='".sprintf(_t("this is a function, to remove it click on (%s)", $widget_path, $cms_type), $name)."'><a href='".ROOT_URL.$name."/".$_GET["get"]."'>".$_GET["get"]."</a></li>");
 		}
 		if($_GET["mode"] != ""){
 			array_push($breadcumb_elements, "<li title='".sprintf(_t("this is a function, to remove it click on (%s)", $widget_path, $cms_type), $_GET["get"])."'>".$_GET["mode"]."</li>");

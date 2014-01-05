@@ -38,22 +38,7 @@ content: "" !important;
 <div class="row row-offcanvas row-offcanvas-right active">
   <div class="col-xs-12 col-sm-9"><?php $body->main(); ?></div>
 	<div class="col-xs-6 col-sm-3 sidebar-offcanvas">
-		<div class="well" style="text-align: left;">
-			<h3 style="text-align: center;">Recommended</h3>
-			<p>CMS // Blog is the number 1 for good textes combinded with design: <a href="blog">Blog</a></p>
-			<p>Hakuna Matata; or the life of monkeys in natural habbits: <a href="blog">Life of Monkeys</a></p>
-		</div>
-		<div class="well" style="text-align: left;">
-			<h3 style="text-align: center;">Our Publisher</h3>
-			<p><a href="blog">PunktSonstNichts</a> | <span class="label label-success">admin</span></p>
-			<p><a href="blog">hermit</a> | <span class="label label-primary">content manager</span></p>
-			<p><a href="blog">Max M&uuml;ller</a> | <span class="label label-info">designer</span></p>
-		</div>
-		<div class="well" style="text-align: left;">
-			<h3 style="text-align: center;">CMS | Bootstrap</h3>
-			<p>Do you like that design? We have this and many other <b>for free</b>!</p>
-			<p><a class="btn btn-success btn-medium" href="http://templateworld123.funpic.de" target="_blank">Visit tdesk.com</a></p>
-		</div>
+		<?php $body->sidebar("sidebar");  ?>
 	</div>
 </div>
 <hr>

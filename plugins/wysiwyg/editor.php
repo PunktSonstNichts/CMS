@@ -1,3 +1,8 @@
+<?php
+if(!ROOT){
+exit;
+}
+?>
 <link rel="stylesheet" href="<?php echo ROOT_URL;?>plugins/wysiwyg/css/main.css" type="text/css"/>
 <script src="<?php echo ROOT_URL;?>plugins/wysiwyg/js/wysiwyg.js"></script>
 <div class="wysiwygeditor-editor">

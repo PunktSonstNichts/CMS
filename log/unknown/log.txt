@@ -5512,3 +5512,268 @@
 [1388862134][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
 [1388862134][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
 [1388862134][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388913711][lang] plugin "%s" is not valid. Please re-install this plugin, including the init.php.</br> could not been found in lang databases /  -  
+[1388913712][lang] plugin "%s" is not valid. Please re-install this plugin, including the init.php.</br> could not been found in lang databases /  -  
+[1388913718][lang] recommended could not been found in lang databases /  -  
+[1388913740][lang] plugin "%s" is not valid. Please re-install this plugin, including the init.php.</br> could not been found in lang databases /  -  
+[1388913740][lang] plugin "%s" is not valid. Please re-install this plugin, including the init.php.</br> could not been found in lang databases /  -  
+[1388913746][lang] recommended could not been found in lang databases /  -  
+[1388913761][lang] plugin "%s" is not valid. Please re-install this plugin, including the init.php.</br> could not been found in lang databases /  -  
+[1388913761][lang] plugin "%s" is not valid. Please re-install this plugin, including the init.php.</br> could not been found in lang databases /  -  
+[1388913767][lang] recommended could not been found in lang databases /  -  
+[1388913788][lang] plugin "%s" is not valid. Please re-install this plugin, including the init.php.</br> could not been found in lang databases /  -  
+[1388913788][lang] plugin "%s" is not valid. Please re-install this plugin, including the init.php.</br> could not been found in lang databases /  -  
+[1388913794][lang] recommended could not been found in lang databases /  -  
+[1388913794][lang] Read article on %s could not been found in lang databases /  -  
+[1388913794][lang] Read article on %s could not been found in lang databases /  -  
+[1388913794][lang] hot could not been found in lang databases /  -  
+[1388913794][lang] Read article on %s could not been found in lang databases /  -  
+[1388913794][lang] hot could not been found in lang databases /  -  
+[1388913794][lang] Read article on %s could not been found in lang databases /  -  
+[1388913794][lang] hot could not been found in lang databases /  -  
+[1388913794][lang] Read article on %s could not been found in lang databases /  -  
+[1388913801][lang] plugin "%s" is not valid. Please re-install this plugin, including the init.php.</br> could not been found in lang databases /  -  
+[1388913801][lang] plugin "%s" is not valid. Please re-install this plugin, including the init.php.</br> could not been found in lang databases /  -  
+[1388913807][lang] recommended could not been found in lang databases /  -  
+[1388913807][lang] Read article on %s could not been found in lang databases /  -  
+[1388913807][lang] Read article on %s could not been found in lang databases /  -  
+[1388913807][lang] hot could not been found in lang databases /  -  
+[1388913807][lang] Read article on %s could not been found in lang databases /  -  
+[1388913807][lang] hot could not been found in lang databases /  -  
+[1388913807][lang] Read article on %s could not been found in lang databases /  -  
+[1388913807][lang] hot could not been found in lang databases /  -  
+[1388913807][lang] Read article on %s could not been found in lang databases /  -  
+[1388914977][lang] plugin "%s" is not valid. Please re-install this plugin, including the init.php.</br> could not been found in lang databases /  -  
+[1388914977][lang] plugin "%s" is not valid. Please re-install this plugin, including the init.php.</br> could not been found in lang databases /  -  
+[1388914983][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388914983][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388914983][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388914983][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388914983][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388914983][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388914983][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388914983][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388915034][lang] plugin "%s" is not valid. Please re-install this plugin, including the init.php.</br> could not been found in lang databases /  -  
+[1388915034][lang] plugin "%s" is not valid. Please re-install this plugin, including the init.php.</br> could not been found in lang databases /  -  
+[1388915040][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388915040][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388915040][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388915041][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388915041][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388915041][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388915041][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388915041][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388920914][lang] plugin "%s" is not valid. Please re-install this plugin, including the init.php.</br> could not been found in lang databases /  -  
+[1388920914][lang] plugin "%s" is not valid. Please re-install this plugin, including the init.php.</br> could not been found in lang databases /  -  
+[1388920920][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388920920][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388920920][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388920920][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388920920][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388920920][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388920921][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388920921][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921059][lang] plugin "%s" is not valid. Please re-install this plugin, including the init.php.</br> could not been found in lang databases /  -  
+[1388921059][lang] plugin "%s" is not valid. Please re-install this plugin, including the init.php.</br> could not been found in lang databases /  -  
+[1388921065][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921065][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921065][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921065][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921065][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921065][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921065][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921065][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921089][lang] plugin "%s" is not valid. Please re-install this plugin, including the init.php.</br> could not been found in lang databases /  -  
+[1388921089][lang] plugin "%s" is not valid. Please re-install this plugin, including the init.php.</br> could not been found in lang databases /  -  
+[1388921095][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921095][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921096][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921096][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921096][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921096][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921096][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921096][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921109][lang] plugin "%s" is not valid. Please re-install this plugin, including the init.php.</br> could not been found in lang databases /  -  
+[1388921109][lang] plugin "%s" is not valid. Please re-install this plugin, including the init.php.</br> could not been found in lang databases /  -  
+[1388921115][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921115][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921115][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921116][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921116][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921116][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921116][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921116][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921211][lang] plugin "%s" is not valid. Please re-install this plugin, including the init.php.</br> could not been found in lang databases /  -  
+[1388921211][lang] plugin "%s" is not valid. Please re-install this plugin, including the init.php.</br> could not been found in lang databases /  -  
+[1388921218][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921218][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921218][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921218][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921218][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921218][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921218][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921218][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921244][lang] plugin "%s" is not valid. Please re-install this plugin, including the init.php.</br> could not been found in lang databases /  -  
+[1388921244][lang] plugin "%s" is not valid. Please re-install this plugin, including the init.php.</br> could not been found in lang databases /  -  
+[1388921250][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921250][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921250][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921251][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921251][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921251][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921251][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921251][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921267][lang] plugin "%s" is not valid. Please re-install this plugin, including the init.php.</br> could not been found in lang databases /  -  
+[1388921267][lang] plugin "%s" is not valid. Please re-install this plugin, including the init.php.</br> could not been found in lang databases /  -  
+[1388921273][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921273][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921273][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921273][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921273][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921273][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921273][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921273][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921304][lang] plugin "%s" is not valid. Please re-install this plugin, including the init.php.</br> could not been found in lang databases /  -  
+[1388921304][lang] plugin "%s" is not valid. Please re-install this plugin, including the init.php.</br> could not been found in lang databases /  -  
+[1388921310][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921310][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921310][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921310][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921310][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921310][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921310][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921310][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921385][lang] plugin "%s" is not valid. Please re-install this plugin, including the init.php.</br> could not been found in lang databases /  -  
+[1388921385][lang] plugin "%s" is not valid. Please re-install this plugin, including the init.php.</br> could not been found in lang databases /  -  
+[1388921391][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921391][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921392][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921392][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921392][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921392][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921392][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921392][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921472][lang] plugin "%s" is not valid. Please re-install this plugin, including the init.php.</br> could not been found in lang databases /  -  
+[1388921472][lang] plugin "%s" is not valid. Please re-install this plugin, including the init.php.</br> could not been found in lang databases /  -  
+[1388921479][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921479][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921479][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921479][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921479][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921479][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921479][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921479][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921508][lang] plugin "%s" is not valid. Please re-install this plugin, including the init.php.</br> could not been found in lang databases /  -  
+[1388921508][lang] plugin "%s" is not valid. Please re-install this plugin, including the init.php.</br> could not been found in lang databases /  -  
+[1388921514][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921514][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921514][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921514][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921514][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921514][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921515][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921515][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921515][lang] admin could not been found in lang databases /  -  
+[1388921612][lang] plugin "%s" is not valid. Please re-install this plugin, including the init.php.</br> could not been found in lang databases /  -  
+[1388921612][lang] plugin "%s" is not valid. Please re-install this plugin, including the init.php.</br> could not been found in lang databases /  -  
+[1388921618][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921618][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921618][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921618][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921618][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921618][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921618][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921618][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921618][lang] admin could not been found in lang databases /  -  
+[1388921618][lang] designer could not been found in lang databases /  -  
+[1388921629][lang] plugin "%s" is not valid. Please re-install this plugin, including the init.php.</br> could not been found in lang databases /  -  
+[1388921629][lang] plugin "%s" is not valid. Please re-install this plugin, including the init.php.</br> could not been found in lang databases /  -  
+[1388921635][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921635][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921635][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921635][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921635][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921635][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921635][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921635][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921635][lang] admin could not been found in lang databases /  -  
+[1388921635][lang] designer could not been found in lang databases /  -  
+[1388921824][lang] plugin "%s" is not valid. Please re-install this plugin, including the init.php.</br> could not been found in lang databases /  -  
+[1388921824][lang] plugin "%s" is not valid. Please re-install this plugin, including the init.php.</br> could not been found in lang databases /  -  
+[1388921831][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921831][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921831][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921831][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921831][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921831][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921831][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921831][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921832][lang] admin could not been found in lang databases /  -  
+[1388921832][lang] designer could not been found in lang databases /  -  
+[1388921832][lang] content manager could not been found in lang databases /  -  
+[1388921851][lang] plugin "%s" is not valid. Please re-install this plugin, including the init.php.</br> could not been found in lang databases /  -  
+[1388921851][lang] plugin "%s" is not valid. Please re-install this plugin, including the init.php.</br> could not been found in lang databases /  -  
+[1388921857][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921858][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921858][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921858][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921858][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921858][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921858][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921858][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921858][lang] admin could not been found in lang databases /  -  
+[1388921858][lang] designer could not been found in lang databases /  -  
+[1388921858][lang] content manager could not been found in lang databases /  -  
+[1388921974][lang] plugin "%s" is not valid. Please re-install this plugin, including the init.php.</br> could not been found in lang databases /  -  
+[1388921974][lang] plugin "%s" is not valid. Please re-install this plugin, including the init.php.</br> could not been found in lang databases /  -  
+[1388921980][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921980][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921980][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921981][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921981][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921981][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921981][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921981][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388921981][lang] admin could not been found in lang databases /  -  
+[1388921981][lang] designer could not been found in lang databases /  -  
+[1388921981][lang] content manager could not been found in lang databases /  -  
+[1388922918][lang] plugin "%s" is not valid. Please re-install this plugin, including the init.php.</br> could not been found in lang databases /  -  
+[1388922918][lang] plugin "%s" is not valid. Please re-install this plugin, including the init.php.</br> could not been found in lang databases /  -  
+[1388922925][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388922925][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388922925][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388922925][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388922925][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388922925][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388922925][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388922925][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388922925][lang] admin could not been found in lang databases /  -  
+[1388922925][lang] designer could not been found in lang databases /  -  
+[1388922925][lang] content manager could not been found in lang databases /  -  
+[1388931721][lang] plugin "%s" is not valid. Please re-install this plugin, including the init.php.</br> could not been found in lang databases /  -  
+[1388931722][lang] plugin "%s" is not valid. Please re-install this plugin, including the init.php.</br> could not been found in lang databases /  -  
+[1388931728][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388931728][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388931728][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388931728][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388931728][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388931728][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388931728][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388931728][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388931729][lang] admin could not been found in lang databases /  -  
+[1388931729][lang] designer could not been found in lang databases /  -  
+[1388931729][lang] content manager could not been found in lang databases /  -  
+[1388932038][lang] plugin "%s" is not valid. Please re-install this plugin, including the init.php.</br> could not been found in lang databases /  -  
+[1388932038][lang] plugin "%s" is not valid. Please re-install this plugin, including the init.php.</br> could not been found in lang databases /  -  
+[1388932044][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388932045][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388932045][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388932045][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388932045][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388932045][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388932045][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388932045][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1388932045][lang] admin could not been found in lang databases /  -  
+[1388932045][lang] designer could not been found in lang databases /  -  
+[1388932045][lang] content manager could not been found in lang databases /  -  
+[1388932045][lang] content manager could not been found in lang databases /  -  

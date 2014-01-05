@@ -1,3 +1,10 @@
+<?php
+//user_auth_check
+if(!isset($_SESSION["user"])){
+	echo "please log in";
+	exit;
+}
+?>
 <link rel="stylesheet" href="scripte/css/main.css" type="text/css"/>
 <link rel="stylesheet" href="scripte/css/blue.css" type="text/css"/>
 

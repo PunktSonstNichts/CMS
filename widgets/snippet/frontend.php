@@ -15,15 +15,15 @@ if($textsnippet != ""){
 	<?php
 	if($textsnippet["label"] == "new"){
 	?>
-	<span class="label label-primary">New</span>
+	<span class="label label-primary"><?php _t("new"); ?></span>
 	<?php
 	}elseif($textsnippet["label"] == "recommended"){
 	?>
-	<span class="label label-success">Recommended</span>
+	<span class="label label-success"><?php _t("recommended"); ?></span>
 	<?php
 	}elseif($textsnippet["label"] == "hot"){
 	?>
-	<span class="label label-danger">hot</span>
+	<span class="label label-danger"><?php _t("hot"); ?></span>
 	<?php
 	}
 	?>
@@ -36,7 +36,7 @@ echo $textsnippet["content"];
 ?>
 ...
 </p>
-<div class="snippet-seemore btn btn-link"><a href="<?php echo $textsnippet["affect_pageNAME"]; ?>">Read article on <?php echo $textsnippet["affect_pageNAME"]; ?></a></div>
+<div class="snippet-seemore btn btn-link"><a href="<?php echo ROOT_URL.$textsnippet["affect_pageNAME"]; ?>"><?php echo sprintf(_t("Read article on %s"), $textsnippet["affect_pageNAME"]); ?></a></div>
 </div>
 </div>
 <?php

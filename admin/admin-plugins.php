@@ -2,7 +2,6 @@
 session_start();
 include("../loader.php");
 
-
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="EN" lang="EN" dir="ltr">
@@ -51,7 +50,7 @@ include_once(dirname(__file__)."/backend_UI.php");
 			<?php
 			}
 			?>
-			<span class="label-danger"><?php echo _t('remove it'); ?></span> | <span class="plugin_enable"><?php echo ($plugin_enabled == true) ? _t("disable plugin") : _t("enable plugin"); ?></span></small>
+			<span class="label-danger"><?php echo _t('remove it'); ?></span> | <a href="plugins-enable.php?plugin=<?php echo $entry;?>"><span class="plugin_enable"><?php echo ($plugin_enabled == true) ? _t("disable plugin") : _t("enable plugin"); ?></span></a></small>
 		</td>
 		<td>
 		<?php

@@ -65,6 +65,7 @@ VALUES ( NULL ,  '".$_SERVER['REMOTE_ADDR']."',  '$browser',  '$useragent',  '$c
 $usertracking->result($query);
 unset($usertracking);
 //start website caching if const is true
+run_action("before-cache");
 if(CACHE == true){
 $cache = new cache($actual_site, 1024);
 }
