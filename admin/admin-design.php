@@ -7,7 +7,7 @@ include("../loader.php");
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="EN" lang="EN" dir="ltr">
 <head profile="http://gmpg.org/xfn/11">
 <meta charset="utf-8">
-<title><?php echo sprintf(_t("%s > backend"),  _t("plugins")); ?></title>
+<title><?php echo sprintf(_t("%s > backend"),  _t("designs")); ?></title>
 </head>
 <body>
 <?php
@@ -16,13 +16,13 @@ include_once(dirname(__file__)."/backend_UI.php");
 <div id="contentframe">
 <div class="element" id="general_setting" style="float: none;">
 <div class="element-heading">
-<span><?php echo _t("plugins"); ?></span>
+<span><?php echo _t("designs"); ?></span>
 </div>
 <div class="element-content">
 	<table>
 	<thead>
 		<tr>
-			<th tabindex="0" rowspan="1" colspan="1" style="width: 350px;"><?php echo _t("plugin"); ?></th>
+			<th tabindex="0" rowspan="1" colspan="1" style="width: 350px;"><?php echo _t("template"); ?></th>
 			<th tabindex="0" rowspan="1" colspan="1" ><?php echo _t("description"); ?></th>
 		</tr>
 	</thead> 
@@ -30,7 +30,7 @@ include_once(dirname(__file__)."/backend_UI.php");
 	<?php
 	$old_chdir = getcwd();
 	chdir(SERVER_DIR);
-	if($handle = opendir("plugins/")) {
+	if($handle = opendir("templates/")) {
 	while (false !== ($entry = readdir($handle))) {
 		if($entry != "." && $entry != "..") {
 			if(file_exists("plugins/".$entry."/init.php")){

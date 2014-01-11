@@ -1,5 +1,8 @@
 <?php
 if(!ROOT){ exit; }
+
+if(can_current_user("view_statistics")){
+
 $user_recentsql = new mysql();
 $user_recentresult = $user_recentsql->query("SELECT COUNT(*) AS User_all, (SELECT COUNT(*) FROM `".$dbprae."client_demograohy` WHERE 'accesstimestamp' >= '".gmdate("Y-m-d H:i:s", time() - (30 * 60))."' LIMIT 0 , 3) AS User_recent FROM  `".$dbprae."client_demograohy` WHERE 'accesstimestamp' >= '".gmdate("Y-m-d H:i:s", time() - (24 * 60 * 60))."' LIMIT 0 , 3;");
 while($user_recent[] = $user_recentsql->result($user_recentresult, "assoc"));
@@ -16,15 +19,36 @@ while($most_used_referrer[] = $referrersql->result($referrerresult, "assoc"));
 $user_development = $user_recent[0]["User_all"] / 24; //BUG
 
 
-$percent_first_browser = round(($most_used_browser[0]["BrowserNum"] / $most_used_browser[0]["AllBrowser"]) * 100);
-$percent_sec_browser = round(($most_used_browser[1]["BrowserNum"] / $most_used_browser[1]["AllBrowser"]) * 100);
+if($most_used_browser[0]["AllBrowser"] == 0){
+	$percent_first_browser = 0;
+}else{
+	$percent_first_browser = round(($most_used_browser[0]["BrowserNum"] / $most_used_browser[0]["AllBrowser"]) * 100);
+}
 
-$percent_first_referrer = round(($most_used_referrer[0]["ReferrerNum"] / $most_used_referrer[0]["AllReferrer"]) * 100);
-$percent_sec_referrer = round(($most_used_referrer[1]["ReferrerNum"] / $most_used_referrer[1]["AllReferrer"]) * 100);
+if($most_used_browser[1]["AllBrowser"] == 0){
+	$percent_sec_browser = 0;
+}else{
+	$percent_sec_browser = round(($most_used_browser[1]["BrowserNum"] / $most_used_browser[1]["AllBrowser"]) * 100);
+}
+
+
+if($most_used_referrer[0]["AllReferrer"] == 0){
+	$percent_first_referrer = 0;
+}else{
+	$percent_first_referrer = round(($most_used_referrer[0]["ReferrerNum"] / $most_used_referrer[0]["AllReferrer"]) * 100);
+}
+
+if($most_used_referrer[1]["AllReferrer"] == 0){
+	$percent_sec_referrer = 0;
+}else{
+	$percent_sec_referrer = round(($most_used_referrer[1]["ReferrerNum"] / $most_used_referrer[1]["AllReferrer"]) * 100);
+}
+
+
 ?>
-	<div class="element" id="users" style="width: 124px; height: 120px;">
+	<div class="element" id="visitors" style="width: 124px; height: 120px;">
 		<div class="element-heading">
-			<span><?php echo _t("users"); ?></span>
+			<span><?php echo _t("visitor"); ?></span>
 		</div>
 		<div class="element-content">
 			<div class="center main-statistic">
@@ -37,7 +61,7 @@ $percent_sec_referrer = round(($most_used_referrer[1]["ReferrerNum"] / $most_use
 			</div>
 		</div>
 	</div>
-	<div class="element" id="users" style="width: 124px; height: 120px;">
+	<div class="element" id=""browsers"" style="width: 124px; height: 120px;">
 		<div class="element-heading">
 			<span><?php echo _t("browsers"); ?></span>
 		</div>
@@ -81,3 +105,6 @@ $percent_sec_referrer = round(($most_used_referrer[1]["ReferrerNum"] / $most_use
 			</div>
 		</div>
 	</div>
+<?php
+}
+?>

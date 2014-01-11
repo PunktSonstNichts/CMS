@@ -5777,3 +5777,275 @@
 [1388932045][lang] designer could not been found in lang databases /  -  
 [1388932045][lang] content manager could not been found in lang databases /  -  
 [1388932045][lang] content manager could not been found in lang databases /  -  
+[1389078825][lang] plugin "%s" is not valid. Please re-install this plugin, including the init.php.</br> could not been found in lang databases /  -  
+[1389078826][lang] plugin "%s" is not valid. Please re-install this plugin, including the init.php.</br> could not been found in lang databases /  -  
+[1389078826][lang] plugin "%s" is not valid. Please re-install this plugin, including the init.php.</br> could not been found in lang databases /  -  
+[1389078833][lang] admin could not been found in lang databases /  -  
+[1389078833][lang] designer could not been found in lang databases /  -  
+[1389078833][lang] content manager could not been found in lang databases /  -  
+[1389078833][lang] content manager could not been found in lang databases /  -  
+[1389078879][lang] plugin "%s" is not valid. Please re-install this plugin, including the init.php.</br> could not been found in lang databases /  -  
+[1389078879][lang] plugin "%s" is not valid. Please re-install this plugin, including the init.php.</br> could not been found in lang databases /  -  
+[1389078885][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389078885][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389078885][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389078885][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389078885][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389078885][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389078885][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389078885][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389078885][lang] admin could not been found in lang databases /  -  
+[1389078885][lang] designer could not been found in lang databases /  -  
+[1389078885][lang] content manager could not been found in lang databases /  -  
+[1389078885][lang] content manager could not been found in lang databases /  -  
+[1389078992][lang] plugin "%s" is not valid. Please re-install this plugin, including the init.php.</br> could not been found in lang databases /  -  
+[1389078992][lang] plugin "%s" is not valid. Please re-install this plugin, including the init.php.</br> could not been found in lang databases /  -  
+[1389078999][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389078999][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389078999][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389078999][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389078999][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389078999][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389078999][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389078999][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389078999][lang] admin could not been found in lang databases /  -  
+[1389078999][lang] designer could not been found in lang databases /  -  
+[1389078999][lang] content manager could not been found in lang databases /  -  
+[1389078999][lang] content manager could not been found in lang databases /  -  
+[1389079052][lang] plugin "%s" is not valid. Please re-install this plugin, including the init.php. could not been found in lang databases /  -  
+[1389079052][lang] plugin "%s" is not valid. Please re-install this plugin, including the init.php. could not been found in lang databases /  -  
+[1389079059][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389079059][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389079059][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389079059][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389079059][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389079059][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389079059][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389079059][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389079059][lang] admin could not been found in lang databases /  -  
+[1389079059][lang] designer could not been found in lang databases /  -  
+[1389079059][lang] content manager could not been found in lang databases /  -  
+[1389079059][lang] content manager could not been found in lang databases /  -  
+[1389079078][lang] plugin "%s" is not valid. Please re-install this plugin, including the init.php. could not been found in lang databases /  -  
+[1389079078][lang] plugin "%s" is not valid. Please re-install this plugin, including the init.php. could not been found in lang databases /  -  
+[1389079084][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389079084][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389079084][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389079084][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389079084][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389079084][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389079084][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389079084][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389079084][lang] admin could not been found in lang databases /  -  
+[1389079084][lang] designer could not been found in lang databases /  -  
+[1389079084][lang] content manager could not been found in lang databases /  -  
+[1389079084][lang] content manager could not been found in lang databases /  -  
+[1389079134][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389079134][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389079134][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389079134][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389079134][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389079135][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389079135][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389079135][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389079135][lang] admin could not been found in lang databases /  -  
+[1389079135][lang] designer could not been found in lang databases /  -  
+[1389079135][lang] content manager could not been found in lang databases /  -  
+[1389079135][lang] content manager could not been found in lang databases /  -  
+[1389079175][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389079175][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389079175][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389079175][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389079175][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389079175][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389079175][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389079175][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389079175][lang] admin could not been found in lang databases /  -  
+[1389079175][lang] designer could not been found in lang databases /  -  
+[1389079175][lang] content manager could not been found in lang databases /  -  
+[1389079175][lang] content manager could not been found in lang databases /  -  
+[1389079196][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389079196][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389079196][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389079196][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389079196][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389079196][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389079196][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389079196][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389079197][lang] admin could not been found in lang databases /  -  
+[1389079197][lang] designer could not been found in lang databases /  -  
+[1389079197][lang] content manager could not been found in lang databases /  -  
+[1389079197][lang] content manager could not been found in lang databases /  -  
+[1389209683][lang] recommended could not been found in lang databases /  -  
+[1389209684][lang] Read article on %s could not been found in lang databases /  -  
+[1389209684][lang] Read article on %s could not been found in lang databases /  -  
+[1389209684][lang] hot could not been found in lang databases /  -  
+[1389209684][lang] Read article on %s could not been found in lang databases /  -  
+[1389209684][lang] hot could not been found in lang databases /  -  
+[1389209684][lang] Read article on %s could not been found in lang databases /  -  
+[1389209684][lang] hot could not been found in lang databases /  -  
+[1389209684][lang] Read article on %s could not been found in lang databases /  -  
+[1389209684][lang] hot could not been found in lang databases /  -  
+[1389209684][lang] Read article on %s could not been found in lang databases /  -  
+[1389209684][lang] hot could not been found in lang databases /  -  
+[1389209684][lang] Read article on %s could not been found in lang databases /  -  
+[1389209684][lang] hot could not been found in lang databases /  -  
+[1389209684][lang] Read article on %s could not been found in lang databases /  -  
+[1389209684][lang] hot could not been found in lang databases /  -  
+[1389209684][lang] Read article on %s could not been found in lang databases /  -  
+[1389209684][lang] hot could not been found in lang databases /  -  
+[1389209684][lang] Read article on %s could not been found in lang databases /  -  
+[1389209722][lang] recommended could not been found in lang databases /  -  
+[1389209722][lang] Read article on %s could not been found in lang databases /  -  
+[1389209722][lang] Read article on %s could not been found in lang databases /  -  
+[1389209722][lang] hot could not been found in lang databases /  -  
+[1389209723][lang] Read article on %s could not been found in lang databases /  -  
+[1389209723][lang] hot could not been found in lang databases /  -  
+[1389209723][lang] Read article on %s could not been found in lang databases /  -  
+[1389209723][lang] hot could not been found in lang databases /  -  
+[1389209723][lang] Read article on %s could not been found in lang databases /  -  
+[1389209723][lang] hot could not been found in lang databases /  -  
+[1389209723][lang] Read article on %s could not been found in lang databases /  -  
+[1389209723][lang] hot could not been found in lang databases /  -  
+[1389209723][lang] Read article on %s could not been found in lang databases /  -  
+[1389209723][lang] hot could not been found in lang databases /  -  
+[1389209723][lang] Read article on %s could not been found in lang databases /  -  
+[1389209723][lang] hot could not been found in lang databases /  -  
+[1389209723][lang] Read article on %s could not been found in lang databases /  -  
+[1389209723][lang] hot could not been found in lang databases /  -  
+[1389209723][lang] Read article on %s could not been found in lang databases /  -  
+[1389209737][lang] recommended could not been found in lang databases /  -  
+[1389209737][lang] Read article on %s could not been found in lang databases /  -  
+[1389209737][lang] Read article on %s could not been found in lang databases /  -  
+[1389209737][lang] hot could not been found in lang databases /  -  
+[1389209737][lang] Read article on %s could not been found in lang databases /  -  
+[1389209737][lang] hot could not been found in lang databases /  -  
+[1389209737][lang] Read article on %s could not been found in lang databases /  -  
+[1389209737][lang] hot could not been found in lang databases /  -  
+[1389209737][lang] Read article on %s could not been found in lang databases /  -  
+[1389209737][lang] hot could not been found in lang databases /  -  
+[1389209737][lang] Read article on %s could not been found in lang databases /  -  
+[1389209737][lang] hot could not been found in lang databases /  -  
+[1389209737][lang] Read article on %s could not been found in lang databases /  -  
+[1389209737][lang] hot could not been found in lang databases /  -  
+[1389209737][lang] Read article on %s could not been found in lang databases /  -  
+[1389209737][lang] hot could not been found in lang databases /  -  
+[1389209737][lang] Read article on %s could not been found in lang databases /  -  
+[1389209737][lang] hot could not been found in lang databases /  -  
+[1389209737][lang] Read article on %s could not been found in lang databases /  -  
+[1389209782][lang] recommended could not been found in lang databases /  -  
+[1389209782][lang] Read article on %s could not been found in lang databases /  -  
+[1389209782][lang] Read article on %s could not been found in lang databases /  -  
+[1389209782][lang] hot could not been found in lang databases /  -  
+[1389209782][lang] Read article on %s could not been found in lang databases /  -  
+[1389209782][lang] hot could not been found in lang databases /  -  
+[1389209782][lang] Read article on %s could not been found in lang databases /  -  
+[1389209782][lang] hot could not been found in lang databases /  -  
+[1389209782][lang] Read article on %s could not been found in lang databases /  -  
+[1389209782][lang] hot could not been found in lang databases /  -  
+[1389209782][lang] Read article on %s could not been found in lang databases /  -  
+[1389209782][lang] hot could not been found in lang databases /  -  
+[1389209782][lang] Read article on %s could not been found in lang databases /  -  
+[1389209782][lang] hot could not been found in lang databases /  -  
+[1389209782][lang] Read article on %s could not been found in lang databases /  -  
+[1389209782][lang] hot could not been found in lang databases /  -  
+[1389209782][lang] Read article on %s could not been found in lang databases /  -  
+[1389209782][lang] hot could not been found in lang databases /  -  
+[1389209782][lang] Read article on %s could not been found in lang databases /  -  
+[1389209787][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389209787][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389209787][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389209787][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389209788][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389209788][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389209788][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389209788][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389209788][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389209788][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389209788][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389209788][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389209788][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389209788][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389209788][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389209788][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389209788][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389209788][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389209788][lang] admin could not been found in lang databases /  -  
+[1389209788][lang] designer could not been found in lang databases /  -  
+[1389209788][lang] content manager could not been found in lang databases /  -  
+[1389209788][lang] content manager could not been found in lang databases /  -  
+[1389209824][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389209824][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389209824][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389209824][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389209824][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389209824][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389209825][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389209825][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389209825][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389209825][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389209825][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389209825][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389209825][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389209825][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389209825][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389209825][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389209825][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389209825][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389209825][lang] admin could not been found in lang databases /  -  
+[1389209825][lang] designer could not been found in lang databases /  -  
+[1389209825][lang] content manager could not been found in lang databases /  -  
+[1389209825][lang] content manager could not been found in lang databases /  -  
+[1389209847][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389209847][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389209847][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389209847][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389209847][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389209847][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389209848][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389209848][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389209848][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389209848][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389209848][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389209848][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389209848][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389209848][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389209848][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389209848][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389209848][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389209848][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389209848][lang] admin could not been found in lang databases /  -  
+[1389209848][lang] designer could not been found in lang databases /  -  
+[1389209848][lang] content manager could not been found in lang databases /  -  
+[1389209848][lang] content manager could not been found in lang databases /  -  
+[1389209877][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389209877][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389209877][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389209877][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389209877][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389209877][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389209878][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389209878][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389209878][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389209878][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389209878][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389209878][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389209878][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389209878][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389209878][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389209878][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389209878][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389209878][lang] %d likes could not been found in lang databases / comment-text/ - plugin 
+[1389209878][lang] admin could not been found in lang databases /  -  
+[1389209878][lang] designer could not been found in lang databases /  -  
+[1389209878][lang] content manager could not been found in lang databases /  -  
+[1389209878][lang] content manager could not been found in lang databases /  -  
+[1389210805][lang] recommended could not been found in lang databases /  -  
+[1389210805][lang] Read article on %s could not been found in lang databases /  -  
+[1389210805][lang] Read article on %s could not been found in lang databases /  -  
+[1389210805][lang] hot could not been found in lang databases /  -  
+[1389210805][lang] Read article on %s could not been found in lang databases /  -  
+[1389210805][lang] hot could not been found in lang databases /  -  
+[1389210805][lang] Read article on %s could not been found in lang databases /  -  
+[1389210805][lang] hot could not been found in lang databases /  -  
+[1389210805][lang] Read article on %s could not been found in lang databases /  -  

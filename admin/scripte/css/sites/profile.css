@@ -1,0 +1,17 @@
+
+#user_auth{
+margin: 25px;
+width: 210px;
+float: left;
+}
+#user_info{
+margin-top: 25px;
+padding-left: 25px;
+width: 210px;
+display: inline-block;
+border-left: 1px solid rgb(238, 238, 238);
+}
+.user_heading{
+font-weight: bold;
+font-size: 1.1em;
+}

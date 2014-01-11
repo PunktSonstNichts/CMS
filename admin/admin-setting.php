@@ -17,7 +17,7 @@ add_action("admin-javascript", "setting_javascript");
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="EN" lang="EN" dir="ltr">
 <head profile="http://gmpg.org/xfn/11">
 <meta charset="utf-8">
-<title><?php echo sprintf(_t("%s > backend"), "setting"); ?></title>
+<title><?php echo sprintf(_t("%s > backend"), _t("settings")); ?></title>
 </head>
 <body>
 <?php

@@ -8,10 +8,13 @@ class mysql{
 	global $dbuser;
 	global $dbpass;
 	global $dbname;
+	global $dbprae;
+	
         $this->host     = $dbhost;
         $this->user     = $dbuser;
         $this->dbpass   = $dbpass;
         $this->dbname   = $dbname;
+        $this->dbprae   = $dbprae;
         $this->connect();
         return($this->connection);
     }

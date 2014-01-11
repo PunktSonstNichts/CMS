@@ -69,5 +69,9 @@ function log_error($errorlevel, $errorstring, $errorfile, $errorline){
     }
 
 
- }
+}
+
+function die_friendly($msg = '', $title = ''){
+echo $msg;
+}
 ?>

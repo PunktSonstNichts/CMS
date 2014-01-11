@@ -1,1 +1,1 @@
-<?php?><form action="" method="post"><input type="text" placeholder="some crap"/></form>
+<?php?><form action="" method="post"><label for="max_result"><?php echo _t("max. comments by page");?></label><input type="text" id="max_result" placeholder="<?php echo _t("max. comments by page");?>"/></form>

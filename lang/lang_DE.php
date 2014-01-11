@@ -1,10 +1,32 @@
 <?php
-$_lang["You are here: %s"] = "Sie sind hier: %s";
+#general - admin
+$_lang["%s > backend"] = "%s - Backend";
+
 #admin/index.php
 $_lang["username"] = "Benutzter:";
 $_lang["password"] = "Passwort:";
 $_lang["remind me"] = "Erinnere mich";
 $_lang["log in"] = "Anmelden";
+
+#admin/admin-setting.php
+$_lang["general settings"] = "Allgemeine Einstellungen";
+$_lang["save edited settings"] = "Einstellungen speichern";
+$_lang["Click on a input field to see what is it about"] = "Klicken sie auf ein Eingabefeld, um zu sehen, um welche Einstellung es sich handelt.";
+
+#admin/admin-widget.php
+$_lang["widget name"] = "Name des Widgets";
+$_lang["sites"] = "Seite(n)";
+
+#admin/admin-plugins.php
+$_lang["plugin"] = "Plug-In";
+$_lang["description"] = "Beschreibung";
+$_lang["disable plugin"] = "ausschalten";
+$_lang["enable plugin"] = "aktivieren";
+$_lang["edit"] = "bearbeiten";
+$_lang["remove it"] = "entfernen";
+$_lang["by %s"] = "von %s";
+$_lang["report plugin"] = "melden";
+
 
 #admin/backend_UI.php
 $_lang["Welcome back, %s"] = "Willkommen zur&uuml;ck, %s";
@@ -16,11 +38,12 @@ $_lang["directory"] = "ein Verzeichnis";
 $_lang["widget"] = "ein Widget";
 $_lang["designs"] = "Designes";
 $_lang["widgets"] = "Widgets";
+$_lang["plugins"] = "Plug-Ins";
 $_lang["settings"] = "Einstellungen";
 $_lang["users"] = "Benutzter";
 
 #admin/admin_widgets/statistics.php
-$_lang["users"] = "Besucher";
+$_lang["visitor"] = "Besucher";
 $_lang["in the past %c minutes"] = "in den letzten %c Minuten";
 $_lang["browsers"] = "Browsers";
 $_lang["refferrer"] = "Refferrer";
@@ -61,9 +84,7 @@ $_lang['no widget found for %1$s or %2$s!'] = 'Kein Widget f&uuml;r %1$s oder %2
 $_lang['widget %s not found!'] = 'Kein Widget unter %s gefunden';
 $_lang["widget '%s' already called!"] = "Widget '%s' wurde schon aufgerufen!";
 
-/*
-Should be in other files for certain widgets or templates 
-#different language files support
-*/
 
+#unknown origin
+$_lang["plugin \"%s\" is not valid. Please re-install this plugin, including the init.php."] = 'Das Plugin "%s" wurde nicht richtig eingerichtet. Die init.php ist Fehlerhaft. Bitte laden sie sich %1$s neu herunter.';
 ?>

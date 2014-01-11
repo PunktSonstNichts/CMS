@@ -23,7 +23,7 @@ add_action("admin-css", "user_css");
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="EN" lang="EN" dir="ltr">
 <head profile="http://gmpg.org/xfn/11">
 <meta charset="utf-8">
-<title><?php echo sprintf(_t("%s > backend"), "widget"); ?></title>
+<title><?php echo sprintf(_t("%s > backend"), _t("users")); ?></title>
 </head>
 <body>
 <?php
@@ -50,12 +50,12 @@ include_once(dirname(__file__)."/backend_UI.php");
 					<thead>
 						<tr>
 							<th tabindex="0" rowspan="1" colspan="1" ><b><?php echo _t("role"); ?></b></th>
-							<th tabindex="0" rowspan="1" colspan="1" ><?php echo _t("sites"); ?></th>
+							<th tabindex="0" rowspan="1" colspan="1" ><?php echo _t("dexcription"); ?></th>
 						</tr>
 					</thead> 
 					<tbody>
 						<tr>
-							<td tabindex="0" rowspan="1" colspan="1" ><?php echo $user["role"]; ?></td>
+							<td tabindex="0" rowspan="1" colspan="1" ><?php echo _t($user["role"]); ?></td>
 							<td tabindex="0" rowspan="1" colspan="1" ><?php echo $user["description"]; ?></td>
 						</tr>
 					</tbody>

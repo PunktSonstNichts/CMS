@@ -1,5 +1,13 @@
 <?php
 if(!ROOT){ exit; }
+
+/* Task
+Preparing array for foreach-loop from sql result
+*/
+$taskssql = new mysql();
+$tasksresult = $taskssql->query("SELECT * FROM  `".$dbprae."tasks`;");
+while($tasks[] = $taskssql->result($tasksresult, "assoc"));
+
 ?>
 <div class="element" style="width: 500px;">
 	<div class="element-heading">

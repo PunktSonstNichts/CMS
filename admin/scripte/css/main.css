@@ -9,8 +9,8 @@
 
 @media screen and (min-width: 240px){
 body {
-font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-font-size: 14px;
+font-family: "Open Sans", Arial, Helvetica, sans-serif;
+font-size: 15px;
 line-height: 1.428571429;
 color: rgb(51, 51, 51);
 }
@@ -68,6 +68,14 @@ border-top: 1px solid rgb(238, 238, 238);
 box-sizing: content-box;
 height: 0;
 }
+.clearfix:after { 
+   content: " ";
+   display: block; 
+   height: 0; 
+   clear: both;
+}
+
+
 #header{
 width: 100%;
 height: 40px;
@@ -186,7 +194,9 @@ text-align: center;
 padding: 15px;
 }
 #sidebar li{
-padding: 15px;
+padding-left: 15px;
+padding-top: 5px;
+padding-bottom: 5px;
 list-style: none;
 }
 #sidebar li > span{
@@ -196,7 +206,7 @@ font-size: 1.2em;
 .submenu{
 position: absolute;
 margin-left: 200px;
-margin-top: -50px;
+margin-top: -36px;
 -webkit-box-shadow: 5px 1px 10px rgba(33, 33, 33, 0.8);
 box-shadow: 5px 1px 10px rgba(33, 33, 33, 0.8);
 }
@@ -204,12 +214,12 @@ box-shadow: 5px 1px 10px rgba(33, 33, 33, 0.8);
 position: absolute;
 margin-left: -10px;
 width: 10px;
-height: 50px;
+height: 36px;
 }
 #contentframe{
 margin: 8px;
 width: 980px;
-padding-bottom: 25px;
+padding-bottom: 35px;
 margin: 0px auto;
 height: auto;
 border-left: 1px solid rgb(210, 210, 210);

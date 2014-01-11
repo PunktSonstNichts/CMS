@@ -4,6 +4,23 @@ if(!isset($_SESSION["user"])){
 	echo "please log in";
 	exit;
 }
+
+include("permission.php");
+
+$admin_sidebar = array(
+array( ROOT_URL."admin/admin-home.php", _t("home")),
+array( ROOT_URL."admin/admin-new.php", _t("new"), array(
+	ROOT_URL."admin/admin-new.php?type=post" => _t("post"),
+	ROOT_URL."admin/admin-new.php?type=site" => _t("site"),
+	ROOT_URL."admin/admin-new.php?type=directory" => _t("directory"),
+	ROOT_URL."admin/admin-new.php?type=widget" => _t("widget"),
+)),
+array( ROOT_URL."admin/admin-design.php", _t("designs")),
+array( ROOT_URL."admin/admin-widget.php", _t("widgets")),
+array( ROOT_URL."admin/admin-plugins.php", _t("plugins")),
+array( ROOT_URL."admin/admin-setting.php", _t("settings")),
+array( ROOT_URL."admin/admin-user.php", _t("users"))
+);
 ?>
 <link rel="stylesheet" href="scripte/css/main.css" type="text/css"/>
 <link rel="stylesheet" href="scripte/css/blue.css" type="text/css"/>
@@ -88,33 +105,43 @@ console.log(isValidDate('11-31-1061'));
 			</div>
 		</div>
 <div id="user_control">
-<?php echo sprintf( _t('Welcome back, %s'), '<a href="#">'.$_SESSION["user"]["name"].'</a>');?>
+<?php echo sprintf( _t('Welcome back, %s'), '<a href="admin-profile.php?user='.$_SESSION["user"]["name"].'" title="'.$_SESSION["user"]["ip"].'">'.$_SESSION["user"]["name"].'</a>');?>
 </div>
 </div>
 <!-- Sidebar -->
-<?php
-run_action("before-adminsidebar");
-?>
 <div id="sidebar">
 <div id="sidebar-heading">
-<span>My CMS SYSTEM</span>
+<span>My haramboy</span>
 </div>
 <ul id="admin-sidebar-panel">
-<li><a href="<?php echo ROOT_URL."admin/admin-home.php"; ?>"><span><?php echo _t("home"); ?></span></a></li>
-<div class="submenu-group">
-<li><a href="<?php echo ROOT_URL."admin/admin-new.php"; ?>"><span><?php echo _t("new"); ?></span></a></li>
-<ul style="display: none;" class="submenu">
-<div class="submenu-connector"></div>
-      <li><a href="<?php echo ROOT_URL."admin/admin-new.php?type=post"; ?>"><?php echo _t("post"); ?></a></li>
-      <li><a href="<?php echo ROOT_URL."admin/admin-new.php?type=site"; ?>"><?php echo _t("site"); ?></a></li>
-      <li><a href="<?php echo ROOT_URL."admin/admin-new.php?type=directory"; ?>"><?php echo _t("directory"); ?></a></li>
-      <li><a href="<?php echo ROOT_URL."admin/admin-new.php?type=widget"; ?>"><?php echo _t("widget"); ?></a></li>
-</ul>
-</div>
-<li><a href="<?php echo ROOT_URL."admin/admin-design.php"; ?>"><span><?php echo _t("designs"); ?></span></a></li>
-<li><a href="<?php echo ROOT_URL."admin/admin-widget.php"; ?>"><span><?php echo _t("widgets"); ?></span></a></li>
-<li><a href="<?php echo ROOT_URL."admin/admin-plugins.php"; ?>"><span><?php echo _t("plugins"); ?></span></a></li>
-<li><a href="<?php echo ROOT_URL."admin/admin-setting.php"; ?>"><span><?php echo _t("settings"); ?></span></a></li>
-<li><a href="<?php echo ROOT_URL."admin/admin-user.php"; ?>"><span><?php echo _t("users"); ?></span></a></li>
+<?php
+run_action("before-adminsidebar");
+
+foreach($admin_sidebar as $element_link => $element){
+
+?>
+
+<?php
+	if(isset($element[2]) && is_array($element[2])){
+		
+		echo "<div class=\"submenu-group\">";
+		echo "<li><a href='".$element[0]."'><span>".$element[1]."</span></a></li>";
+		echo "<ul style=\"display: none;\" class=\"submenu\">";
+		echo "<div class=\"submenu-connector\"></div>";
+
+
+		foreach($element[2] as $link => $submenu){
+			echo "<li><a href=".$link.">".$submenu."</a></li>";
+		}
+
+		echo "</ul>";
+		echo "</div>";
+
+	}else{
+		echo "<li><a href='".$element[0]."'><span>".$element[1]."</span></a></li>";
+	}
+
+}
+?>
 </ul>
 </div>

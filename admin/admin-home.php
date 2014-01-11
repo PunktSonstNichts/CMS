@@ -14,12 +14,7 @@ include_once(dirname(__file__)."/backend_UI.php");
 //Add securitycheck here
 
 
-/* Task
-Preparing array for foreach-loop from sql result
-*/
-$taskssql = new mysql();
-$tasksresult = $taskssql->query("SELECT * FROM  `".$dbprae."tasks`;");
-while($tasks[] = $taskssql->result($tasksresult, "assoc"));
+
 ?>
 <div id="contentframe">
 	<div class="container" style="display: inline-block;">

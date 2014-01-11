@@ -1,5 +1,5 @@
 <?php
-if($_SESSION["user"]["role"] == "admin"){
+if(can_current_user("publish_post")){
 ?>
 <div class="element" id="quikpost">
 	<div class="element-heading">

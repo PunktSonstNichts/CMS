@@ -15,7 +15,7 @@ $titleinput_id = "commentbox-title-$commentboxcounter";
 $contentinput_id = "commentbox-content-$commentboxcounter";
 ?>
 <div class='commentbox well' style="padding-top: 15px;">
-<div class="commentbox comment-heading">Comment-Box</div>
+<div class="commentbox comment-heading"><?php echo _t("Comment-Box");?></div>
 <button class="commentbox comment-toggleview btn btn-primary"><?php echo _t("read comments", $widget_path, $cms_type); ?></button>
 <div class="commentbox comment-body">
 <?php
@@ -173,4 +173,9 @@ $(document).ready( function(){
 add_action('after-text-loaded', 'get_comments', array("transferred-keys" => array("text-id", "text-title")));
 add_action('css-loading', 'add_commentbox_css');
 add_action('js-loading', 'add_commentbox_js');
+
+add_action("installation", "cb_install");
+function cb_install(){
+
+}
 ?>

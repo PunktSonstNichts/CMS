@@ -1,7 +1,8 @@
 <?php
-session_start();
-define("DEVELOPMODE",false);
 include("../loader.php");
+session_set_cookie_params('o, /admin', ROOT, isset($_SERVER["HTTPS"]), true);
+session_start();
+
 
 $reply = array();
 
@@ -16,10 +17,19 @@ $remindme_checkbox = true;
 if($Name != ""){
 	if($password != ""){
 				$usersql = new mysql();
-				$userresult = $usersql->query("SELECT  `Name`, `passw`, `role` FROM `users` WHERE `Name` LIKE '$Name';");
+				$userresult = $usersql->query("SELECT  `Name`, `passw`, `role` FROM `".$dbprae."users` WHERE `Name` LIKE '$Name';");
 				$row = $usersql->result($userresult, "assoc");
 				if(md5($password) == $row["passw"]){
-					$_SESSION["user"] = array("name" => $row["Name"], "role" => $row["role"]);
+				
+					if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
+						$ip = $_SERVER['HTTP_CLIENT_IP'];
+					} elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+						$ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+					} else {
+						$ip = $_SERVER['REMOTE_ADDR'];
+					}
+					
+					$_SESSION["user"] = array("name" => $row["Name"], "role" => $row["role"], "ip" => $ip);
 					$reply["error"] = false;
 					$reply["location"] = "admin-home.php";
 				}else{
