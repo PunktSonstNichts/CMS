@@ -12,11 +12,6 @@ while($tasks[] = $taskssql->result($tasksresult, "assoc"));
 <div class="element" style="width: 500px;">
 	<div class="element-heading">
 		<span><?php echo _t("tasks in progress"); ?></span>
-		<div class="box-icon">
-			<a href="index.html#" class="btn-setting"><i class="fa fa-wrench"></i></a>
-			<a href="index.html#" class="btn-minimize"><i class="fa fa-chevron-up"></i></a>
-			<a href="index.html#" class="btn-close"><i class="fa fa-times"></i></a>
-		</div>
 	</div>
 	<div class="element-content">
 		<table>
@@ -49,11 +44,12 @@ while($tasks[] = $taskssql->result($tasksresult, "assoc"));
 		<?php
 		}
 		}
+		if(can_current_user("create_task")){
 		?>
-				<tr>
+		<tr>
 			<td><input type="text" class="slim" placeholder="<?php echo _t("task name"); ?>"></td>
 			<td>
-				<select width="150" style="width: 150px;" class="slim" name="user">
+				<select width="130" style="width: 130px;" class="slim" name="user">
 					<?php
 					foreach($user_array as $user){
 						if($user != ""){
@@ -65,7 +61,10 @@ while($tasks[] = $taskssql->result($tasksresult, "assoc"));
 			</td>
 			<td>Deadline</td>
 			<td><input type="submit" class="btn slim" value="<?php echo _t("add task"); ?>"></td>
-		</tr>	
+		</tr>
+		<?php
+		}
+		?>
 		</tbody>
 		</table> 	
 	</div>

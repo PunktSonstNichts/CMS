@@ -35,8 +35,8 @@ case "img":
 		</div></br>
 		
 		<div id="dialog-handler">
-			<button class="btn-success"><?php echo _t("Save edited image"); ?></button>
-			<button class="btn-danger"><?php echo _t("cancel editing"); ?></button>
+			<button class="btn-success"><i class="fa fa-floppy-o"></i> <?php echo _t("Save edited image"); ?></button>
+			<button class="btn-danger"><i class="fa fa-trash-o"></i> <?php echo _t("cancel editing"); ?></button>
 		</div>
 	</div>
 <?php
@@ -69,8 +69,8 @@ case "a":
 
 		
 		<div id="dialog-handler">
-			<button class="btn-success">Save edited link</button>
-			<button class="btn-danger"><?php echo _t("cancel editing"); ?></button>
+			<button class="btn-success"><i class="fa fa-floppy-o"></i> <?php echo _t("Save edited link"); ?></button>
+			<button class="btn-danger"><i class="fa fa-trash-o"></i> <?php echo _t("cancel editing"); ?></button>
 		</div>
 	</div>
 <?php

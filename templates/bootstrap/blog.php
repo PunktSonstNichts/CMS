@@ -38,7 +38,7 @@ content: "" !important;
 <div class="row row-offcanvas row-offcanvas-right active">
   <div class="col-xs-12 col-sm-9"><?php $body->main(); ?></div>
 	<div class="col-xs-6 col-sm-3 sidebar-offcanvas">
-		<?php $body->sidebar("sidebar");  ?>
+		<?php $body->sidebar("sidebar");  ?> <!--  End Sitebar -->
 	</div>
 </div>
 <hr>

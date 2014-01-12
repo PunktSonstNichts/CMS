@@ -1,17 +1,56 @@
+.well{
+background-color: rgb(255, 255, 255);
+border: 1px solid rgb(221, 221, 221);
+margin: 5px;
+padding: 5px;
+}
 
 #user_auth{
 margin: 25px;
-width: 210px;
 float: left;
+position: fixed;
 }
 #user_info{
 margin-top: 25px;
 padding-left: 25px;
-width: 210px;
+margin-right: 20px;
+min-height: 450px; /* To fix fixed user_auth overflowing*/
+float: right;
 display: inline-block;
 border-left: 1px solid rgb(238, 238, 238);
 }
 .user_heading{
 font-weight: bold;
 font-size: 1.1em;
+}
+
+
+.social_link{
+margin: 3px;
+display: inline-block;
+float: left;
+text-decoration: none!important;
+color: black;
+}
+.social_link:hover > i{
+box-shadow: 0px 0px 4px 1px rgba(0,0,0,0.8);
+}
+
+.social_link > i{
+-webkit-transition:all 0.3s ease-in;  
+-moz-transition:all 0.3s ease-in;  
+-o-transition:all 0.3s ease-in;  
+transition:all 0.3s ease-in; 
+display: block;
+margin: 0px auto;
+text-align: center;
+width: 39px;
+color: rgb(38, 103, 168);
+text-decoration: none!important;
+}
+
+
+.social_link > i:hover{
+color: white;
+background-color: rgb(38, 103, 168);
 }

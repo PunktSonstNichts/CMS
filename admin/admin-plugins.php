@@ -90,4 +90,5 @@ include_once(dirname(__file__)."/backend_UI.php");
 
 </div>
 </div>
+</div> <!-- #header-fixed-helper -->
 </body>

@@ -124,8 +124,8 @@ transition: box-shadow ease-in-out 0.065s, background-color ease-in-out .20s;
 outline: 0;
 }
 .btn.slim, button.slim, input[type=button].slim{
-font-size: 12px;
-padding: 4px 6px;
+font-size: 14px;
+padding: 2px 6px;
 margin-top: -1px;
 }
 
@@ -166,10 +166,23 @@ color: rgb(255, 255, 255);
 background-color: rgb(229, 72, 54);
 border-color: rgb(220, 30, 30);
 }
-
 .btn-danger:hover{
 background: rgb(200, 50, 50) !important;
 color: rgb(255, 255, 255);
-background-color: rgb(71, 164, 71);
+background-color: rgb(200, 50, 50);
 border-color: rgb(225, 20, 20);
+}
+
+.btn-primary{
+background-image: none !important;
+background: rgb(51, 126, 201) !important;
+color: rgb(255, 255, 255);
+background-color: rgb(51, 126, 201);
+border-color: rgb(38, 103, 168);
+}
+.btn-primary:hover{
+background: rgb(38, 103, 168) !important;
+color: rgb(255, 255, 255);
+background-color: rgb(38, 103, 168);
+border-color: rgb(38, 103, 168);
 }

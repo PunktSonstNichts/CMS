@@ -1,1 +1,80 @@
 #export for alexandre's schönwitz language translator - thanks!
+lang/lang_DE.php|recommended
+lang/lang_DE.php|Read article on %s
+lang/lang_DE.php|Read article on %s
+lang/lang_DE.php|hot
+lang/lang_DE.php|Read article on %s
+lang/lang_DE.php|hot
+lang/lang_DE.php|Read article on %s
+lang/lang_DE.php|hot
+lang/lang_DE.php|Read article on %s
+lang/lang_DE.php|recommended
+lang/lang_DE.php|Read article on %s
+lang/lang_DE.php|Read article on %s
+lang/lang_DE.php|hot
+lang/lang_DE.php|Read article on %s
+lang/lang_DE.php|hot
+lang/lang_DE.php|Read article on %s
+lang/lang_DE.php|hot
+lang/lang_DE.php|Read article on %s
+lang/lang_DE.php|recommended
+lang/lang_DE.php|Read article on %s
+lang/lang_DE.php|Read article on %s
+lang/lang_DE.php|hot
+lang/lang_DE.php|Read article on %s
+lang/lang_DE.php|hot
+lang/lang_DE.php|Read article on %s
+lang/lang_DE.php|hot
+lang/lang_DE.php|Read article on %s
+lang/lang_DE.php|Comment-Box
+plugins/comment-text/lang/lang_DE.php|%d likes
+plugins/comment-text/lang/lang_DE.php|%d likes
+lang/lang_DE.php|Comment-Box
+plugins/comment-text/lang/lang_DE.php|%d likes
+plugins/comment-text/lang/lang_DE.php|%d likes
+lang/lang_DE.php|Comment-Box
+plugins/comment-text/lang/lang_DE.php|%d likes
+plugins/comment-text/lang/lang_DE.php|%d likes
+lang/lang_DE.php|Comment-Box
+plugins/comment-text/lang/lang_DE.php|%d likes
+plugins/comment-text/lang/lang_DE.php|%d likes
+lang/lang_DE.php|Comment-Box
+plugins/comment-text/lang/lang_DE.php|%d likes
+plugins/comment-text/lang/lang_DE.php|%d likes
+lang/lang_DE.php|Comment-Box
+plugins/comment-text/lang/lang_DE.php|%d likes
+plugins/comment-text/lang/lang_DE.php|%d likes
+lang/lang_DE.php|Comment-Box
+plugins/comment-text/lang/lang_DE.php|%d likes
+plugins/comment-text/lang/lang_DE.php|%d likes
+lang/lang_DE.php|Comment-Box
+plugins/comment-text/lang/lang_DE.php|%d likes
+plugins/comment-text/lang/lang_DE.php|%d likes
+lang/lang_DE.php|Comment-Box
+plugins/comment-text/lang/lang_DE.php|%d likes
+plugins/comment-text/lang/lang_DE.php|%d likes
+lang/lang_DE.php|Comment-Box
+plugins/comment-text/lang/lang_DE.php|%d likes
+plugins/comment-text/lang/lang_DE.php|%d likes
+lang/lang_DE.php|Comment-Box
+plugins/comment-text/lang/lang_DE.php|%d likes
+plugins/comment-text/lang/lang_DE.php|%d likes
+lang/lang_DE.php|Comment-Box
+plugins/comment-text/lang/lang_DE.php|%d likes
+plugins/comment-text/lang/lang_DE.php|%d likes
+lang/lang_DE.php|Comment-Box
+plugins/comment-text/lang/lang_DE.php|%d likes
+plugins/comment-text/lang/lang_DE.php|%d likes
+lang/lang_DE.php|Comment-Box
+plugins/comment-text/lang/lang_DE.php|%d likes
+plugins/comment-text/lang/lang_DE.php|%d likes
+lang/lang_DE.php|Comment-Box
+plugins/comment-text/lang/lang_DE.php|%d likes
+plugins/comment-text/lang/lang_DE.php|%d likes
+lang/lang_DE.php|Comment-Box
+plugins/comment-text/lang/lang_DE.php|%d likes
+plugins/comment-text/lang/lang_DE.php|%d likes
+lang/lang_DE.php|admin
+lang/lang_DE.php|designer
+lang/lang_DE.php|content manager
+lang/lang_DE.php|content manager

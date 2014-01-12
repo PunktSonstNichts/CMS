@@ -36,7 +36,7 @@ echo $textsnippet["content"];
 ?>
 ...
 </p>
-<div class="snippet-seemore btn btn-link"><a href="<?php echo ROOT_URL.$textsnippet["affect_pageNAME"]; ?>"><?php echo sprintf(_t("Read article on %s"), $textsnippet["affect_pageNAME"]); ?></a></div>
+<div class="snippet-seemore btn btn-link"><a href="<?php echo ROOT_URL.$textsnippet["affected_pageNAME"]; ?>"><?php echo sprintf(_t("Read article on %s"), $textsnippet["affected_pageNAME"]); ?></a></div>
 </div>
 </div>
 <?php

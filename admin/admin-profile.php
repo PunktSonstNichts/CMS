@@ -2,6 +2,7 @@
 session_start();
 include("../loader.php");
 
+
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="EN" lang="EN" dir="ltr">
@@ -14,12 +15,14 @@ include("../loader.php");
 <?php
 include_once(dirname(__file__)."/backend_UI.php");
 ?>
+
 <div id="contentframe">
 <?php
 	$user = htmlspecialchars($_GET["user"]);
 	$usersql = new mysql();
 	$usersqlresult = $usersql->query("SELECT  * FROM `".$usersql->dbprae."users` WHERE `Name` = '$user' LIMIT 1;");
 	$user = $usersql->result($usersqlresult, "object");
+	if($user != ""){
 ?>
 <div id="user_frame" class="clearfix">
 	<div id="user_auth">
@@ -66,6 +69,32 @@ include_once(dirname(__file__)."/backend_UI.php");
 		</div>	
 		<?php
 		}
+
+		if($user->social != ""){
+		$user_sozial_array = json_decode($user->social, true);
+		?>
+		<div id="user_social">
+		<?php
+		foreach($user_sozial_array as $social_platform => $social){
+			switch($social_platform){
+				case "facebook":
+					echo '<a class="social_link" href="'.$social["link"].'" title="'.$social["name"].'" target="_blank"><i class="fa fa-facebook fa-border fa-3x"></i></a>';
+				break;
+				case "github":
+					echo '<a class="social_link" href="'.$social["link"].'" target="_blank"><i class="fa fa-github fa-border fa-3x"></i></a>';
+				break;
+				case "youtube":
+					echo '<a class="social_link" href="'.$social["link"].'" target="_blank"><i class="fa fa-youtube-play fa-border fa-3x"></i></a>';
+				break;
+				default:
+					echo '<a class="social_link" href="'.$social["link"].'" title="'.$social["name"].'" target="_blank"><i class="fa fa-external-link fa-border fa-3x"></i></a>';
+				break;
+			}
+		}
+		?>
+		</div>
+		<?php
+		}
 		?>
 	</div>
 	<div id="user_info">
@@ -74,7 +103,6 @@ include_once(dirname(__file__)."/backend_UI.php");
 			<p><?php echo $user->description; ?></p>
 		</div>
 		<hr>
-		<div id="user_tasks">
 		<?php
 		$tasks = array();
 		$taskssql = new mysql();
@@ -85,45 +113,100 @@ include_once(dirname(__file__)."/backend_UI.php");
 		$tasks = array_filter($tasks);
 		if(!empty($tasks)){
 		?>
+		<div id="user_tasks">
 			<span class="user_heading"><?php echo _t("task assigned"); ?></span>
-				<table>
-					<thead>
-						<tr>
-							<th tabindex="0" rowspan="1" colspan="1" style="width: 200px;"><?php echo _t("task"); ?></th>
-							<th tabindex="0" rowspan="1" colspan="1" style="width: 90px;"><?php echo _t("progress"); ?></th>
-							<th tabindex="0" rowspan="1" colspan="1" style="width: 80px;"><?php echo _t("status"); ?></th>
-						</tr>
-					</thead> 
-					<tbody>
-					<?php
-
-					
-					foreach($tasks as $task){
-						if($task != ""){
-							list($task_name, $task_type) = array_pad(explode("|", $task["status"], 2), 2, null);
-							$label = "<span class='label-$task_type'>$task_name</span>";
-							$progressbar = "$task_type";
-						?>
-						<tr>
-							<td><?php echo $task["task-name"]; ?></td>
-							<td><div class="progress slim <?php echo $progressbar; ?>"><div class="ui-progressbar-value" style="width: <?php echo $task["progress"]; ?>%;"></div></div></td>
-							<td><?php echo $label; ?></td>
-						</tr>		
-						<?php
-						}
-					}
+			<table>
+				<thead>
+					<tr>
+						<th tabindex="0" rowspan="1" colspan="1" style="width: 200px;"><?php echo _t("task"); ?></th>
+						<th tabindex="0" rowspan="1" colspan="1" style="width: 90px;"><?php echo _t("progress"); ?></th>
+						<th tabindex="0" rowspan="1" colspan="1" style="width: 80px;"><?php echo _t("status"); ?></th>
+					</tr>
+				</thead> 
+				<tbody>
+				<?php
+				foreach($tasks as $task){
+					if($task != ""){
+						list($task_name, $task_type) = array_pad(explode("|", $task["status"], 2), 2, null);
+						$label = "<span class='label-$task_type'>$task_name</span>";
+						$progressbar = "$task_type";
 					?>
-					</tbody>
-				</table>
+					<tr>
+						<td><?php echo $task["task-name"]; ?></td>
+						<td><div class="progress slim <?php echo $progressbar; ?>"><div class="ui-progressbar-value" style="width: <?php echo $task["progress"]; ?>%;"></div></div></td>
+						<td><?php echo $label; ?></td>
+					</tr>		
+					<?php
+					}
+				}
+				?>
+				</tbody>
+			</table>
+		</div>
+		<?php
+		}elseif(can_current_user("create_task")){
+		?>
+		<div id="user_tasks">
+			<div id="user_no_task"><?php echo sprintf(_t('%1$s isn\'t assigned to one task yet. <a href=\'%2$s\'>create one for him</a>'), $user->Name, "#"); ?></div>
+		</div>
+		<?php
+		}
+		?>
+		<hr>
+		<div id="last_activity">
+			<span class="user_heading"><?php echo _t("last activity"); ?></span></br>
+			
 			<?php
-			}elseif(can_current_user("create_task")){
-			?>
-			<div id="user_no_task"><?php echo sprintf(_t("%1$s isn't assigned to one task yet. <a href='%2$s'>create one for him</a>"), $user->Name, "#"); ?></div>
-			<?php
+			$crawlersql = new mysql();
+			$crawlerresult = $crawlersql->query("SELECT * FROM  `".$dbprae."globals` WHERE `type` = 'search_key';");
+			while($crawler = $crawlersql->result($crawlerresult, "assoc")){
+			if($crawler != ""){
+				$columnnames = json_decode($crawler["value"], true);
+				?>
+				<div class="well" id="last_activity_<?php echo $crawler["key"];?>">
+				<?php
+				$objectsql = new mysql();
+				$objectresult = $objectsql->query("SELECT * FROM  `".$dbprae.$crawler["key"]."` WHERE ".$columnnames["username"]." = '".$user->Name."' ORDER BY ".$columnnames["date"]." DESC;");
+				while($object = $objectsql->result($objectresult, "assoc")){
+					if($object != ""){
+					//print_r($object);
+					?>
+					<div class="activity_element <?php echo $crawler["key"]; ?>">
+						<div class="activity_element_title" style="float:left;"><a href="<?php echo $object[$columnnames["link"]]; ?>"><?php echo $object[$columnnames["title"]]; ?></a></div>
+						<div class="activity_element_date" style="width: 100%; text-align: right;"><small style="font-size: 0.8em; color: rgb(66,66,66);">since <?php echo date_format(date_create($object[$columnnames["date"]]), 'd.m.y // H:i:s'); ?></small></div><br>
+						<div class="activity_element_preview"><?php echo $object[$columnnames["preview"]]; ?></div>
+					</div>
+					<hr>
+					<?php
+				}
+				}
+				?>
+				</div>
+				<?php
+			}
 			}
 			?>
 		</div>
 	</div>
+
 </div>
+<?php
+}else{
+?>
+<div id="user_frame" class="clearfix">
+	<div class="element" id="general_setting" style="float: none;">
+		<div class="element-heading">
+			<span><?php echo _t("error"); ?></span>
+		</div>
+		<div class="element-content">
+		<?php echo sprintf(_t('user "%1$s" does not exist in database. Check the url or visit your <a href="%2$s">user list</a>.'), htmlspecialchars($_GET["user"]), "XXX"); ?></br>
+		</div>
+	</div>
+</div>
+<?php
+}
+?>
+</div>
+</div> <!-- #header-fixed-helper -->
 
 </body>

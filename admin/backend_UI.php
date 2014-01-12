@@ -8,22 +8,23 @@ if(!isset($_SESSION["user"])){
 include("permission.php");
 
 $admin_sidebar = array(
-array( ROOT_URL."admin/admin-home.php", _t("home")),
-array( ROOT_URL."admin/admin-new.php", _t("new"), array(
+array( ROOT_URL."admin/admin-home.php", '<i class="fa fa-tachometer"></i> '._t("home")),
+array( ROOT_URL."admin/admin-new.php", '<i class="fa fa-pencil"></i> '._t("new"), array(
 	ROOT_URL."admin/admin-new.php?type=post" => _t("post"),
 	ROOT_URL."admin/admin-new.php?type=site" => _t("site"),
 	ROOT_URL."admin/admin-new.php?type=directory" => _t("directory"),
 	ROOT_URL."admin/admin-new.php?type=widget" => _t("widget"),
 )),
-array( ROOT_URL."admin/admin-design.php", _t("designs")),
-array( ROOT_URL."admin/admin-widget.php", _t("widgets")),
-array( ROOT_URL."admin/admin-plugins.php", _t("plugins")),
-array( ROOT_URL."admin/admin-setting.php", _t("settings")),
-array( ROOT_URL."admin/admin-user.php", _t("users"))
+array( ROOT_URL."admin/admin-design.php", '<i class="fa fa-magic"></i> '._t("designs")),
+array( ROOT_URL."admin/admin-widget.php", ''._t("widgets")),
+array( ROOT_URL."admin/admin-plugins.php", ''._t("plugins")),
+array( ROOT_URL."admin/admin-setting.php", '<i class="fa fa-wrench"></i> '._t("settings")),
+array( ROOT_URL."admin/admin-user.php", '<i class="fa fa-user"></i> '._t("users"))
 );
 ?>
 <link rel="stylesheet" href="scripte/css/main.css" type="text/css"/>
 <link rel="stylesheet" href="scripte/css/blue.css" type="text/css"/>
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 
 <script src="scripte/js/jquery.min.js"></script>
 <script src="scripte/js/jquery-ui.min.js"></script>
@@ -100,18 +101,18 @@ console.log(isValidDate('11-31-1061'));
 <div id="sidebar-toggleview" class="header-element">Sidebar</div>
 <div class="divider"></div>
 <div id="notifications" class="header-element">
-			<div id="active_notification">
-			<div class="icon"><!-- EDIT IMG HERE --></div><span>activity</span>
+			<div class="btn slim btn-primary">
+			<span><i class="fa fa-cogs"></i> <?php echo _t("activity"); ?></span>
 			</div>
 		</div>
 <div id="user_control">
 <?php echo sprintf( _t('Welcome back, %s'), '<a href="admin-profile.php?user='.$_SESSION["user"]["name"].'" title="'.$_SESSION["user"]["ip"].'">'.$_SESSION["user"]["name"].'</a>');?>
 </div>
 </div>
-<!-- Sidebar -->
+<div id="header-fixed-helper">
 <div id="sidebar">
 <div id="sidebar-heading">
-<span>My haramboy</span>
+<span>My CMS</span>
 </div>
 <ul id="admin-sidebar-panel">
 <?php

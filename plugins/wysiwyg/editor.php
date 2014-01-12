@@ -3,7 +3,7 @@ if(!ROOT){
 exit;
 }
 ?>
-<link rel="stylesheet" href="<?php echo ROOT_URL;?>plugins/wysiwyg/css/main.css" type="text/css"/>
+<link rel="stylesheet" href="<?php echo ROOT_URL;?>plugins/wysiwyg/css/wysiwyg.css" type="text/css"/>
 <script src="<?php echo ROOT_URL;?>plugins/wysiwyg/js/wysiwyg.js"></script>
 <div class="wysiwygeditor-editor">
 <input type="hidden" name="form_inhalt" id="form_inhalt" value="">
@@ -35,7 +35,7 @@ if(jQuery().dialog) {
 
 });
 </script>
-<button type="button" class="wysiwyg first" onclick="format('insertparagraph','<p>');" title="Textabsatz">¶</button>
+<button type="button" class="wysiwyg first" onclick="format('insertparagraph','<p>');" title="Textabsatz"><i class="fa">¶</i></button>
 <ul class="wysiwyg" title="Textabsatz">
 <span>h</span>
 <div class="wysiwyg-submenu">
@@ -44,17 +44,17 @@ if(jQuery().dialog) {
 <button class="wysiwyg" type="button" onclick="format('formatblock','<h3>');" title="Überschrift 3. Ordnung">h3</button>
 </div>
 </ul>
-<button class="wysiwyg" type="button" onclick="format('insertunorderedlist','');" title="Unsortierte Liste">?</button>
-<button class="wysiwyg" type="button" onclick="format('insertorderedlist','');"   title="Unsortierte Liste">1.</button>
-<button class="wysiwyg" type="button" onclick="format('bold','');"><b>B</b></button>
-<button class="wysiwyg" type="button" onclick="format('italic','');"><i>I</i></button>
+<button class="wysiwyg" type="button" onclick="format('insertunorderedlist','');" title="Unsortierte Liste"><i class="fa fa-list-ul"></i></button>
+<button class="wysiwyg" type="button" onclick="format('insertorderedlist','');"   title="Unsortierte Liste"><i class="fa fa-list-ol"></i></button>
+<button class="wysiwyg" type="button" onclick="format('bold','');"><i class="fa fa-bold"></i></button>
+<button class="wysiwyg" type="button" onclick="format('italic','');"><i class="fa fa-italic"></i></button>
 <ul class="wysiwyg last" title="Ausrichtung">
-<span>=</span>
+<span><i class="fa fa-align-center"></i></span>
 <div class="wysiwyg-submenu">
-<button class="wysiwyg" type="button" onclick="format('justifyleft','');">|= </button>
-<button class="wysiwyg" type="button" onclick="format('justifyright','');"> =|</button>
-<button class="wysiwyg" type="button" onclick="format('justifycenter','');">)=(</button>
-<button class="wysiwyg" type="button" onclick="format('justifyfull','');">|=|</button>
+<button class="wysiwyg" type="button" onclick="format('justifyleft','');"><i class="fa fa-align-left"></i></button>
+<button class="wysiwyg" type="button" onclick="format('justifyright','');"><i class="fa fa-align-right"></i></button>
+<button class="wysiwyg" type="button" onclick="format('justifycenter','');"><i class="fa fa-align-center"></i></button>
+<button class="wysiwyg" type="button" onclick="format('justifyfull','');"><i class="fa fa-align-justify"></i></button>
 </div>
 </ul>
 <?php
