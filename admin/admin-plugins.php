@@ -37,6 +37,7 @@ include_once(dirname(__file__)."/backend_UI.php");
 				$plugin_name = "";
 				$plugin_author = "";
 				$plugin_description = "";
+				$plugin_installed = false;
 				include("plugins/".$entry."/init.php");
 	?>
 	<tr>			
@@ -59,8 +60,14 @@ include_once(dirname(__file__)."/backend_UI.php");
 		<td>
 		<?php
 		echo ($plugin_description != "") ? $plugin_description : _t("undefined");
+		echo ($plugin_author != "") ? ' <small><span class="label-success">'.sprintf( _t('by %s'), $plugin_author).'</span></small>' : '<small><span class="label-warning">'._t("no author").'</span></small>';
+		if(!$plugin_installed){
 		?>
-		<small><span class="label-success"><?php echo sprintf( _t('by %s'), $plugin_author); ?></span></small>
+		<hr style="margin: 5px;">
+		<span class="warning"><?php echo sprintf(_t('%1$s isn\'t installed. The plug-in may not work correct. Fix it %2$s'), $plugin_name, "<a href='XXX'>"._t("now")."</a>"); ?></span>
+		<?php
+		}
+		?>
 		</td>
 	</tr>
 	<?php

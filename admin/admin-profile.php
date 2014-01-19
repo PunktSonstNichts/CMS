@@ -78,13 +78,13 @@ include_once(dirname(__file__)."/backend_UI.php");
 		foreach($user_sozial_array as $social_platform => $social){
 			switch($social_platform){
 				case "facebook":
-					echo '<a class="social_link" href="'.$social["link"].'" title="'.$social["name"].'" target="_blank"><i class="fa fa-facebook fa-border fa-3x"></i></a>';
+					echo '<a class="social_link" href="'.$social["link"].'" title="'.$social["name"].'" target="_blank"><i class="fa fa-fw fa-facebook fa-border fa-3x"></i></a>';
 				break;
 				case "github":
-					echo '<a class="social_link" href="'.$social["link"].'" target="_blank"><i class="fa fa-github fa-border fa-3x"></i></a>';
+					echo '<a class="social_link" href="'.$social["link"].'" target="_blank"><i class="fa fa-fw fa-github fa-border fa-3x"></i></a>';
 				break;
 				case "youtube":
-					echo '<a class="social_link" href="'.$social["link"].'" target="_blank"><i class="fa fa-youtube-play fa-border fa-3x"></i></a>';
+					echo '<a class="social_link" href="'.$social["link"].'" target="_blank"><i class="fa fa-fw fa-youtube-play fa-border fa-3x"></i></a>';
 				break;
 				default:
 					echo '<a class="social_link" href="'.$social["link"].'" title="'.$social["name"].'" target="_blank"><i class="fa fa-external-link fa-border fa-3x"></i></a>';
@@ -158,6 +158,7 @@ include_once(dirname(__file__)."/backend_UI.php");
 			
 			<?php
 			$crawlersql = new mysql();
+			// To get the column names of the widgets...
 			$crawlerresult = $crawlersql->query("SELECT * FROM  `".$dbprae."globals` WHERE `type` = 'search_key';");
 			while($crawler = $crawlersql->result($crawlerresult, "assoc")){
 			if($crawler != ""){
@@ -167,9 +168,9 @@ include_once(dirname(__file__)."/backend_UI.php");
 				<?php
 				$objectsql = new mysql();
 				$objectresult = $objectsql->query("SELECT * FROM  `".$dbprae.$crawler["key"]."` WHERE ".$columnnames["username"]." = '".$user->Name."' ORDER BY ".$columnnames["date"]." DESC;");
-				while($object = $objectsql->result($objectresult, "assoc")){
-					if($object != ""){
-					//print_r($object);
+				while($objects[] = $objectsql->result($objectresult, "assoc"));
+				if($objects[0] != ""){ // Check if the array contains at least one element
+				foreach($objects as $object){
 					?>
 					<div class="activity_element <?php echo $crawler["key"]; ?>">
 						<div class="activity_element_title" style="float:left;"><a href="<?php echo $object[$columnnames["link"]]; ?>"><?php echo $object[$columnnames["title"]]; ?></a></div>
@@ -179,6 +180,13 @@ include_once(dirname(__file__)."/backend_UI.php");
 					<hr>
 					<?php
 				}
+				}else{
+					?>
+					<div class="activity_element no_activity">
+							<div class="activity_element_title"><?php echo sprintf(_t('%1$s didn\'t have any activity on %2$s'), $user->Name, $crawler["key"] ); ?></div>
+					</div>
+					<hr>
+					<?php				
 				}
 				?>
 				</div>

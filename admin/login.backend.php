@@ -35,17 +35,17 @@ if($Name != ""){
 				}else{
 					$reply["error"] = true;
 					$reply["location"] = "index.php";
-					$reply["msg"] = "Wrong Password";
+					$reply["msg"] = _t("Wrong Password");
 				}			
 	}else{
 	$reply["error"] = true;
 	$reply["location"] = "index.php";
-	$reply["msg"] = "Empty Password field";
+	$reply["msg"] = _t("Empty Password field");
 	}
 }else{
 $reply["error"] = true;
 $reply["location"] = "index.php";
-$reply["msg"] = "Empty User Field";
+$reply["msg"] = _t("Empty User Field");
 }
 echo json_encode($reply);
 ?>

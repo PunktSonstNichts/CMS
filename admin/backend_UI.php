@@ -1,11 +1,10 @@
 <?php
 //user_auth_check
-if(!isset($_SESSION["user"])){
+if(!isset($_SESSION["user"]) || !isset($_SESSION["user"]["name"])){
 	echo "please log in";
 	exit;
 }
 
-include("permission.php");
 
 $admin_sidebar = array(
 array( ROOT_URL."admin/admin-home.php", '<i class="fa fa-tachometer"></i> '._t("home")),
@@ -15,17 +14,20 @@ array( ROOT_URL."admin/admin-new.php", '<i class="fa fa-pencil"></i> '._t("new")
 	ROOT_URL."admin/admin-new.php?type=directory" => _t("directory"),
 	ROOT_URL."admin/admin-new.php?type=widget" => _t("widget"),
 )),
+array( ROOT_URL."admin/admin-sites.php", '<i class="fa fa-files-o"></i> '._t("sites")),
 array( ROOT_URL."admin/admin-design.php", '<i class="fa fa-magic"></i> '._t("designs")),
-array( ROOT_URL."admin/admin-widget.php", ''._t("widgets")),
 array( ROOT_URL."admin/admin-plugins.php", ''._t("plugins")),
 array( ROOT_URL."admin/admin-setting.php", '<i class="fa fa-wrench"></i> '._t("settings")),
 array( ROOT_URL."admin/admin-user.php", '<i class="fa fa-user"></i> '._t("users"))
 );
 ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="EN" lang="EN" dir="ltr">
+<head profile="http://gmpg.org/xfn/11">
 <link rel="stylesheet" href="scripte/css/main.css" type="text/css"/>
 <link rel="stylesheet" href="scripte/css/blue.css" type="text/css"/>
 <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-
+<title><?php echo $admin->get_title(); ?></title>
 <script src="scripte/js/jquery.min.js"></script>
 <script src="scripte/js/jquery-ui.min.js"></script>
 <script type="text/javascript" src="scripte/js/javascript.php"></script>
@@ -73,32 +75,11 @@ $('form').submit(function(e){
 });
 
 });
-
-
-
-function isValidDate(date){
-    var matches = /^(\d{2})[-\/](\d{2})[-\/](\d{4})$/.exec(date);
-    if (matches == null) return false;
-    var d = matches[2];
-    var m = matches[1] - 1;
-    var y = matches[3];
-    var composedDate = new Date(y, m, d);
-    return composedDate.getDate() == d &&
-            composedDate.getMonth() == m &&
-            composedDate.getFullYear() == y;
-}
-console.log(isValidDate('10-12-1961'));
-console.log(isValidDate('12/11/1961'));
-console.log(isValidDate('02-11-1961'));
-console.log(isValidDate('12/01/1961'));
-console.log(isValidDate('13-11-1961'));
-console.log(isValidDate('11-31-1961'));
-console.log(isValidDate('11-31-1061'));
 </script>
 </head>
 <body>
 <div id="header">
-<div id="sidebar-toggleview" class="header-element">Sidebar</div>
+<div id="sidebar-toggleview" class="header-element"><?php echo _t("Sidebar"); ?></div>
 <div class="divider"></div>
 <div id="notifications" class="header-element">
 			<div class="btn slim btn-primary">
@@ -106,7 +87,7 @@ console.log(isValidDate('11-31-1061'));
 			</div>
 		</div>
 <div id="user_control">
-<?php echo sprintf( _t('Welcome back, %s'), '<a href="admin-profile.php?user='.$_SESSION["user"]["name"].'" title="'.$_SESSION["user"]["ip"].'">'.$_SESSION["user"]["name"].'</a>');?>
+<?php echo sprintf( _t('Welcome back, %s'), '<a href="admin-profile.php?user='.$_SESSION["user"]["name"].'">'.$_SESSION["user"]["name"].'</a>');?>
 </div>
 </div>
 <div id="header-fixed-helper">
@@ -145,4 +126,10 @@ foreach($admin_sidebar as $element_link => $element){
 }
 ?>
 </ul>
+</div>
+<div id="help" class="clearfix">
+<div id="help_content">
+<?php $admin->get_help(); ?>
+</div>
+<div id="help_toggle"><?php echo _t("Help"); ?></div>
 </div>

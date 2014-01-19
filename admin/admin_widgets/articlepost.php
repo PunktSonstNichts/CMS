@@ -1,13 +1,15 @@
 <?php
 if(can_current_user("publish_post")){
 ?>
-<div class="element" id="quikpost">
+<div class="element" id="quikpost" style="width: 100%;">
 	<div class="element-heading">
 		<span><?php echo _t("quikpost");?></span>
 	</div>
 	<div class="element-content">
-		<form method="post" style="margin-left: 5px;" action="publish.php">
-			<input type="text" name="article-title" placeholder="<?php echo _t("your title");?>" style="margin-bottom: 5px; width: 364px;"/>
+		<form method="post" style="margin-left: 5px; margin-right: 5px;" action="publish.php">
+			<div>
+				<input type="text" name="article-title" placeholder="<?php echo _t("your title");?>" style="margin-bottom: 5px; width: 100%;"/>
+			</div>
 			<?php
 			#quikpost
 			$default_settings_sql = "SELECT setting, value FROM `widgets_settings` WHERE `widget` = 'quikpost_w'";

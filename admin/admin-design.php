@@ -33,26 +33,27 @@ include_once(dirname(__file__)."/backend_UI.php");
 	if($handle = opendir("templates/")) {
 	while (false !== ($entry = readdir($handle))) {
 		if($entry != "." && $entry != "..") {
-			if(file_exists("plugins/".$entry."/init.php")){
+			if(file_exists("templates/".$entry."/init.php")){
 				$plugin_name = "";
 				$plugin_author = "";
 				$plugin_description = "";
-				include("plugins/".$entry."/init.php");
+				$plugin_installed = false;
+				include("templates/".$entry."/init.php");
 	?>
 	<tr>			
 		<td>
 			<b><?php echo $plugin_name; ?></b></br>
 			<small>
 			<?php
-			if(file_exists("plugins/".$entry."/setting.php")){
+			if(file_exists("templates/".$entry."/setting.php")){
 			?>
-				<a href="plugins-edit.php?plugin=<?php echo $entry;?>&name=<?php echo $plugin_name; ?>&type=edit"><?php echo _t('edit'); ?></a> | 
+				<a href="templates-edit.php?plugin=<?php echo $entry;?>&name=<?php echo $plugin_name; ?>&type=edit"><?php echo _t('edit'); ?></a> | 
 			<?php
 			}
 			?>
 			<span class="label-danger"><?php echo _t('remove it'); ?></span> | 
-			<a href="plugins-edit.php?plugin=<?php echo $entry;?>&enable=<?php echo ($plugin_enabled == true) ? "false" : "true"; ?>&return=<?php echo $_SERVER["PHP_SELF"]; ?>&type=enable" ><span class="plugin_enable"><?php echo ($plugin_enabled == true) ? _t("disable plugin") : _t("enable plugin"); ?></span></a> | 
-			<a href="plugins-edit.php?plugin=<?php echo $entry;?>&name=<?php echo $plugin_name; ?>&type=checkifvalid" ><span class="plugin_enable"><?php echo _t("check plugin"); ?></span></a>
+			<a href="templates-edit.php?plugin=<?php echo $entry;?>&enable=<?php echo ($plugin_enabled == true) ? "false" : "true"; ?>&return=<?php echo $_SERVER["PHP_SELF"]; ?>&type=enable" ><span class="plugin_enable"><?php echo ($plugin_enabled == true) ? _t("disable plugin") : _t("enable plugin"); ?></span></a> | 
+			<a href="templates-edit.php?plugin=<?php echo $entry;?>&name=<?php echo $plugin_name; ?>&type=checkifvalid" ><span class="plugin_enable"><?php echo _t("check plugin"); ?></span></a>
 			
 			</small>
 		</td>

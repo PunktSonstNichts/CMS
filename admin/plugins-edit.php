@@ -34,16 +34,10 @@ switch($_GET["type"]){
 		header("Location:".$_GET["return"]); 
 		exit;
 	case "edit":
-?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="EN" lang="EN" dir="ltr">
-<head profile="http://gmpg.org/xfn/11">
-<meta charset="utf-8">
-<title><?php echo sprintf(_t("%s > backend"), _t("plugin")); ?></title>
-</head>
-<body>
-<?php
-include_once(dirname(__file__)."/backend_UI.php");
+
+		$admin = new admin;	
+		$admin->set_title(sprintf(_t("%s > backend"), _t("plugin")));
+		include_once(dirname(__file__)."/backend_UI.php");
 ?>
 <div id="contentframe">
 <div class="element" id="general_setting" style="float: none;">
@@ -74,16 +68,11 @@ if($_GET["plugin"] != ""){
 <?php
 	break;
 	case "checkifvalid":
-?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="EN" lang="EN" dir="ltr">
-<head profile="http://gmpg.org/xfn/11">
-<meta charset="utf-8">
-<title><?php echo sprintf(_t("%s > backend"), _t("plugin")); ?></title>
-</head>
-<body>
-<?php
-include_once(dirname(__file__)."/backend_UI.php");
+
+		$admin = new admin;	
+		$admin->set_title(sprintf(_t("%s > backend"), _t("plugin")));
+		include_once(dirname(__file__)."/backend_UI.php");
+		include_once(dirname(__file__)."/backend_UI.php");
 ?>
 <div id="contentframe">
 <div class="element" style="float: none;">

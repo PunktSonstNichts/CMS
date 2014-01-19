@@ -1,0 +1,13 @@
+ul.selector-list{
+display: box;
+box-orient: vertical;
+list-style: none;
+margin: 5px;
+float: left;
+}
+#pages-main-content{
+float: right;
+}
+.page-general{
+margin: 5px;
+}

@@ -9,7 +9,7 @@ $tasksresult = $taskssql->query("SELECT * FROM  `".$dbprae."tasks`;");
 while($tasks[] = $taskssql->result($tasksresult, "assoc"));
 
 ?>
-<div class="element" style="width: 500px;">
+<div class="element" style="width: 100%;">
 	<div class="element-heading">
 		<span><?php echo _t("tasks in progress"); ?></span>
 	</div>
@@ -17,10 +17,10 @@ while($tasks[] = $taskssql->result($tasksresult, "assoc"));
 		<table>
 		<thead>
 			<tr>
-			<th tabindex="0" rowspan="1" colspan="1" style="width: 200px;"><?php echo _t("task"); ?></th>
-			<th tabindex="0" rowspan="1" colspan="1" style="width: 170px;"><?php echo _t("assigned to"); ?></th>
-			<th tabindex="0" rowspan="1" colspan="1" style="width: 90px;"><?php echo _t("progress"); ?></th>
-			<th tabindex="0" rowspan="1" colspan="1" style="width: 80px;"><?php echo _t("status"); ?></th></tr>
+			<th><?php echo _t("task"); ?></th>
+			<th><?php echo _t("assigned to"); ?></th>
+			<th style="width: 90px;"><?php echo _t("progress"); ?></th>
+			<th><?php echo _t("status"); ?></th></tr>
 		</thead> 
 		<tbody>
 		<?php

@@ -17,10 +17,6 @@ case "simple":
 <style type="text/css">
 .wysiwygeditor-content{
 margin-top: 40px !important;
-width: 353px !important;
-}
-.wysiwygeditor-editor{
-width: 389px;
 }
 </style>
 <script type="javascript">
@@ -45,7 +41,7 @@ if(jQuery().dialog) {
 </div>
 </ul>
 <button class="wysiwyg" type="button" onclick="format('insertunorderedlist','');" title="Unsortierte Liste"><i class="fa fa-list-ul"></i></button>
-<button class="wysiwyg" type="button" onclick="format('insertorderedlist','');"   title="Unsortierte Liste"><i class="fa fa-list-ol"></i></button>
+<button class="wysiwyg" type="button" onclick="format('insertorderedlist','');"   title="Sortierte Liste"><i class="fa fa-list-ol"></i></button>
 <button class="wysiwyg" type="button" onclick="format('bold','');"><i class="fa fa-bold"></i></button>
 <button class="wysiwyg" type="button" onclick="format('italic','');"><i class="fa fa-italic"></i></button>
 <ul class="wysiwyg last" title="Ausrichtung">
@@ -66,18 +62,18 @@ default:
 <button class="wysiwyg" type="button" onclick="format('formatblock','<h2>');" title="Überschrift 2. Ordnung">H2</button>
 <button class="wysiwyg" type="button" onclick="format('formatblock','<h3>');" title="Überschrift 3. Ordnung">H3</button>
 <button class="wysiwyg" type="button" onclick="format('formatblock','<h4>');" title="Überschrift 4. Ordnung">H4</button>
-<button class="wysiwyg" type="button" onclick="format('insertunorderedlist','');" title="Unsortierte Liste">?</button>
-<button class="wysiwyg" type="button" onclick="format('insertorderedlist','');"   title="Unsortierte Liste">1.</button>
+<button class="wysiwyg" type="button" onclick="format('insertunorderedlist','');" title="Unsortierte Liste"><i class="fa fa-list-ul"></i></button>
+<button class="wysiwyg" type="button" onclick="format('insertorderedlist','');"   title="Sortierte Liste"><i class="fa fa-list-ol"></i></button>
 <button class="wysiwyg" type="button" onclick="format('inserthorizontalrule','');"title="Trennlinie">&mdash;</button>
-<button class="wysiwyg" type="button" onclick="format('bold','');"><b>B</b></button>
-<button class="wysiwyg" type="button" onclick="format('italic','');"><i>I</i></button>
+<button class="wysiwyg" type="button" onclick="format('bold','');"><i class="fa fa-bold"></i></button>
+<button class="wysiwyg" type="button" onclick="format('italic','');"><i class="fa fa-italic"></i></button>
 <button class="wysiwyg" type="button" onclick="format('subscript','');"><span style="font-size: 65%;"><sub>X</sub></span></button>
 <button class="wysiwyg" type="button" onclick="format('superscript','');"><span style="font-size: 65%;"><sup>X</sup></span></button>
 <button class="wysiwyg" type="button" onclick="document.execCommand('createlink');"><span style="text-decoration: underline;">link</span></button>
-<button class="wysiwyg" type="button" onclick="format('justifyleft','');">|= </button>
-<button class="wysiwyg" type="button" onclick="format('justifyright','');"> =|</button>
-<button class="wysiwyg" type="button" onclick="format('justifycenter','');">)=(</button>
-<button class="wysiwyg" type="button" class="last" onclick="format('justifyfull','');">|=|</button>
+<button class="wysiwyg" type="button" onclick="format('justifyleft','');"><i class="fa fa-align-left"></i></button>
+<button class="wysiwyg" type="button" onclick="format('justifyright','');"><i class="fa fa-align-right"></i></button>
+<button class="wysiwyg" type="button" onclick="format('justifycenter','');"><i class="fa fa-align-center"></i></button>
+<button class="wysiwyg" type="button" class="last" onclick="format('justifyfull','');"><i class="fa fa-align-justify"></i></button>
 <?php
 break;
 }

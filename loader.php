@@ -51,6 +51,9 @@ include("backend/plugins.php");
 // to do: better check if site should get cached (eg. different languages)
 include("cache.php");
 
+// function.php wich stores the most used and important functions
+include("backend/functions.php");
+
 
 if (defined('DEVELOPMODE')) {
 	if(constant('DEVELOPMODE') == true){
@@ -58,9 +61,9 @@ if (defined('DEVELOPMODE')) {
 	}
 }
 
-
-
 run_action("loader-finished");
+
+@header('Content-Type: ' . 'text/html' . '; charset=' . get_charset());
 
 chdir( $old_chdir );
 ?>

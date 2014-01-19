@@ -35,36 +35,30 @@ include_once(dirname(__file__)."/backend_UI.php");
 		<span><?php echo _t("users"); ?></span>
 	</div>
 	<div class="element-content">
-		<?php
-			$user_sql = "SELECT * FROM `".$dbprae."users`;";
-			$user_c = new mysql();
-			$user_result = $user_c->query($user_sql);
-			while($user = $user_c->result($user_result, "assoc")){
-		?>
-		<div class="element">
-			<div class="element-heading">
-				<span><?php echo $user["Name"]; ?></span>
-			</div>
-			<div class="element-content">
-				<table>
-					<thead>
-						<tr>
-							<th tabindex="0" rowspan="1" colspan="1" ><b><?php echo _t("role"); ?></b></th>
-							<th tabindex="0" rowspan="1" colspan="1" ><?php echo _t("dexcription"); ?></th>
-						</tr>
-					</thead> 
-					<tbody>
-						<tr>
-							<td tabindex="0" rowspan="1" colspan="1" ><?php echo _t($user["role"]); ?></td>
-							<td tabindex="0" rowspan="1" colspan="1" ><?php echo $user["description"]; ?></td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-		</div>
-		<?php
-		}
-		?>
+		<table>
+			<thead>
+				<tr>
+					<th><b><?php echo _t("user"); ?></b></th>
+					<th><b><?php echo _t("role"); ?></b></th>
+					<th><?php echo _t("description"); ?></th>
+				</tr>
+			</thead> 
+			<tbody>
+			<?php
+			$usersql = new mysql();
+			$user_result = $usersql->query("SELECT * FROM `".$usersql->dbprae."users`;");
+			while($user = $usersql->result($user_result, "assoc")){
+			?>
+				<tr>
+					<td><?php echo $user["Name"]; ?></td>
+					<td><?php echo _t($user["role"]); ?></td>
+					<td><?php echo $user["description"]; ?></td>
+				</tr>
+			<?php
+			}
+			?>
+			</tbody>
+		</table>
 	</div>
 </div>
 </div>
