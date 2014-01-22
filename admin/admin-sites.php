@@ -1,17 +1,31 @@
 <?php
 session_start();
+include("admin.php");
 include("../loader.php");
+if(!isset($admin)){
+	$admin = ""; #kein Objekt
+}
+if(!is_object($admin)){
+	$admin = new admin;
+}
+run_action("admin-dashboard");
+
+function sites_js(){
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="EN" lang="EN" dir="ltr">
-<head profile="http://gmpg.org/xfn/11">
-<link rel="stylesheet" href="scripte/css/sites/pages.css" type="text/css"/>
-<title><?php echo sprintf(_t("%s > backend"), _t("pages")); ?></title>
-</head>
-<body>
+$(".selector-link").click( function(e){
+	e.preventDefault();
+	$(".pages-element").fadeOut(1);
+	$("#page-" + $(this).attr("href")).fadeIn();
+});
 <?php
+}
+add_action("admin-javascript", "sites_js");
+
+$admin->set_title(sprintf(_t("%s > backend"), _t("pages")));
+
 include_once(dirname(__file__)."/backend_UI.php");
 ?>
+<link rel="stylesheet" href="scripte/css/sites/pages.css" type="text/css"/>
 <div id="contentframe">
 <div class="element">
 	<div class="element-heading">
@@ -25,7 +39,7 @@ include_once(dirname(__file__)."/backend_UI.php");
 			while($page = $pagessql->result($pagesresult, "assoc")){
 			?>
 				<li class="selector-element">
-					<a href="<?php echo $page["name"]; ?>"><span class="selector-pagename"><?php echo $page["visual_name"]; ?></span></a>
+					<a href="<?php echo $page["name"]; ?>" class="selector-link"><span class="selector-pagename"><?php echo $page["visual_name"]; ?></span></a>
 					<span class="selector-path label-warning" ><?php echo $page["template"].".php"; ?></span>
 				</li>
 			<?php
@@ -40,15 +54,16 @@ include_once(dirname(__file__)."/backend_UI.php");
 	?>
 	<div class="pages-element" id="page-<?php echo $page["name"]; ?>" style="display: none;">
 	<div class="page-general">
+		<p><?php echo $page["site_description"]; ?></p>
 		<a href="#"><?php echo _t("view page"); ?></a></br>
 		
 	</div>
-			<table>
+		<table width="98%">
 			<thead>
 				<tr>
 					<th><b><?php echo _t("widget"); ?></b></th>
 					<th><b><?php echo _t("position"); ?></b></th>
-					<th><?php echo _t("content"); ?></th>
+					<th><?php echo _t("status"); ?></th>
 				</tr>
 			</thead> 
 			<tbody>

@@ -174,8 +174,46 @@ add_action('after-text-loaded', 'get_comments', array("transferred-keys" => arra
 add_action('css-loading', 'add_commentbox_css');
 add_action('js-loading', 'add_commentbox_js');
 
+
+
+function cb_to_dashboard_elem(){
+//add the cb box to the dashboard
+if(!isset($admin)){
+$admin = ""; #kein Objekt
+}
+if(!is_object($admin)){
+	$admin = new admin;
+}
+global $admin;
+
+$help = array(
+	array(
+		"id" => 1,
+		"title" => _t("What does the Comment Box?"),
+		"content" => _t("The Comment Box is a plugin wich gives visitors of your site the oppertunity to comment any text.")
+	)
+);
+if(can_current_user("comment_box_manage")){
+	$admin->add_dashboard_element("comment_box", "Comment Box", "cb_dashboard_html", 3, 10, $help);
+}
+}
+add_action("admin-dashboard", "cb_to_dashboard_elem");
+
+function cb_dashboard_html($target){
+if($target == "dashboard" && can_current_user("comment_box_manage")){
+?>
+Manage the comment-plugin here
+<?php
+}else{
+echo _t("Cheatin, uh?");
+}
+}
+
+
 add_action("installation", "cb_install");
 function cb_install(){
-
+add_permission("admin", "comment_box_manage", "1");
+add_permission("designer", "comment_box_css", "1");
 }
+
 ?>

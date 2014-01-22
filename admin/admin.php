@@ -2,6 +2,7 @@
 class admin{
 
 private $element = array();
+private $help = array();
 private $page_title = "";
 
 public function set_title($title){
@@ -17,8 +18,9 @@ public function get_title(){
 			'functionname' => $functionname,
 			'row' => $row,
 			'position' => $position,
-			'help' => $help
 		);
+		$this->help[$element] = $help;
+		$this->help[$element][0]["name"] = $heading;
 	}
 
 	public function get_dashboard_elements($row, $html = true){
@@ -44,16 +46,27 @@ public function get_title(){
 
 	public function get_help($html = true){
 		$output = array();
-		foreach($this->element as $name => $element){
+		if($html){
+			echo "<div id=\"help_content\">";
+			echo "<div id=\"help_selection\">";
+			echo "<ul id=\"help_selection_list\">";
+			foreach($this->help as $name => $element){
+				echo "<li class='help-sitebar-list' data-target='help-$name'><span>".$element[0]["name"]."</span></li>";
+			}
+			echo "</ul>";
+			echo "</div>";
+			
+		}
+		foreach($this->help as $name => $element){
 				if($html){
 				
 				echo "<div class='help_box' id='help-$name'>";
-				foreach($element["help"] as $help){
-				if($help != ""){
+				foreach($element as $help){
+				if(is_array($help)){
 				?>
 					<div class="help_element" id="help-<?php echo $help["id"]; ?>">
-					<div class="help_element_title"><?php echo $help["title"]; ?></div>
-					<div class="help_element_content"><?php echo $help["content"]; ?></div>
+						<div class="help_element_title"><?php echo $help["title"]; ?></div>
+						<div class="help_element_content"><?php echo $help["content"]; ?></div>
 					</div>
 				<?php
 				}
@@ -62,6 +75,9 @@ public function get_title(){
 				}else{
 					$output[$name] = $this->element[$name]['help'];
 				}
+			}
+			if($html){
+				echo "</div>";
 			}
 		return $output;
 	}

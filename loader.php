@@ -63,7 +63,7 @@ if (defined('DEVELOPMODE')) {
 
 run_action("loader-finished");
 
-@header('Content-Type: ' . 'text/html' . '; charset=' . get_charset());
+
 
 chdir( $old_chdir );
 ?>

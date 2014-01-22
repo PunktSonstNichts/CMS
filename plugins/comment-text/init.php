@@ -4,5 +4,5 @@ $plugin_description = "Comment Plugin allows user to comment to every text, view
 $plugin_author = "PunktSonstNichts";
 
 // auto-generated
-$plugin_enabled = false;
+$plugin_enabled = true;
 ?>

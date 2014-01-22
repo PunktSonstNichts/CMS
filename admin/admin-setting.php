@@ -1,6 +1,13 @@
 <?php
 session_start();
+include("admin.php");
 include("../loader.php");
+if(!isset($admin)){
+	$admin = ""; #kein Objekt
+}
+if(!is_object($admin)){
+	$admin = new admin;
+}
 
 function setting_javascript(){
 ?>
@@ -12,15 +19,11 @@ function setting_javascript(){
 
 //put javascript to other javascript for a cleaner html output
 add_action("admin-javascript", "setting_javascript");
-?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="EN" lang="EN" dir="ltr">
-<head profile="http://gmpg.org/xfn/11">
-<meta charset="utf-8">
-<title><?php echo sprintf(_t("%s > backend"), _t("settings")); ?></title>
-</head>
-<body>
-<?php
+
+run_action("admin-dashboard");
+
+$admin->set_title(sprintf(_t("%s > backend"), _t("settings")));
+
 include_once(dirname(__file__)."/backend_UI.php");
 ?>
 <div id="contentframe">
@@ -30,18 +33,32 @@ include_once(dirname(__file__)."/backend_UI.php");
 </div>
 <div class="element-content">
 <form action="setting_change.php" method="post" style="float: left;">
+<table>
+	<thead>
+		<tr>
+			<th><b><?php echo _t("name"); ?></b></th>
+			<th style="width: 65%;"><b><?php echo _t("value"); ?></b></th>
+		</tr>
+	</thead> 
+	<tbody>
 <?php
 $settingssql = new mysql();
-$settingsresult = $settingssql->query("SELECT * from ".$dbprae."globals;");
+$settingsresult = $settingssql->query("SELECT * from ".$dbprae."globals  WHERE `user_editable` = 1;");
 while($setting = $settingssql->result($settingsresult, "assoc")){
 ?>
-<label class="setting_label" for="setting_<?php echo $setting["ID"]; ?>"><?php echo $setting["key"]; ?></label>
-<input type="text" class="setting_input" title="<?php echo $setting["description"]; ?>" value="<?php echo $setting["value"]; ?>" id="setting_<?php echo $setting["ID"]; ?>" name="<?php echo $setting["key"]; ?>" <?php echo ($setting["type"] == "info") ? "disabled" : ""; ?>/>
+<tr>
+	<td><label class="setting_label" for="setting_<?php echo $setting["ID"]; ?>"><?php echo $setting["key"]; ?></label></td>
+	<td><input type="text" style="width: 100%;" class="setting_input" title="<?php echo $setting["description"]; ?>" value="<?php echo $setting["value"]; ?>" id="setting_<?php echo $setting["ID"]; ?>" name="<?php echo $setting["key"]; ?>" <?php echo ($setting["type"] == "info") ? "disabled" : ""; ?>/></td>
+</tr>
 <?php
 }
 ?>
-<input type="submit" class="btn" value="<?php echo _t("save edited settings"); ?>"/>
-<input type="button" class="btn-danger" value="<?php echo _t("cancel editing"); ?>"/>
+<tr>
+	<td><input type="submit" class="btn" value="<?php echo _t("save edited settings"); ?>"/></td>
+	<td><input type="button" class="btn-danger" value="<?php echo _t("cancel editing"); ?>"/></td>
+</tr>
+</tbody>
+</table>
 </form>
 <div id="general_setting_desription" style="padding: 5px; float: right; margin-right: 10px; width: 330px;">
 <?php echo _t("Click on a input field to see what is it about"); ?>

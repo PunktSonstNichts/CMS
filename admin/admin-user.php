@@ -1,6 +1,14 @@
 <?php
 session_start();
+include("admin.php");
+if(!isset($admin)){
+	$admin = ""; #kein Objekt
+}
+if(!is_object($admin)){
+	$admin = new admin;
+}
 include("../loader.php");
+
 
 function user_css(){
 ?>
@@ -16,17 +24,13 @@ margin-bottom: 5px;
 <?php
 }
 
-//put javascript to other javascript for a cleaner html output
+//put css to other css for a cleaner html output
 add_action("admin-css", "user_css");
-?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="EN" lang="EN" dir="ltr">
-<head profile="http://gmpg.org/xfn/11">
-<meta charset="utf-8">
-<title><?php echo sprintf(_t("%s > backend"), _t("users")); ?></title>
-</head>
-<body>
-<?php
+
+run_action("admin-dashboard");
+
+$admin->set_title(sprintf(_t("%s > backend"), _t("users")));
+
 include_once(dirname(__file__)."/backend_UI.php");
 ?>
 <div id="contentframe">

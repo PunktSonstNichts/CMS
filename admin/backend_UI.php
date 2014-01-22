@@ -16,10 +16,13 @@ array( ROOT_URL."admin/admin-new.php", '<i class="fa fa-pencil"></i> '._t("new")
 )),
 array( ROOT_URL."admin/admin-sites.php", '<i class="fa fa-files-o"></i> '._t("sites")),
 array( ROOT_URL."admin/admin-design.php", '<i class="fa fa-magic"></i> '._t("designs")),
+array( ROOT_URL."admin/admin-widgets.php", '<i class="fa fa-desktop"></i> '._t("widgets")),
 array( ROOT_URL."admin/admin-plugins.php", ''._t("plugins")),
 array( ROOT_URL."admin/admin-setting.php", '<i class="fa fa-wrench"></i> '._t("settings")),
 array( ROOT_URL."admin/admin-user.php", '<i class="fa fa-user"></i> '._t("users"))
 );
+
+@header('Content-Type: ' . 'text/html' . '; charset=' . get_charset());
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="EN" lang="EN" dir="ltr">
@@ -73,7 +76,22 @@ $('form').submit(function(e){
 		}
 	});
 });
-
+	$("#help_toggle").click(function() {
+		showOrHide = new Boolean();
+		$("#help_content").toggle( showOrHide );
+		if( showOrHide === true ){
+			$("#help_content").slideDown(140);
+		}else if( showOrHide === false ){
+			$("#help_content").slideUp(140);
+		}
+	});
+	
+	$(".help-sitebar-list").click(function(){
+	$(".help-sitebar-list").removeClass("active");
+	$(this).addClass("active");
+	$(".help_box").hide();
+	$(".help_box#" + $(this).attr("data-target")).fadeIn();
+	});
 });
 </script>
 </head>
@@ -128,8 +146,7 @@ foreach($admin_sidebar as $element_link => $element){
 </ul>
 </div>
 <div id="help" class="clearfix">
-<div id="help_content">
 <?php $admin->get_help(); ?>
 </div>
 <div id="help_toggle"><?php echo _t("Help"); ?></div>
-</div>
+

@@ -1,5 +1,6 @@
 <?php
 session_start();
+include("admin.php");
 include("../loader.php");
 
 error_reporting(E_ALL);
@@ -71,7 +72,6 @@ if($_GET["plugin"] != ""){
 
 		$admin = new admin;	
 		$admin->set_title(sprintf(_t("%s > backend"), _t("plugin")));
-		include_once(dirname(__file__)."/backend_UI.php");
 		include_once(dirname(__file__)."/backend_UI.php");
 ?>
 <div id="contentframe">

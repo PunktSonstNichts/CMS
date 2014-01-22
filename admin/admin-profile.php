@@ -1,21 +1,26 @@
 <?php
 session_start();
+include("admin.php");
 include("../loader.php");
+if(!isset($admin)){
+	$admin = ""; #kein Objekt
+}
+if(!is_object($admin)){
+	$admin = new admin;
+}
+run_action("admin-dashboard");
 
-
+function profile_css(){
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="EN" lang="EN" dir="ltr">
-<head profile="http://gmpg.org/xfn/11">
 <link rel="stylesheet" href="scripte/css/sites/profile.css" type="text/css"/>
-<meta charset="utf-8">
-<title><?php echo sprintf(_t("%s > backend"),  _t("user profile")); ?></title>
-</head>
-<body>
 <?php
+}
+
+add_action("admin-head-loading", "profile_css");
+$admin->set_title(sprintf(_t("%s > backend"),  _t("user profile")));
+
 include_once(dirname(__file__)."/backend_UI.php");
 ?>
-
 <div id="contentframe">
 <?php
 	$user = htmlspecialchars($_GET["user"]);
@@ -174,7 +179,7 @@ include_once(dirname(__file__)."/backend_UI.php");
 					?>
 					<div class="activity_element <?php echo $crawler["key"]; ?>">
 						<div class="activity_element_title" style="float:left;"><a href="<?php echo $object[$columnnames["link"]]; ?>"><?php echo $object[$columnnames["title"]]; ?></a></div>
-						<div class="activity_element_date" style="width: 100%; text-align: right;"><small style="font-size: 0.8em; color: rgb(66,66,66);">since <?php echo date_format(date_create($object[$columnnames["date"]]), 'd.m.y // H:i:s'); ?></small></div><br>
+						<div class="activity_element_date" style="width: 100%; text-align: right;"><small style="font-size: 0.8em; color: rgb(66,66,66);"> <?php echo _t("since").date_format(date_create($object[$columnnames["date"]]), 'd.m.y // H:i:s'); ?></small></div><br>
 						<div class="activity_element_preview"><?php echo $object[$columnnames["preview"]]; ?></div>
 					</div>
 					<hr>

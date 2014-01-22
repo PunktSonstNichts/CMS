@@ -15,6 +15,7 @@ background-color: rgb(248, 245, 248);
 table{
 border: 1px solid rgb(221, 221, 221);
 margin: 5px;
+width: 98%;
 }
 table>thead{
 background-color: rgb(245, 245, 245);
