@@ -1,13 +1,9 @@
 <?php
 session_start();
 include("admin.php");
+$admin = new admin("user profile");
 include("../loader.php");
-if(!isset($admin)){
-	$admin = ""; #kein Objekt
-}
-if(!is_object($admin)){
-	$admin = new admin;
-}
+
 run_action("admin-dashboard");
 
 function profile_css(){
@@ -17,7 +13,6 @@ function profile_css(){
 }
 
 add_action("admin-head-loading", "profile_css");
-$admin->set_title(sprintf(_t("%s > backend"),  _t("user profile")));
 
 include_once(dirname(__file__)."/backend_UI.php");
 ?>

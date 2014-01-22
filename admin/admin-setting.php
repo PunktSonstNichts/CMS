@@ -1,13 +1,9 @@
 <?php
 session_start();
 include("admin.php");
+$admin = new admin("settings");
 include("../loader.php");
-if(!isset($admin)){
-	$admin = ""; #kein Objekt
-}
-if(!is_object($admin)){
-	$admin = new admin;
-}
+
 
 function setting_javascript(){
 ?>
@@ -22,7 +18,6 @@ add_action("admin-javascript", "setting_javascript");
 
 run_action("admin-dashboard");
 
-$admin->set_title(sprintf(_t("%s > backend"), _t("settings")));
 
 include_once(dirname(__file__)."/backend_UI.php");
 ?>

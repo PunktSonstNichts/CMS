@@ -178,12 +178,6 @@ add_action('js-loading', 'add_commentbox_js');
 
 function cb_to_dashboard_elem(){
 //add the cb box to the dashboard
-if(!isset($admin)){
-$admin = ""; #kein Objekt
-}
-if(!is_object($admin)){
-	$admin = new admin;
-}
 global $admin;
 
 $help = array(

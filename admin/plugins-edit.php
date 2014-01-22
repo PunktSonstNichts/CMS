@@ -36,8 +36,7 @@ switch($_GET["type"]){
 		exit;
 	case "edit":
 
-		$admin = new admin;	
-		$admin->set_title(sprintf(_t("%s > backend"), _t("plugin")));
+		$admin = new admin("plugin");
 		include_once(dirname(__file__)."/backend_UI.php");
 ?>
 <div id="contentframe">
@@ -70,8 +69,7 @@ if($_GET["plugin"] != ""){
 	break;
 	case "checkifvalid":
 
-		$admin = new admin;	
-		$admin->set_title(sprintf(_t("%s > backend"), _t("plugin")));
+		$admin = new admin("plugin");
 		include_once(dirname(__file__)."/backend_UI.php");
 ?>
 <div id="contentframe">

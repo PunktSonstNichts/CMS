@@ -3,13 +3,15 @@ class admin{
 
 private $element = array();
 private $help = array();
-private $page_title = "";
+private $page = "";
+private $pagetitle = "";
 
-public function set_title($title){
-	return $this->page_title = $title;
+public function __construct($pagename){
+	return $this->page = $pagename;
 }
 public function get_title(){
-	return $this->page_title;
+	$this->pagetitle = sprintf(_t("%s > backend"), _t($this->page));
+	return $this->pagetitle;
 }
 
 	public function add_dashboard_element($element, $heading = '', $functionname = '', $row, $position, $help = array(0 => array("id" => 0, "title" => '', "content" => ''))){

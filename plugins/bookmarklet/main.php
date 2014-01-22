@@ -1,12 +1,6 @@
 <?php
 function queue_element_to_dashboard(){
 //add the bookmarklet box to the dashboard
-if(!isset($admin)){
-$admin = ""; #kein Objekt
-}
-if(!is_object($admin)){
-	$admin = new admin;
-}
 global $admin;
 
 $help = array(
