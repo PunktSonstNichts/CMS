@@ -107,7 +107,7 @@ include_once(dirname(__file__)."/backend_UI.php");
 		$tasks = array();
 		$taskssql = new mysql();
 		
-		$tasksresult = $taskssql->query("SELECT * FROM  `".$dbprae."tasks` WHERE assigned_toUSERNAME LIKE '%".$user->Name."%';");
+		$tasksresult = $taskssql->query("SELECT * FROM  `".$taskssql->dbprae."tasks` WHERE assigned_toUSERNAME LIKE '%".$user->Name."%';");
 		while($tasks[] = $taskssql->result($tasksresult, "assoc"));
 		
 		$tasks = array_filter($tasks);
@@ -159,7 +159,7 @@ include_once(dirname(__file__)."/backend_UI.php");
 			<?php
 			$crawlersql = new mysql();
 			// To get the column names of the widgets...
-			$crawlerresult = $crawlersql->query("SELECT * FROM  `".$dbprae."globals` WHERE `type` = 'search_key';");
+			$crawlerresult = $crawlersql->query("SELECT * FROM  `".$crawlersql->dbprae."globals` WHERE `type` = 'search_key';");
 			while($crawler = $crawlersql->result($crawlerresult, "assoc")){
 			if($crawler != ""){
 				$columnnames = json_decode($crawler["value"], true);
@@ -167,7 +167,7 @@ include_once(dirname(__file__)."/backend_UI.php");
 				<div class="well" id="last_activity_<?php echo $crawler["key"];?>">
 				<?php
 				$objectsql = new mysql();
-				$objectresult = $objectsql->query("SELECT * FROM  `".$dbprae.$crawler["key"]."` WHERE ".$columnnames["username"]." = '".$user->Name."' ORDER BY ".$columnnames["date"]." DESC;");
+				$objectresult = $objectsql->query("SELECT * FROM  `".$objectsql->dbprae.$crawler["key"]."` WHERE ".$columnnames["username"]." = '".$user->Name."' ORDER BY ".$columnnames["date"]." DESC;");
 				while($objects[] = $objectsql->result($objectresult, "assoc"));
 				if($objects[0] != ""){ // Check if the array contains at least one element
 				foreach($objects as $object){

@@ -3,7 +3,7 @@
 include("backend/header.php");
 
 $index = new mysql();
-$result = $index->query("SELECT * FROM  `".$dbprae."pages` WHERE `name` = '$actual_site' LIMIT 1");
+$result = $index->query("SELECT * FROM  `".$index->dbprae."pages` WHERE `name` = '$actual_site' LIMIT 1");
 $pagedata = $index->result($result, "assoc");
 $index->free_result(); 
 $index->close_connect();
@@ -11,7 +11,7 @@ unset($index);
 run_action("pagedata", array("pagedata" => $pagedata));
 
 $template_sql = new mysql();
-$template_res = $template_sql->query("SELECT `value` FROM `".$dbprae."globals` WHERE `key` = 'template' LIMIT 1;");
+$template_res = $template_sql->query("SELECT `value` FROM `".$template_sql->dbprae."globals` WHERE `key` = 'template' LIMIT 1;");
 $template = $template_sql->result($template_res, "assoc");
 $template_sql->free_result(); 
 $template_sql->close_connect();
@@ -29,7 +29,7 @@ If a task is assigned to the actual site and its taggeg as "WIP" client gets WIP
 
 // Conditions
 $wip_condition_sql = new mysql();
-$wip_condition_res = $wip_condition_sql->query("SELECT `value` FROM `".$dbprae."globals` WHERE `key` = 'closed-by-wip-contidtion' LIMIT 1;");
+$wip_condition_res = $wip_condition_sql->query("SELECT `value` FROM `".$wip_condition_sql->dbprae."globals` WHERE `key` = 'closed-by-wip-contidtion' LIMIT 1;");
 $wip_condition = $wip_condition_sql->result($wip_condition_res, "assoc");
 $wip_condition_sql->free_result(); 
 $wip_condition_sql->close_connect(); 
@@ -39,7 +39,7 @@ $wip_condition = $wip_condition["value"];
 if($wip_condition != ""){
 
 	$task = new mysql();
-	$task_result = $task->query("SELECT * FROM `".$dbprae."tasks` WHERE `assigned_toSITENAME` = '".htmlspecialchars($_GET["site"])."' AND $wip_condition LIMIT 1;");
+	$task_result = $task->query("SELECT * FROM `".$task->dbprae."tasks` WHERE `assigned_toSITENAME` = '".htmlspecialchars($_GET["site"])."' AND $wip_condition LIMIT 1;");
 	$wip_task_info = $task->result($task_result, "assoc");
 	flush();
 	if($wip_task_info != ""){
@@ -62,7 +62,7 @@ if($wip_condition != ""){
 	define( "ACTUAL_SITENAME", $pagedata["visual_name"]); // Visual-Name of actual site
 	//widgets that are suppost to show on the side
 	$widgets = new mysql();
-	$result = $widgets->query("SELECT * FROM `".$dbprae."pagemeta` WHERE `affected_pageID` = '".$pagedata["ID"]."'");
+	$result = $widgets->query("SELECT * FROM `".$widgets->dbprae."pagemeta` WHERE `affected_pageID` = '".$pagedata["ID"]."'");
 	while($pagedata_widgets[] = $widgets->result($result, "assoc"));
 	$widgets->free_result(); 
 	$widgets->close_connect(); 
@@ -70,7 +70,7 @@ if($wip_condition != ""){
 
 	//settings for the widgets
 	$setting = new mysql();
-	$setting_result = $setting->query("SELECT * FROM `".$dbprae."widgets_settings`;");
+	$setting_result = $setting->query("SELECT * FROM `".$setting->dbprae."widgets_settings`;");
 	while($settings[] = $setting->result($setting_result, "assoc"));
 	$setting->free_result(); 
 	$setting->close_connect(); 

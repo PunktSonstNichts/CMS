@@ -38,19 +38,18 @@ include_once(dirname(__file__)."/backend_UI.php");
 	<tbody>
 <?php
 $settingssql = new mysql();
-$settingsresult = $settingssql->query("SELECT * from ".$dbprae."globals  WHERE `user_editable` = 1;");
+$settingsresult = $settingssql->query("SELECT * from ".$settingssql->dbprae."globals  WHERE `user_editable` = 1;");
 while($setting = $settingssql->result($settingsresult, "assoc")){
 ?>
 <tr>
 	<td><label class="setting_label" for="setting_<?php echo $setting["ID"]; ?>"><?php echo $setting["key"]; ?></label></td>
-	<td><input type="text" style="width: 100%;" class="setting_input" title="<?php echo $setting["description"]; ?>" value="<?php echo $setting["value"]; ?>" id="setting_<?php echo $setting["ID"]; ?>" name="<?php echo $setting["key"]; ?>" <?php echo ($setting["type"] == "info") ? "disabled" : ""; ?>/></td>
+	<td><input type="text" style="width: 100%;" class="setting_input" title="<?php echo $setting["description"]; ?>" value="<?php echo $setting["value"]; ?>" id="setting_<?php echo $setting["ID"]; ?>" name="<?php echo $setting["key"]; ?>"/></td>
 </tr>
 <?php
 }
 ?>
 <tr>
-	<td><input type="submit" class="btn" value="<?php echo _t("save edited settings"); ?>"/></td>
-	<td><input type="button" class="btn-danger" value="<?php echo _t("cancel editing"); ?>"/></td>
+	<td colspan="2"><input type="submit" class="btn" value="<?php echo _t("save edited settings"); ?>"/></td>
 </tr>
 </tbody>
 </table>
@@ -64,10 +63,19 @@ while($setting = $settingssql->result($settingsresult, "assoc")){
 <hr>
 <div class="element" id="widget_setting" style="float: none;">
 <div class="element-heading">
-<span><?php echo _t("settings for widgets"); ?></span>
+<span><?php echo _t("settings for write"); ?></span>
 </div>
 <div class="element-content">
+	<form action="setting_change.php" method="post">
+		<div class="input_element">
+			<label class="setting_label" for="setting_write_use_wysiwyg"><?php echo _t("Use wysiwyg-editor"); ?></label>
+			<input type="checkbox" value="<?php echo $setting["value"]; ?>" id="setting_write_use_wysiwyg" name="setting_write_use_wysiwyg"/>
+		</div>
 
+		<div class="input_element">
+			<input type="submit" class="btn" value="<?php echo _t("save edited settings"); ?>"/>
+		</div>
+	</form>
 </div>
 </div>
 </div>

@@ -5,7 +5,7 @@ if(!ROOT){ exit; }
 Preparing array for foreach-loop from sql result
 */
 $taskssql = new mysql();
-$tasksresult = $taskssql->query("SELECT * FROM  `".$dbprae."tasks`;");
+$tasksresult = $taskssql->query("SELECT * FROM  `".$taskssql->dbprae."tasks`;");
 while($tasks[] = $taskssql->result($tasksresult, "assoc"));
 
 ?>
@@ -24,9 +24,8 @@ while($tasks[] = $taskssql->result($tasksresult, "assoc"));
 		</thead> 
 		<tbody>
 		<?php
-		#quikpost
-		$user_sql = "SELECT ID, Name, role, active_Q0 FROM `".$dbprae."users`;";
 		$user_c = new mysql();
+		$user_sql = "SELECT ID, Name, role, active_Q0 FROM `".$user_c->dbprae."users`;";
 		$user_result = $user_c->query($user_sql);
 		while($user_array[] = $user_c->result($user_result, "assoc"));
 		foreach($tasks as $task){

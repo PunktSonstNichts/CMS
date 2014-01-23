@@ -4,15 +4,15 @@ if(!ROOT){ exit; }
 if(can_current_user("view_statistics")){
 
 $user_recentsql = new mysql();
-$user_recentresult = $user_recentsql->query("SELECT COUNT(*) AS User_all, (SELECT COUNT(*) FROM `".$dbprae."client_demograohy` WHERE 'accesstimestamp' >= '".gmdate("Y-m-d H:i:s", time() - (30 * 60))."' LIMIT 0 , 3) AS User_recent FROM  `".$dbprae."client_demograohy` WHERE 'accesstimestamp' >= '".gmdate("Y-m-d H:i:s", time() - (24 * 60 * 60))."' LIMIT 0 , 3;");
+$user_recentresult = $user_recentsql->query("SELECT COUNT(*) AS User_all, (SELECT COUNT(*) FROM `".$user_recentsql->dbprae."client_demograohy` WHERE 'accesstimestamp' >= '".gmdate("Y-m-d H:i:s", time() - (30 * 60))."' LIMIT 0 , 3) AS User_recent FROM  `".$dbprae."client_demograohy` WHERE 'accesstimestamp' >= '".gmdate("Y-m-d H:i:s", time() - (24 * 60 * 60))."' LIMIT 0 , 3;");
 while($user_recent[] = $user_recentsql->result($user_recentresult, "assoc"));
 
 $browsersql = new mysql();
-$browserresult = $browsersql->query("SELECT COUNT(Browser) AS BrowserNum , Browser, (SELECT COUNT(*) FROM `".$dbprae."client_demograohy` ) AS AllBrowser FROM  `".$dbprae."client_demograohy` GROUP BY Browser ORDER BY COUNT( Browser ) DESC LIMIT 0 , 3;");
+$browserresult = $browsersql->query("SELECT COUNT(Browser) AS BrowserNum , Browser, (SELECT COUNT(*) FROM `".$browsersql->dbprae."client_demograohy` ) AS AllBrowser FROM  `".$dbprae."client_demograohy` GROUP BY Browser ORDER BY COUNT( Browser ) DESC LIMIT 0 , 3;");
 while($most_used_browser[] = $browsersql->result($browserresult, "assoc"));
 
 $referrersql = new mysql();
-$referrerresult = $referrersql->query("SELECT COUNT(Referrer) AS ReferrerNum , Referrer, (SELECT COUNT(*) FROM `".$dbprae."client_demograohy` ) AS AllReferrer FROM  `".$dbprae."client_demograohy` GROUP BY Referrer ORDER BY COUNT( Referrer ) DESC LIMIT 0 , 3;");
+$referrerresult = $referrersql->query("SELECT COUNT(Referrer) AS ReferrerNum , Referrer, (SELECT COUNT(*) FROM `".$referrersql->dbprae."client_demograohy` ) AS AllReferrer FROM  `".$dbprae."client_demograohy` GROUP BY Referrer ORDER BY COUNT( Referrer ) DESC LIMIT 0 , 3;");
 while($most_used_referrer[] = $referrersql->result($referrerresult, "assoc"));
 
 /* Stat math */

@@ -12,8 +12,9 @@ if(can_current_user("publish_post")){
 			</div>
 			<?php
 			#quikpost
-			$default_settings_sql = "SELECT setting, value FROM `widgets_settings` WHERE `widget` = 'quikpost_w'";
+		
 			$default_settings_c = new mysql();
+			$default_settings_sql = "SELECT setting, value FROM `".$default_settings_c->dbprae."widgets_settings` WHERE `widget` = 'quikpost_w'";
 			$metaresult = $default_settings_c->query($default_settings_sql);
 			// putting all pre-defined settings into hidden input fields,
 			// so that the client can change these in modal dialog
