@@ -45,9 +45,10 @@ include_once(dirname(__file__)."/backend_UI.php");
 	<?php
 	$pagessql = new mysql();
 	$pagesresult = $pagessql->query("SELECT * FROM `".$pagessql->dbprae."pages`;");
+	$count = 0;
 	while($page = $pagessql->result($pagesresult, "assoc")){
 	?>
-	<div class="pages-element" id="page-<?php echo $page["name"]; ?>" style="display: none;">
+	<div class="pages-element" id="page-<?php echo $page["name"]; ?>" <?php echo ($count != 0) ? 'style="display: none;"' : ''; ?>>
 	<div class="page-general">
 		<p><?php echo $page["site_description"]; ?></p>
 		<a href="#"><?php echo _t("view page"); ?></a></br>
@@ -79,6 +80,7 @@ include_once(dirname(__file__)."/backend_UI.php");
 		</table>
 	</div>
 	<?php
+	$count++;
 	}
 	?>
 	</div>

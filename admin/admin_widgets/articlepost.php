@@ -23,10 +23,7 @@ if(can_current_user("publish_post")){
 				<input type="hidden" name="<?php echo $row["setting"];?>"   value="<?php echo $row["value"];?>"/>
 			<?php
 			}
-			$wysiwygtype = "simple";
-			chdir(SERVER_DIR);
-			include("plugins/wysiwyg/editor.php");
-			chdir( $old_chdir );
+			run_action("wysiwyg", array("type" => "simple"));
 			?>
 			<input type="submit" class="btn" value="<?php echo _t("publish");?>"/>
 			<input type="button" class="btn" value="<?php echo _t("extend");?>"/>

@@ -1,0 +1,18 @@
+ul.selector-list{
+display: box;
+box-orient: vertical;
+list-style: none;
+margin: 5px;
+}
+
+#change_post{
+float: left;
+}
+
+#post_edit_field{
+float: right;
+width: 700px;
+margin-left: 15px;
+padding-left: 5px;
+border-left: 1px solid rgb(170, 170, 170);
+}
