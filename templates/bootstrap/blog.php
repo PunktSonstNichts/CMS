@@ -4,9 +4,10 @@
 <?php echo $header->title; ?>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-5589-1">
 <?php echo $header->metastring; ?>
-<link rel="stylesheet" href="<?php echo ROOT_URL."templates/".TEMPLATE; ?>/scripte/css/bootstrap.css">
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
 <script src="http://code.jquery.com/jquery-latest.js"></script>
+<link rel="stylesheet" href="<?php echo ROOT_URL."templates/".TEMPLATE; ?>/scripte/css/bootstrap.css">
+<script src="<?php echo ROOT_URL."templates/".TEMPLATE; ?>/scripte/js/bootstrap.js"></script>
+
 <script type="text/javascript">
 <?php
 run_action('js-loading');
@@ -22,6 +23,9 @@ font-size: 24px !important;
 .breadcrumb>li+li:before {
 padding: 0 !important;
 content: "" !important;
+}
+.fly_in{
+position: absolute !important;
 }
 </style>
 </head>

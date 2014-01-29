@@ -7,11 +7,17 @@ document.getElementsByTagName('head')[0].appendChild(script);
 
 function HandleDOM_Change() {
 	$(document).ready( function(){
-		if (document.getElementById("wysiwygeditor-content")){
-			document.getElementById("wysiwygeditor-content").addEventListener("keyup", function(e) {
+		
+		if (document.getElementById("wysiwygeditor-content-<?php echo $_GET["idprae"]; ?>")){
+		
+			setInterval(function(){saveEdit()},3500);
+			
+			document.getElementById("wysiwygeditor-content-<?php echo $_GET["idprae"]; ?>").addEventListener("keyup", function(e) {
 				saveEdit();
 				checkhtml();
 			});
+			
+			 console.log(<?php echo $_GET["idprae"]; ?>);
 
 			$("ul.wysiwyg").hover( function(){
 				$(this).children(".wysiwyg-submenu").show();
@@ -21,7 +27,7 @@ function HandleDOM_Change() {
 
 
 
-			$('#wysiwygeditor-content').bind('DOMNodeInserted', function(event){
+			$('#wysiwygeditor-content-<?php echo $_GET["idprae"]; ?>').bind('DOMNodeInserted', function(event){
 				checkhtml();
 			});
 
@@ -62,15 +68,9 @@ function HandleDOM_Change() {
 			}
 		});
 
-		function saveEdit(){
-		   document.getElementById("form_inhalt").value = document.getElementById("wysiwygeditor-content").innerHTML;
-		   return true;
-		}
-		function format(command_name, command_value) {
-		   document.execCommand(command_name, false, command_value);
-		}
+
 		function checkhtml(){
-			$("#wysiwygeditor-content").children().each( function(){
+			$("#wysiwygeditor-content-<?php echo $_GET["idprae"]; ?>").children().each( function(){
 			$(this).addClass("wysiwyg-content-element");
 			if($(this)[0]["nodeName"] == "IMG" || $(this)[0]["nodeName"] == "A" ){
 			$(this).data("defaultborder", $(this).css("border"));
@@ -85,9 +85,6 @@ function HandleDOM_Change() {
 		}
 		function execDatavalues(){
 		$(".wysiwyg-content-element").each( function(){
-			$(this).attr("data-*").each( function(){
-			alert($(this));
-			});
 			var special_attribut = $(this).data("data-special");
 			if(special_attribut != ""){
 			var special_type = $(this).data("data-special-type");
@@ -104,6 +101,14 @@ function HandleDOM_Change() {
 		}
 	});
 	}
+}
+
+function saveEdit(){
+   document.getElementById("wysiwyg_content_<?php echo $_GET["idprae"]; ?>").value = document.getElementById("wysiwygeditor-content-<?php echo $_GET["idprae"]; ?>").innerHTML;
+   return true;
+}
+function format(command_name, command_value) {
+   document.execCommand(command_name, false, command_value);
 }
 
 //--- Narrow the container down AMAP.

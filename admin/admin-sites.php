@@ -40,6 +40,10 @@ include_once(dirname(__file__)."/backend_UI.php");
 			<?php
 			}
 			?>
+			<li class="selector-element">
+				<a href="#new" class="selector-link"><span class="selector-pagename"><?php echo _t("create a new site"); ?></span></a>
+				<span class="selector-path label-danger" ><div contenteditable="true" class="no-input-css" style="display: inline;">yourname</div>.php</span>
+			</li>
 		</ul>
 	<div id="pages-main-content">
 	<?php
@@ -51,7 +55,7 @@ include_once(dirname(__file__)."/backend_UI.php");
 	<div class="pages-element" id="page-<?php echo $page["name"]; ?>" <?php echo ($count != 0) ? 'style="display: none;"' : ''; ?>>
 	<div class="page-general">
 		<p><?php echo $page["site_description"]; ?></p>
-		<a href="#"><?php echo _t("view page"); ?></a></br>
+		<a href="<?php echo ROOT_URL.$page["name"]; ?>"><?php echo _t("view page"); ?></a></br>
 		
 	</div>
 		<table width="98%">
@@ -59,7 +63,7 @@ include_once(dirname(__file__)."/backend_UI.php");
 				<tr>
 					<th><b><?php echo _t("widget"); ?></b></th>
 					<th><b><?php echo _t("position"); ?></b></th>
-					<th><?php echo _t("status"); ?></th>
+					<th><b><?php echo _t("widget settings"); ?></b></th>
 				</tr>
 			</thead> 
 			<tbody>
@@ -71,11 +75,22 @@ include_once(dirname(__file__)."/backend_UI.php");
 				<tr>
 					<td><?php echo $pagemeta["widget"]; ?></td>
 					<td><?php echo $pagemeta["position"]; ?></td>
-					<td><?php echo $pagemeta["ID"]; ?></td>
+					<td><a href="<?php echo "admin-widgets.php?widget=".$pagemeta["widget"]."&site=".$page["name"]; ?>"><?php echo _t("change content"); ?></a></td>
 				</tr>
 			<?php
 			}
+			$selectwidgetsql = new mysql();
+			$widgetresult = $selectwidgetsql->query("SELECT * FROM `".$selectwidgetsql->dbprae."pagemeta` LEFT JOIN `widgets` ON `pagemeta`.widget = `widgets`.name GROUP BY `widget`;");
+			while($widget = $selectwidgetsql->result($widgetresult, "assoc")){
+				$select[] = $widget["widget"];
+			}
+			$select_pos = array("top", "sidebar", "navigation", "main", "footer");
 			?>
+				<tr>
+					<td><?php create_select($select, "slim");?></td>
+					<td><?php create_select($select_pos, "slim");?></td>
+					<td><input type="submit" class="slim" value="<?php echo _t("create widget");?>"/></td>
+				</tr>
 			</tbody>
 		</table>
 	</div>

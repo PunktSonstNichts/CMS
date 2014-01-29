@@ -1,3 +1,17 @@
+/* Personal code */
+
+$("document").ready( function(){
+	//$("input, button").addClass("fly_in").attr("data-marginleft", function(){ return $(this).css("marginLeft");}).css("margin-left","-395px");
+	var breite = parseFloat(document.body.offsetWidth) + 50;
+	$("a").addClass("fly_in").attr("data-marginleft", function(){ return $(this).css("marginLeft");}).css("marginLeft", breite);
+	
+	
+	$(".fly_in").each(function(e){
+		var delay = (e + 1) * (130 + Math.floor((Math.random()*1000)+100));
+		$(this).delay(delay).animate({marginLeft: 24}, 700).animate({marginLeft: -15}, 400).animate({marginLeft: 5}, 300).animate({marginLeft: $(this).attr("data-marginleft")}, 200).removeClass("fly_in");
+	});
+});
+
 /* ========================================================================
  * Bootstrap: alert.js v3.0.3
  * http://getbootstrap.com/javascript/#alerts

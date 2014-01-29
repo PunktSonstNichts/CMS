@@ -51,6 +51,9 @@ include("backend/plugins.php");
 // to do: better check if site should get cached (eg. different languages)
 include("cache.php");
 
+// madia.php is there to include in an easy way media like images, audio, (...) [additional pre-rendered to save traffic]
+include("backend/media.php");
+
 // function.php wich stores the most used and important functions
 include("backend/functions.php");
 

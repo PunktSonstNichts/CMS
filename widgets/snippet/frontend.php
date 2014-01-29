@@ -15,15 +15,15 @@ if($textsnippet != ""){
 	<?php
 	if($textsnippet["label"] == "new"){
 	?>
-	<span class="label label-primary"><?php _t("new"); ?></span>
+		<span class="label label-primary"><?php echo _t("new"); ?></span>
 	<?php
 	}elseif($textsnippet["label"] == "recommended"){
 	?>
-	<span class="label label-success"><?php _t("recommended"); ?></span>
+		<span class="label label-success"><?php echo _t("recommended"); ?></span>
 	<?php
 	}elseif($textsnippet["label"] == "hot"){
 	?>
-	<span class="label label-danger"><?php _t("hot"); ?></span>
+		<span class="label label-danger"><?php echo _t("hot"); ?></span>
 	<?php
 	}
 	?>

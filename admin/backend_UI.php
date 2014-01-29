@@ -37,7 +37,6 @@ array( ROOT_URL."admin/admin-user.php", '<i class="fa fa-user"></i> '._t("users"
 <?php
 run_action("admin-head-loading");
 ?>
-<script type="text/javascript" src="../plugins/wysiwyg/js/wysiwyg.js"></script>
 <style type="text/css">
 <?php
 run_action("admin-css");
@@ -52,30 +51,6 @@ run_action("admin-javascript");
 
 $('div').dialog('init');
 
-$('form').submit(function(e){
-	var form = $(this);
-	e.preventDefault();
-	$.ajax({
-		type: $(this).attr("method"),
-		url: $(this).attr("action"),
-		data: $(this).serialize(),
-		success: function(data){
-			console.log(data);
-			var obj = JSON.parse(data);
-			if(obj.error == false){
-				$('div').dialog('success', obj.msg);
-				if(obj.location){
-					location.replace(obj.location);
-				}else{
-					form.children('input[type=text]').val("");
-					form.find('div[contenteditable=true]').html("");		
-				}
-			}else{
-				$('div').dialog('error', obj.msg);
-			}
-		}
-	});
-});
 	$("#help_toggle").click(function() {
 		showOrHide = new Boolean();
 		$("#help_content").toggle( showOrHide );

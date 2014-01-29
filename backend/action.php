@@ -43,7 +43,11 @@ function run_action($actionname, $transfered_params = array()){
 					foreach($return_array as $return_key => $return_parameter){
 						//sorts out every variables wich don't need to get returned
 						if(in_array($return_key, $parameter)){
+							if($return_array[$return_key] === array_search($return_key, $parameter)){
+							$params[] = "";
+							}else{
 							$params[] = $return_parameter;
+							}
 						}
 					}
 				}else{

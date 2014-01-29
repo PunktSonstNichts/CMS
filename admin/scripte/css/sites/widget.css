@@ -16,3 +16,59 @@ margin-left: 15px;
 padding-left: 5px;
 border-left: 1px solid rgb(170, 170, 170);
 }
+
+.widget-selection{
+list-style: none;
+}
+
+li.widget-selection{
+margin: 5px;
+border: 1px solid rgb(170, 170, 170);
+background-color: white;
+height: 207px;
+width: 128px;
+float: left;
+text-align: center;
+}
+li.widget-selection.red{
+	background-color: rgb(217, 83, 79);
+}
+li.widget-selection.blue{
+	background-color: rgb(97, 207, 226);
+}
+li.widget-selection.green{
+	background-color: rgb(107, 226, 97);
+}
+li.widget-selection.orange{
+	background-color: rgb(235, 209, 74);
+}
+
+li.widget-selection.semi.red{
+	background-color: rgba(217, 83, 79, 0.4);
+}
+li.widget-selection.semi.blue{
+	background-color: rgba(97, 207, 226, 0.4);
+}
+li.widget-selection.semi.green{
+	background-color: rgba(107, 226, 97, 0.4);
+}
+li.widget-selection.semi.orange{
+	background-color: rgba(235, 209, 74, 0.4);
+}
+li.widget-selection:hover{
+box-shadow: 0px 5px 15px rgba(0,0,0,0.4);
+transform: rotate3d(0,1,0,35deg);
+}
+a.widget-link{
+color: rgb(51,51,51);
+text-decoration: none;
+}
+.widget-logo{
+font-size: 56px;
+margin: 15px auto;
+text-align: center;
+}
+.widget-heading{
+font-size: 14px;
+font-weight: bold;
+}

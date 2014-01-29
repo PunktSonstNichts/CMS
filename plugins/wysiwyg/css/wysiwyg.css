@@ -2,10 +2,15 @@
 border: 1px solid rgb(133, 133, 133);
 border-radius: 1px;
 }
+.wysiwygeditor-toolbar{
+display: inline-block;
+height: 36px;
+}
 .wysiwygeditor-toolbar.simple{
 border-bottom: 1px solid rgb(133, 133, 133);
 height: 32px;
 }
+
 button.wysiwyg, ul.wysiwyg{
 float: left;
 color: rgb(36,36,33) !important;

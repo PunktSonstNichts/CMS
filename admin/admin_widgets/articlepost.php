@@ -6,7 +6,7 @@ if(can_current_user("publish_post")){
 		<span><?php echo _t("quikpost");?></span>
 	</div>
 	<div class="element-content">
-		<form method="post" style="margin-left: 5px; margin-right: 5px;" action="publish.php">
+		<form method="post" data-type="new-content" style="margin-left: 5px; margin-right: 5px;" action="publish.php">
 			<div>
 				<input type="text" name="article-title" placeholder="<?php echo _t("your title");?>" style="margin-bottom: 5px; width: 100%;"/>
 			</div>
@@ -26,6 +26,7 @@ if(can_current_user("publish_post")){
 			run_action("wysiwyg", array("type" => "simple"));
 			?>
 			<input type="submit" class="btn" value="<?php echo _t("publish");?>"/>
+			<input type="button" class="btn btn-warning" value="<?php echo _t("save draft");?>"/>
 			<input type="button" class="btn" value="<?php echo _t("extend");?>"/>
 		</form>
 	</div>

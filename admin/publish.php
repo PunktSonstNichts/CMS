@@ -21,7 +21,7 @@ if($title == ""){
 	$response["msg"] = _t("you don't have the rights to publish posts. The post will get saved as a draft.");
 }else{
 $update_textdb = new mysql();
-$metaresult = $update_textdb->query("INSERT INTO `cms_cms`.`text_w` (`ID`, `Heading`, `author`, `publishdate`, `lasteditdate`, `label`, `affected_pageID`, `affect_pageNAME`, `content`, `preview`, `keywords`) VALUES (NULL, '$title', '".$_SESSION["user"]["name"]."', '".date("Y-m-d H:i:s")."', '".date("Y-m-d H:i:s")."', 'hot', '$default_siteID', '$default_siteNAME', '".$_POST["form_inhalt"]."', 'no time for a preview text :(', '$default_keywords');");
+$metaresult = $update_textdb->query("INSERT INTO `".$update_textdb->dbprae."text_w` (`ID`, `Heading`, `author`, `publishdate`, `lasteditdate`, `label`, `affected_pageID`, `affect_pageNAME`, `content`, `preview`, `keywords`) VALUES (NULL, '$title', '".$_SESSION["user"]["name"]."', '".date("Y-m-d H:i:s")."', '".date("Y-m-d H:i:s")."', 'hot', '$default_siteID', '$default_siteNAME', '".$_POST["form_inhalt"]."', 'no time for a preview text :(', '$default_keywords');");
 
 $response["error"] = false;
 $response["msg"] = _t("everything worked fine");
