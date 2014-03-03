@@ -1,7 +1,8 @@
 <?php
-include("../loader.php");
-session_set_cookie_params('o, /admin', ROOT, isset($_SERVER["HTTPS"]), true);
+
 session_start();
+include("../loader.php");
+
 
 
 $reply = array();
@@ -29,7 +30,7 @@ if($Name != ""){
 						$ip = $_SERVER['REMOTE_ADDR'];
 					}
 					
-					$_SESSION["user"] = array("name" => $row["Name"], "role" => $row["role"], "ip" => $ip);
+					$_SESSION["user"] = array("name" => $row["Name"], "role" => $row["role"], "ip" => $ip, "is_disabled" => false);
 					$reply["error"] = false;
 					$reply["location"] = "admin-home.php";
 				}else{

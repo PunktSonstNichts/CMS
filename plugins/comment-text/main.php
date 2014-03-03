@@ -1,16 +1,13 @@
 <?php
-$widget_path = "comment-text/";
-$cms_type = "plugin";
 
+$commentboxcounter = 0;
 
 function get_comments( $text_id, $text_title ){
 
-global $widget_path;
-global $cms_type;
+global $commentboxcounter;
+$widget_path = "comment-text/";
+$cms_type = "plugin";
 
-if(!isset($commentboxcounter)){
-$commentboxcounter = 0;
-}
 $titleinput_id = "commentbox-title-$commentboxcounter";
 $contentinput_id = "commentbox-content-$commentboxcounter";
 ?>
@@ -180,11 +177,14 @@ function cb_to_dashboard_elem(){
 //add the cb box to the dashboard
 global $admin;
 
+$widget_path = "comment-text/";
+$cms_type = "plugin";
+
 $help = array(
 	array(
 		"id" => 1,
-		"title" => _t("What does the Comment Box?"),
-		"content" => _t("The Comment Box is a plugin wich gives visitors of your site the oppertunity to comment any text.")
+		"title" => _t("What does the Comment Box?", $widget_path, $cms_type),
+		"content" => _t("The Comment Box is a plugin wich gives visitors of your site the oppertunity to comment any text.", $widget_path, $cms_type)
 	)
 );
 if(can_current_user("comment_box_manage")){
@@ -193,21 +193,30 @@ if(can_current_user("comment_box_manage")){
 }
 add_action("admin-dashboard", "cb_to_dashboard_elem");
 
+
 function cb_dashboard_html($target){
+$widget_path = "comment-text/";
+$cms_type = "plugin";
+
 if($target == "dashboard" && can_current_user("comment_box_manage")){
 ?>
-Manage the comment-plugin here
+Manage Plugin here
+<?php
+}elseif($target == "dashboard" && can_current_user("comment_box_css")){
+?>
+design commentbox here
 <?php
 }else{
-echo _t("Cheatin, uh?");
+	echo _t("Cheatin, uh?");
 }
 }
 
 
 add_action("installation", "cb_install");
 function cb_install(){
-add_permission("admin", "comment_box_manage", "1");
-add_permission("designer", "comment_box_css", "1");
+	add_permission("admin", "comment_box_manage", "1");
+	add_permission("designer", "comment_box_css", "1");
+	return true;
 }
 
 ?>

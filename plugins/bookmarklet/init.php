@@ -4,5 +4,6 @@ $plugin_description = "One simple button. it allows you to quote content from ev
 $plugin_author = "PunktSonstNichts";
 
 // auto-generated
+$plugin_installed = true;
 $plugin_enabled = true;
 ?>

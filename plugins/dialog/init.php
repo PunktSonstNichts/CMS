@@ -4,5 +4,6 @@ $plugin_description = "a jquery and css based dialog box for all important messa
 $plugin_author = "PunktSonstNichts";
 
 // auto-generated
+$plugin_installed = true;
 $plugin_enabled = true;
 ?>

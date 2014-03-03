@@ -59,7 +59,7 @@ include_once(dirname(__file__)."/backend_UI.php");
 		if(!$plugin_installed){
 		?>
 		<hr style="margin: 5px;">
-		<span class="warning"><?php echo sprintf(_t('%1$s isn\'t installed. The plug-in may not work correct. Fix it %2$s'), (($plugin_name) ? $plugin_name : $entry), "<a href='XXX'>"._t("now")."</a>"); ?></span>
+		<span class="warning"><?php echo sprintf(_t('%1$s isn\'t installed. The plug-in may not work correct. Fix it %2$s'), (($plugin_name) ? $plugin_name : $entry), "<a href='plugins-edit.php?plugin=".$entry."&return=".$_SERVER["PHP_SELF"]."&type=install'>"._t("now")."</a>"); ?></span>
 		<?php
 		}
 		?>

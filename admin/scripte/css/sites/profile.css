@@ -1,10 +1,3 @@
-.well{
-background-color: rgb(255, 255, 255);
-border: 1px solid rgb(221, 221, 221);
-margin: 5px;
-padding: 5px;
-}
-
 #user_auth{
 margin: 25px;
 float: left;

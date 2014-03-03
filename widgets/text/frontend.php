@@ -2,9 +2,7 @@
 <?php
 $snippet = new mysql();
 $snippet_result = $snippet->query("SELECT * FROM `text_w` WHERE `affected_pageID` = ".$this->sqlresult_array_site["ID"].";");
-while($snippet_arr[] = $snippet->result($snippet_result, "assoc"));
-
-foreach($snippet_arr as $textsnippet){
+while($textsnippet = $snippet->result($snippet_result, "assoc")){
 if($textsnippet != ""){
 ?>
 <div class="snippet" style="margin: 5px; display: block;">

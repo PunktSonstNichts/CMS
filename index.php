@@ -39,31 +39,7 @@ switch(constant('DEVELOPMODE')){
 		break;
 }
 
-// user-log
-$cookie = "superawesomestuff";
-$useragent = $_SERVER['HTTP_USER_AGENT'];
 
-if(strpos($useragent, 'MSIE') !== FALSE)
-   $browser =  "Internet Explorer";
- elseif(strpos($useragent, 'Firefox') !== FALSE)
-   $browser =  "Mozilla Firefox";
- elseif(strpos($useragent, 'Chrome') !== FALSE)
-   $browser =  "Google Chrome";
- elseif(strpos($useragent, 'Opera Mini') !== FALSE)
-   $browser =  "Opera Mini";
- elseif(strpos($useragent, 'Opera') !== FALSE)
-   $browser =  "Opera";
- elseif(strpos($useragent, 'Safari') !== FALSE)
-   $browser =  "Safari";
- else
-   $browser =  "Other";
-
-
-$usertracking = new mysql();
-$query = $usertracking->query("INSERT INTO `".$dbprae."client_demograohy`  ( `ID` ,`IP` ,`Browser` ,`User Agent` ,`cookie` ,`Referrer` ,`accesstimestamp` )
-VALUES ( NULL ,  '".$_SERVER['REMOTE_ADDR']."',  '$browser',  '$useragent',  '$cookie', '".parse_url($_SERVER['HTTP_REFERER'], PHP_URL_HOST)."',  '".date('Y-m-d H:i:s')."');");
-$usertracking->result($query);
-unset($usertracking);
 //start website caching if const is true
 run_action("before-cache");
 if(CACHE == true){

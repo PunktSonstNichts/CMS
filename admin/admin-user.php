@@ -1,12 +1,7 @@
 <?php
 session_start();
 include("admin.php");
-if(!isset($admin)){
-	$admin = ""; #kein Objekt
-}
-if(!is_object($admin)){
-	$admin = new admin;
-}
+$admin = new admin("users");
 include("../loader.php");
 
 
@@ -28,8 +23,6 @@ margin-bottom: 5px;
 add_action("admin-css", "user_css");
 
 run_action("admin-dashboard");
-
-$admin->set_title(sprintf(_t("%s > backend"), _t("users")));
 
 include_once(dirname(__file__)."/backend_UI.php");
 ?>

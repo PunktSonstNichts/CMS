@@ -1,6 +1,6 @@
 <?php
 session_start();
-if($_SESSION["user"] != ""){
+if($_SESSION["user"] != "" && $_SESSION["user"]["is_disabled"] == false){
 	include("../loader.php");
     header("Location: http://".ROOT."admin/admin-home.php");
     exit();
@@ -155,9 +155,10 @@ border-color: rgb(0, 220, 0);
 	<div id="heading">Backend</div>
 	<form action="<?php echo ROOT_URL."admin/login.backend.php";?>" method="post" name="loginform" style=" margin-left: 5px;">
 	<div id="text">
-			<div ><label class="label" for="username" ><?php echo _t("username");?></label></br><input type="text"     id="username"  name="username"  /></div>
-			<div ><label class="label" for="userpassw"><?php echo _t("password");?></label></br><input type="password" id="userpassw" name="userpassw" /></div>
+			<div ><label class="label" for="username" ><?php echo _t("username");?></label></br><input type="text"     class="big" id="username"  name="username"  /></div>
+			<div ><label class="label" for="userpassw"><?php echo _t("password");?></label></br><input type="password" class="big" id="userpassw" name="userpassw" /></div>
 	</div>
+	
 	<div id="remindme" style="margin-top: 18px;"><input style="display: none;" type="checkbox" id="remindme_checkbox" name="remindme_checkbox"/><label for="remindme_checkbox" class="select-button"><div></div><span style="font-size: 0.9em;"><?php echo _t("remind me");?></span></label></div>
 	<input type="submit" class="btn" style="margin-left: 50%;" value="<?php echo _t("log in");?>"/>
 	</form>

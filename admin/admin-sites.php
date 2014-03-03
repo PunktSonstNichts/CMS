@@ -1,7 +1,7 @@
 <?php
 session_start();
 include("admin.php");
-$admin = new admin("pages");
+$admin = new admin("sites");
 include("../loader.php");
 
 
@@ -24,7 +24,7 @@ include_once(dirname(__file__)."/backend_UI.php");
 <div id="contentframe">
 <div class="element">
 	<div class="element-heading">
-		<span><?php echo _t("pages"); ?></span>
+		<span><?php echo _t("sites"); ?></span>
 	</div>
 	<div class="element-content">
 		<ul class="selector-list well">
@@ -41,8 +41,8 @@ include_once(dirname(__file__)."/backend_UI.php");
 			}
 			?>
 			<li class="selector-element">
-				<a href="#new" class="selector-link"><span class="selector-pagename"><?php echo _t("create a new site"); ?></span></a>
-				<span class="selector-path label-danger" ><div contenteditable="true" class="no-input-css" style="display: inline;">yourname</div>.php</span>
+				<a href="_new" class="selector-link"><span class="selector-pagename"><?php echo _t("create a new site"); ?></span></a>
+				<span class="selector-path label-danger">.php</span>
 			</li>
 		</ul>
 	<div id="pages-main-content">
@@ -97,7 +97,32 @@ include_once(dirname(__file__)."/backend_UI.php");
 	<?php
 	$count++;
 	}
+	$templates = array("commerce", "blog", "main");
 	?>
+	<div class="pages-element" id="page-_new" <?php echo ($count != 0) ? 'style="display: none;"' : ''; ?>>
+	<form method="post" data-type="new" action="<?php echo ROOT_URL."widgets/text/savepost.php";?>">
+		<table class="form-table">
+		<tr>
+			<td><label for="sitename"><?php echo _t("site name"); ?></label></td>
+			<td><input type="text" id="sitename" name="sitename" placeholder="<?php echo _t("site name"); ?>"/></td>
+		</tr>
+		
+		<tr>
+			<td><label for="sitedescription"><?php echo _t("site description"); ?></label></td>
+			<td><input type="text" id="sitedescription" name="sitedescription" placeholder="<?php echo _t("site description"); ?>"/></td>
+		</tr>
+		
+		<tr>
+			<td><label for="sitetemplate"><?php echo _t("site template"); ?></label></td>
+			<td><?php create_select($templates);?></td>
+		</tr>
+		
+		<tr>
+			<td colspan="2"><input type="submit" value="<?php echo _t("create site"); ?>"/></td>
+		</tr>
+		</table>
+	</form>
+	</div>
 	</div>
 	</div>
 </div>

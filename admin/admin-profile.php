@@ -161,6 +161,7 @@ include_once(dirname(__file__)."/backend_UI.php");
 			// To get the column names of the widgets...
 			$crawlerresult = $crawlersql->query("SELECT * FROM  `".$crawlersql->dbprae."globals` WHERE `type` = 'search_key';");
 			while($crawler = $crawlersql->result($crawlerresult, "assoc")){
+			$objects = array();
 			if($crawler != ""){
 				$columnnames = json_decode($crawler["value"], true);
 				?>
@@ -170,16 +171,19 @@ include_once(dirname(__file__)."/backend_UI.php");
 				$objectresult = $objectsql->query("SELECT * FROM  `".$objectsql->dbprae.$crawler["key"]."` WHERE ".$columnnames["username"]." = '".$user->Name."' ORDER BY ".$columnnames["date"]." DESC;");
 				while($objects[] = $objectsql->result($objectresult, "assoc"));
 				if($objects[0] != ""){ // Check if the array contains at least one element
-				foreach($objects as $object){
-					?>
-					<div class="activity_element <?php echo $crawler["key"]; ?>">
-						<div class="activity_element_title" style="float:left;"><a href="<?php echo $object[$columnnames["link"]]; ?>"><?php echo $object[$columnnames["title"]]; ?></a></div>
-						<div class="activity_element_date" style="width: 100%; text-align: right;"><small style="font-size: 0.8em; color: rgb(66,66,66);"> <?php echo _t("since").date_format(date_create($object[$columnnames["date"]]), 'd.m.y // H:i:s'); ?></small></div><br>
-						<div class="activity_element_preview"><?php echo $object[$columnnames["preview"]]; ?></div>
-					</div>
-					<hr>
-					<?php
-				}
+					foreach($objects as $object){
+					if($object != ""){
+						?>
+						<div class="activity_element <?php echo $crawler["key"]; ?>">
+							<div class="activity_element_title" style="float:left;"><a href="<?php echo ROOT_URL.$object[$columnnames["link"]]; ?>"><?php echo $object[$columnnames["title"]]; ?></a></div>
+							<div class="activity_element_date" style="width: 100%; text-align: right;"><small style="font-size: 0.8em; color: rgb(66,66,66);"> <?php echo _t("since").date_format(date_create($object[$columnnames["date"]]), 'd.m.y // H:i:s'); ?></small></div><br>
+							<div class="activity_element_preview"><?php echo $object[$columnnames["preview"]]; ?></div>
+						</div>
+						<hr>
+						<?php
+					}
+					}
+					echo "<small>".sprintf(_t('%1$s\'s activity on %2$s'), $user->Name, $crawler["key"] )."</small>";
 				}else{
 					?>
 					<div class="activity_element no_activity">

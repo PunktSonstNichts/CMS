@@ -17,7 +17,6 @@ switch($_GET["type"]){
 
 
 		$neu = fopen ($filename,"w");
-		print_r($file);
 		$zeile_arr = explode("\r\n", $file);
 		$target_line = count($zeile_arr) - 2;
 		if($_GET["enable"] == "true"){
@@ -106,6 +105,34 @@ if($_GET["plugin"] != ""){
 </div>
 </body>
 <?php
+	break;
+	case "install":
+	if($_GET["plugin"] != ""){
+		$old_chdir = getcwd();
+		chdir(SERVER_DIR);
+		if(file_exists("plugins/".$_GET["plugin"]."/main.php")){
+			$installation_return = run_action("installation");
+			if($installation_return == true){
+				$filename = "plugins/".$_GET["plugin"]."/init.php";
+				//get old content
+				$file = fread(fopen($filename,"r"), filesize($filename));
+				$neu = fopen ($filename,"w");
+				$zeile_arr = explode("\r\n", $file);
+				$target_line = count($zeile_arr) - 2;
+				$zeile_arr[$target_line] = '$plugin_installed = true;'."\r\n".'$plugin_enabled = true;';
+				fwrite($neu, implode("\r\n", $zeile_arr)); 
+				header("Status: 301 Moved Permanently"); 
+				header("Location:".$_GET["return"]); 
+				exit;
+			}else{
+			print_r($installation_return);
+			}
+		}else{
+			 echo sprintf(_t('no main.php exist in \"%1$s\".'), "plugins/".$_GET["plugin"]."/main.php");
+		}
+	}else{
+		echo _t("no values transmitted");
+	}
 	break;
 }
 ?>

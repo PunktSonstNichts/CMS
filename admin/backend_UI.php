@@ -75,7 +75,7 @@ $('div').dialog('init');
 <div id="sidebar-toggleview" class="header-element"><?php echo _t("Sidebar"); ?></div>
 <div class="divider"></div>
 <div id="notifications" class="header-element">
-			<div class="btn slim btn-primary">
+			<div class="btn slim btn-primary" style="height: 21px;">
 			<span><i class="fa fa-cogs"></i> <?php echo _t("activity"); ?></span>
 			</div>
 		</div>

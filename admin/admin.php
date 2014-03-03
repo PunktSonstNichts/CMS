@@ -60,8 +60,7 @@ public function get_title(){
 			
 		}
 		foreach($this->help as $name => $element){
-				if($html){
-				
+			if($html){
 				echo "<div class='help_box' id='help-$name'>";
 				foreach($element as $help){
 				if(is_array($help)){
@@ -74,13 +73,13 @@ public function get_title(){
 				}
 				}
 				echo "</div>";
-				}else{
-					$output[$name] = $this->element[$name]['help'];
-				}
+			}else{
+				$output[$name] = $this->element[$name]['help'];
 			}
-			if($html){
-				echo "</div>";
-			}
+		}
+		if($html){
+			echo "</div>";
+		}
 		return $output;
 	}
 

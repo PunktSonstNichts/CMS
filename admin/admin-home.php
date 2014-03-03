@@ -20,7 +20,6 @@ include_once(dirname(__file__)."/backend_UI.php");
 		<div id="dashboard-container-column1" class="dashboard-container">
 		<?php
 		$admin->get_dashboard_elements(1);
-		include("admin_widgets/statistics.php");
 		?>
 		</div>
 		<div id="dashboard-container-column2" class="dashboard-container">

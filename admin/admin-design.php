@@ -1,16 +1,11 @@
 <?php
 session_start();
 include("admin.php");
+$admin = new admin("designs");
 include("../loader.php");
-if(!isset($admin)){
-	$admin = ""; #kein Objekt
-}
-if(!is_object($admin)){
-	$admin = new admin;
-}
+
 run_action("admin-dashboard");
 
-$admin->set_title(sprintf(_t("%s > backend"), _t("designs")));
 
 include_once(dirname(__file__)."/backend_UI.php");
 ?>
@@ -45,17 +40,9 @@ include_once(dirname(__file__)."/backend_UI.php");
 		<td>
 			<b><?php echo $plugin_name; ?></b></br>
 			<small>
-			<?php
-			if(file_exists("templates/".$entry."/setting.php")){
-			?>
-				<a href="templates-edit.php?plugin=<?php echo $entry;?>&name=<?php echo $plugin_name; ?>&type=edit"><?php echo _t('edit'); ?></a> | 
-			<?php
-			}
-			?>
 			<span class="label-danger"><?php echo _t('remove it'); ?></span> | 
 			<a href="templates-edit.php?plugin=<?php echo $entry;?>&enable=<?php echo ($plugin_enabled == true) ? "false" : "true"; ?>&return=<?php echo $_SERVER["PHP_SELF"]; ?>&type=enable" ><span class="plugin_enable"><?php echo ($plugin_enabled == true) ? _t("disable plugin") : _t("enable plugin"); ?></span></a> | 
 			<a href="templates-edit.php?plugin=<?php echo $entry;?>&name=<?php echo $plugin_name; ?>&type=checkifvalid" ><span class="plugin_enable"><?php echo _t("check plugin"); ?></span></a>
-			
 			</small>
 		</td>
 		<td>

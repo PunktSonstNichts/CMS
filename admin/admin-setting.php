@@ -28,7 +28,7 @@ include_once(dirname(__file__)."/backend_UI.php");
 </div>
 <div class="element-content">
 <form action="setting_change.php" method="post" style="float: left;">
-<table>
+<table class="form-table">
 	<thead>
 		<tr>
 			<th><b><?php echo _t("name"); ?></b></th>

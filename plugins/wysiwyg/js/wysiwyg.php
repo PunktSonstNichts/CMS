@@ -10,11 +10,11 @@ function HandleDOM_Change() {
 		
 		if (document.getElementById("wysiwygeditor-content-<?php echo $_GET["idprae"]; ?>")){
 		
-			setInterval(function(){saveEdit()},3500);
+			setInterval(function(){saveEdit(<?php echo $_GET["idprae"]; ?>)},3500);
 			
 			document.getElementById("wysiwygeditor-content-<?php echo $_GET["idprae"]; ?>").addEventListener("keyup", function(e) {
-				saveEdit();
-				checkhtml();
+				saveEdit(<?php echo $_GET["idprae"]; ?>);
+				checkhtml(<?php echo $_GET["idprae"]; ?>);
 			});
 			
 			 console.log(<?php echo $_GET["idprae"]; ?>);
@@ -28,7 +28,7 @@ function HandleDOM_Change() {
 
 
 			$('#wysiwygeditor-content-<?php echo $_GET["idprae"]; ?>').bind('DOMNodeInserted', function(event){
-				checkhtml();
+				checkhtml(<?php echo $_GET["idprae"]; ?>);
 			});
 
 			$(document).on('click', '.wysiwyg-content-element', function(){
@@ -44,7 +44,7 @@ function HandleDOM_Change() {
 							$(".elem-edit").each(function(){
 							element.attr( $(this).attr("data-effected_attribut"), $(this).val() );
 							});
-							saveEdit();
+							saveEdit(<?php echo $_GET["idprae"]; ?>);
 						}
 					});
 				}else if($(this)[0]["nodeName"] == "A"){
@@ -57,7 +57,7 @@ function HandleDOM_Change() {
 							element.attr( $(this).attr("data-effected_attribut"), $(this).val() );
 							});
 							execDatavalues();
-							saveEdit();
+							saveEdit(<?php echo $_GET["idprae"]; ?>);
 						}
 					});
 				}
@@ -69,8 +69,8 @@ function HandleDOM_Change() {
 		});
 
 
-		function checkhtml(){
-			$("#wysiwygeditor-content-<?php echo $_GET["idprae"]; ?>").children().each( function(){
+		function checkhtml(siteid){
+			$("#wysiwygeditor-content-" + siteid).children().each( function(){
 			$(this).addClass("wysiwyg-content-element");
 			if($(this)[0]["nodeName"] == "IMG" || $(this)[0]["nodeName"] == "A" ){
 			$(this).data("defaultborder", $(this).css("border"));
@@ -103,8 +103,8 @@ function HandleDOM_Change() {
 	}
 }
 
-function saveEdit(){
-   document.getElementById("wysiwyg_content_<?php echo $_GET["idprae"]; ?>").value = document.getElementById("wysiwygeditor-content-<?php echo $_GET["idprae"]; ?>").innerHTML;
+function saveEdit(siteid){
+   document.getElementById("wysiwyg_content_" + siteid).value = document.getElementById("wysiwygeditor-content-"+ siteid).innerHTML;
    return true;
 }
 function format(command_name, command_value) {

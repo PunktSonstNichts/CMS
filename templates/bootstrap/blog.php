@@ -41,7 +41,7 @@ position: absolute !important;
   <hr>
 <div class="row row-offcanvas row-offcanvas-right active">
   <div class="col-xs-12 col-sm-9"><?php $body->main(); ?></div>
-	<div class="col-xs-6 col-sm-3 sidebar-offcanvas">
+	<div class="col-xs-6 col-sm-3 sidebar-offcanvas" style="min-width: 240px;">
 		<?php $body->sidebar("sidebar");  ?> <!--  End Sitebar -->
 	</div>
 </div>

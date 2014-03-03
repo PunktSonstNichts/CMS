@@ -4,5 +4,6 @@ $plugin_description = "The best editor for your content so far.";
 $plugin_author = "PunktSonstNichts";
 
 // auto-generated
+$plugin_installed = true;
 $plugin_enabled = true;
 ?>

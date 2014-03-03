@@ -1,5 +1,5 @@
 <?php
-function queue_element_to_dashboard(){
+function queue_bookmarklet_to_dashboard(){
 //add the bookmarklet box to the dashboard
 global $admin;
 
@@ -17,7 +17,7 @@ $help = array(
 );
 $admin->add_dashboard_element("bookmarklet", "Bookmarklet", "dashboard_html", 1, 10, $help);
 }
-add_action("admin-dashboard", "queue_element_to_dashboard");
+add_action("admin-dashboard", "queue_bookmarklet_to_dashboard");
 
 function dashboard_html($target){
 if($target == "dashboard" && can_current_user("bookmarklet")){
@@ -34,8 +34,10 @@ echo _t("Cheatin, uh?");
 }
 }
 
-function installation(){
-add_permission("admin", "bookmarklet", "1");
-add_permission("content manager", "bookmarklet", "1");
+add_action("installation", "bookmarklet_install");
+function bookmarklet_install(){
+	add_permission("admin", "bookmarklet", "1");
+	add_permission("content manager", "bookmarklet", "1");
+	return true;
 }
 ?>

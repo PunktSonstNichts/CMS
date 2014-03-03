@@ -1,4 +1,4 @@
-table>tbody>tr>th, table>tfoot>tr>th, table>tbody>tr>td, table>tfoot>tr>td {
+table>tbody>tr>th, table>tfoot>tr>th, table>tbody>tr>td, table>tfoot>tr>td{
 padding: 5px;
 border-top: 1px solid rgb(221, 221, 221);
 background-color: white;
@@ -22,4 +22,14 @@ background-color: rgb(245, 245, 245);
 color: rgb(51, 51, 51);
 padding: 0;
 margin: 0;
+}
+.form-table{
+border-collapse: collapse;
+border: 0px !important;
+clear: both;
+}
+table.form-table>tbody>tr>th, table.form-table>tfoot>tr>th, table.form-table>tbody>tr>td, table>.form-tabletfoot>tr>td{
+border-collapse: collapse;
+border: 0px !important;
+min-width: 200px;
 }
